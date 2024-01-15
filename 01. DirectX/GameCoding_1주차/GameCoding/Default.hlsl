@@ -13,12 +13,7 @@ struct VS_INPUT
 	float2 uv : TEXCOORD;
 };
 
-cbuffer TransformData : register(b0)
-{
-	row_major matrix matWorld;
-}
-
-cbuffer CameraData : register(b1)
+cbuffer CameraData : register(b0)
 {
 	//카메라가 건내주는 뷰랑 프로젝션은 한번만
 	row_major matrix matView;
@@ -26,6 +21,13 @@ cbuffer CameraData : register(b1)
 	// matView와 matProjection은 카메라와 '만' 관련이 있음
 	// camera buffer을 만들어 따로 빼주면 된다 (한번만 하면 됨)
 }
+
+cbuffer TransformData : register(b1)
+{
+	row_major matrix matWorld;
+}
+
+
 
 struct VS_OUTPUT
 {
