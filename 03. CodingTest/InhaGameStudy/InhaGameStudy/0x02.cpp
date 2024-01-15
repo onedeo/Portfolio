@@ -1,40 +1,67 @@
 #include <iostream>
-#include <stack>
+#include <string>
 
 using namespace std;
 
 int main()
 {
-	cin.tie(0);
-	ios::sync_with_stdio(0);
-
-	stack<int> stk;
-	int n, ht;
-	int max;
+	int* dat, * ans;
+	int n, num;
 	cin >> n;
-	int sum = n - 1;
+	dat = new int[n];
+	ans = new int[n];
+	int head = 0;
+	int tail = 0;
+
+	string oper;
+	int i = 0;
 	while (n--)
 	{
-		cin >> ht;
-		if (stk.empty())
+		cin >> oper;
+		if (oper == "push")
 		{
-			stk.push(ht);
-			max = ht;
+			cin >> num;
+			dat[tail++] = num;
 		}
-		else if (max < ht)
+		else if (oper == "pop")
 		{
-			sum += stk.size() - 1;
-			while (!stk.empty()) stk.pop();
-			max = ht;
-			stk.push(ht);
+			if (head < tail)
+			{
+				ans[i++] = dat[head];
+				head++;
+			}
+			else ans[i++] = -1;
 		}
-		else stk.push(ht);
+		else if (oper == "size")
+		{
+			ans[i++] = tail - head;
+		}
+		else if (oper == "empty")
+		{
+			if (tail - head == 0) ans[i++] = 1;
+			else ans[i++] = 0;
+		}
+		else if (oper == "front")
+		{
+			if (head != tail)
+				ans[i++] = dat[head];
+			else ans[i++] = -1;
+		}
+		else if (oper == "back")
+		{
+			if(head!=tail)
+			ans[i++] = dat[tail-1];
+			else ans[i++] = -1;
+		}
 	}
-	sum += stk.size() - 1;
-	sum--;
 
-	cout << sum;
+	for (int j = 0; j < i; j++)
+	{
+		cout << ans[j]<<"\n";
+	}
 
+	delete[] dat;
+	delete[] ans;
 
 	return 0;
 }
