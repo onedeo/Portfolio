@@ -1,0 +1,44 @@
+@startuml
+
+interface Item
+
+Item<|-- Toy
+Item<|-- Tool
+Item<|-- Bread
+
+class ShoppingCart
+{
+    -List<Item> Item
+    +void AddItem(Item item)
+    +void removeItem(Item item)
+    +Item GetItem(int index)
+    #int Size()
+    /'- : private, + : public, # : protected'/
+}
+
+ShoppingCart o-- Item
+
+class Client
+{
+    void OnAddItem(Item item)
+    void OnRemoveItem(Item item)
+}
+
+class Server
+{
+    ShoppingCart cart
+    int AddItem(Item item)
+    int RemoveItem(Item item)
+}
+
+Server-->ShoppingCart
+Client-->Server
+Client*- ShopView
+
+class ShopView
+{
+    void LoadView()
+    void Update(ShoppingCart cart)
+}
+
+@enduml

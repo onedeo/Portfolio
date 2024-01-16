@@ -1,0 +1,38 @@
+@startuml
+
+/'
+actor Person
+
+Person->SadState : Lost Money
+Person->HappyState : Receive Money
+
+HappyState->ExcitedState : Win a Lottery
+activate ExcitedState
+
+loop 10 times
+ExcitedState->ExcitedState : Shall I Donate?
+end
+
+alt I am a good person
+
+    loop 100 times
+    ExcitedState->SatisfiedState : DonateMoney
+    end
+else I am not a decent person
+
+    ExcitedState->SatisfiedState : Keep Money
+
+end
+deactivate ExcitedState
+'/
+actor NormalSkeleton
+
+Wait->Patrol : PlayerDetected
+loop
+Check Player Detect
+end
+
+
+
+
+@enduml
