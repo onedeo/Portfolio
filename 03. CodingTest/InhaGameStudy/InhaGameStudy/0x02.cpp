@@ -1,67 +1,59 @@
 #include <iostream>
+#include <queue>
 #include <string>
 
 using namespace std;
 
 int main()
 {
-	int* dat, * ans;
+	cin.tie(0);
+	ios::sync_with_stdio(0);
+
 	int n, num;
 	cin >> n;
-	dat = new int[n];
-	ans = new int[n];
-	int head = 0;
-	int tail = 0;
-
 	string oper;
-	int i = 0;
-	while (n--)
+	queue<int> que;
+	queue<int> ans;
+	for (int i = 0; i < n; i++)
 	{
 		cin >> oper;
 		if (oper == "push")
 		{
 			cin >> num;
-			dat[tail++] = num;
+			que.push(num);
 		}
 		else if (oper == "pop")
 		{
-			if (head < tail)
+			if (que.empty()) ans.push(-1);
+			else
 			{
-				ans[i++] = dat[head];
-				head++;
+				ans.push(que.front());
+				que.pop();
 			}
-			else ans[i++] = -1;
 		}
 		else if (oper == "size")
 		{
-			ans[i++] = tail - head;
+			ans.push(que.size());
 		}
 		else if (oper == "empty")
 		{
-			if (tail - head == 0) ans[i++] = 1;
-			else ans[i++] = 0;
+			ans.push(que.empty());
 		}
 		else if (oper == "front")
 		{
-			if (head != tail)
-				ans[i++] = dat[head];
-			else ans[i++] = -1;
+			if (que.empty()) ans.push(-1);
+			else ans.push(que.front());
 		}
 		else if (oper == "back")
 		{
-			if(head!=tail)
-			ans[i++] = dat[tail-1];
-			else ans[i++] = -1;
+			if (que.empty()) ans.push(-1);
+			else ans.push(que.back());
 		}
 	}
 
-	for (int j = 0; j < i; j++)
+	while (!ans.empty())
 	{
-		cout << ans[j]<<"\n";
+		cout << ans.front()<<"\n";
+		ans.pop();
 	}
-
-	delete[] dat;
-	delete[] ans;
-
-	return 0;
 }
