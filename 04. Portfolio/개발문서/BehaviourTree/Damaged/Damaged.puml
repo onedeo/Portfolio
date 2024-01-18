@@ -1,0 +1,15 @@
+@startuml
+
+[*]-->Sequencer
+Sequencer : MonsterDamaged
+Sequencer-->CheckBoolean
+CheckBoolean : isDamaged
+Sequencer-->StopParticle
+Sequencer-->PlayAnimation
+PlayAnimation : Damaged Animation
+Sequencer-->Wait
+Sequencer-->ChasePlayer
+Sequencer-->SetBoolean
+SetBoolean : isDamaged=false
+
+@enduml

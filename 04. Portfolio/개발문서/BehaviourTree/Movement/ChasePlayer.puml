@@ -1,0 +1,11 @@
+@startuml
+
+[*]-->Sequencer
+Sequencer-->CheckDetection
+CheckDetection : Detect Chase Player
+Sequencer-->PlayAnimation
+PlayAnimation : Walk Animation
+Sequencer-->PlayAudio
+Sequencer-->SetAgentToPlayer
+
+@enduml

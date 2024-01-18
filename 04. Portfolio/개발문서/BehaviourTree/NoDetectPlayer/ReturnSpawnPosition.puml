@@ -1,0 +1,16 @@
+@startuml
+
+[*]-->Sequencer
+Sequencer-->Inverter
+Inverter-->CheckBoolean
+CheckBoolean : isOnSpawnPosition
+Sequencer-->PlayAnimaton0
+PlayAnimaton0 : Walk Animation
+Sequencer-->PlayAudio
+Sequencer-->ReturnToPosition
+Sequencer-->PlayAnimation1
+PlayAnimation1 : Sitted Animation
+Sequencer-->SetBoolean
+SetBoolean : isOnSpawnPosition = false
+
+@enduml

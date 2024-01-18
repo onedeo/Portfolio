@@ -1,0 +1,48 @@
+@startuml
+
+[*]-->Repeat
+Repeat-->InterruptSelector
+InterruptSelector --> SelectorDamaged
+SelectorDamaged : Damaged or Dead
+SelectorDamaged-->Dead
+Dead : Sequencer
+SelectorDamaged-->Damaged
+Damaged : Sequencer
+InterruptSelector --> MonsterAction
+MonsterAction : Sequencer
+MonsterAction-->SelectorAction
+SelectorAction : Selector
+SelectorAction-->SelectorAttack
+SelectorAttack : Selector
+SelectorAttack-->RuToPlayer
+RuToPlayer : Sequencer
+SelectorAttack-->FanshapeAttack
+FanshapeAttack : Sequencer
+SelectorAttack-->MeleeAttack
+MeleeAttack : Sequencer
+SelectorAction-->SelectorMovement
+SelectorMovement : Selector
+SelectorMovement-->Overavel
+Overavel : Sequencer
+SelectorMovement-->FirstTimeDetectPlayer
+FirstTimeDetectPlayer : Sequencer
+SelectorMovement-->NearPlayer
+NearPlayer : Sequencer
+SelectorMovement-->ChasePlayer
+ChasePlayer : Sequencer
+SelectorMovement-->Patrol
+Patrol : Sequencer
+SelectorAction-->NoPlayerDetection
+NoPlayerDetection : Selector
+NoPlayerDetection-->ReturnPosition
+ReturnPosition : Sequencer
+NoPlayerDetection-->Wait
+Wait : Sequencer
+
+
+
+
+
+
+
+@enduml

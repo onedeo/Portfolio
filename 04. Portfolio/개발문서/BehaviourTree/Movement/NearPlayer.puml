@@ -1,0 +1,11 @@
+@startuml
+
+[*]-->Sequencer
+Sequencer-->CheckPlayerIsNear
+CheckPlayerIsNear : PlayerDistance>StoppingDistance
+Sequencer-->PlayAudio
+Sequencer-->LookPlayer
+Sequencer-->PlayAnimation
+PlayAnimation : AttackIdle Animation
+
+@enduml

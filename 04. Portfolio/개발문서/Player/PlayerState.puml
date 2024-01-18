@@ -1,0 +1,41 @@
+@startuml
+
+PlayerController --> PlayerStateMachine
+
+class PlayerStateMachine
+{
+    +PlayerBaseState CurrentState
+    +PlayerStateName CurrentStatename
+    -Dictionary<PlayerStateName, PlayerBaseState> states
+
+    +PlayerStateMachine(PlayerStateName startState, PlayerBaseState state)
+    +AddState(PlayerStateName stateName, PlayerBaseState state) : void
+    +GetState(PlayerStateName stateName) : PlayerBasetState
+    +DeleteState(PlayerStatename stateName) : void
+    +ChangeState(PlayerStateName stateName) : void
+    +UpdateState() : void
+    +FixedUpdateState() : void
+}
+
+PlayerStateMachine o-- PlayerBaseState
+'PlayerStateMachine o- PlayerBaseState
+abstract class PlayerBaseState
+{
+    #PlayerController Controller
+    +PlayerBasetState(PlayerController controller) : void
+    +abstract OnEnterState() : void
+    +abstract OnUpdateState() : void
+    +abstract OnFixedUpdateState() : void
+    +abstract OnExitState() : void
+}
+
+
+PlayerBaseState <|-- PlayerStateCharging
+PlayerBaseState <|-- PlayerStateDead
+PlayerBaseState <|-- PlayerStateDodge
+PlayerBaseState <|-- PlayerStateIdle
+PlayerBaseState <|-- PlayerStateJump
+
+
+
+@enduml

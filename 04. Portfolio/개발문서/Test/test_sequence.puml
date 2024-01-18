@@ -1,0 +1,24 @@
+@startuml
+
+namespace Assets.Scripts.Player {
+    class PlayerStateMachine {
+        -CurrentState: PlayerBaseState
+        -CurrentStateName: PlayerStateName
+        -states: Dictionary<PlayerStateName, PlayerBaseState>
+        
+        +PlayerStateMachine(stateName: PlayerStateName, state: PlayerBaseState)
+        +AddState(stateName: PlayerStateName, state: PlayerBaseState): void
+        +GetState(stateName: PlayerStateName): PlayerBaseState
+        +DeleteState(stateName: PlayerStateName): void
+        +ChangeState(nextStateName: PlayerStateName): void
+        +ChangeState(nextStateName: PlayerStateName, info: StateInfo): void
+        +UpdateState(): void
+        +FixedUpdateState(): void
+    }
+
+    class StateInfo {
+        // StateInfo properties go here
+    }
+}
+
+@enduml

@@ -1,5 +1,5 @@
 #include <iostream>
-#include <queue>
+#include <stack>
 #include <string>
 
 using namespace std;
@@ -9,51 +9,36 @@ int main()
 	cin.tie(0);
 	ios::sync_with_stdio(0);
 
-	int n, num;
-	cin >> n;
-	string oper;
-	queue<int> que;
-	queue<int> ans;
-	for (int i = 0; i < n; i++)
+	string str;
+	cin >> str;
+	int popCount = 0;
+	int ans = 0;
+	
+	stack<char> stk;
+	for (int i = 0; i < str.size(); i++)
 	{
-		cin >> oper;
-		if (oper == "push")
+		if (stk.empty())
 		{
-			cin >> num;
-			que.push(num);
-		}
-		else if (oper == "pop")
-		{
-			if (que.empty()) ans.push(-1);
-			else
+			if (popCount > 1)
 			{
-				ans.push(que.front());
-				que.pop();
+				ans += popCount;
+				popCount = 0;
 			}
 		}
-		else if (oper == "size")
+		if (str[i] == '(')
+			stk.push(str[i]);
+		else
 		{
-			ans.push(que.size());
-		}
-		else if (oper == "empty")
-		{
-			ans.push(que.empty());
-		}
-		else if (oper == "front")
-		{
-			if (que.empty()) ans.push(-1);
-			else ans.push(que.front());
-		}
-		else if (oper == "back")
-		{
-			if (que.empty()) ans.push(-1);
-			else ans.push(que.back());
-		}
+			stk.pop();
+			popCount++;
+		}		
 	}
-
-	while (!ans.empty())
+	if (popCount > 1)
 	{
-		cout << ans.front()<<"\n";
-		ans.pop();
+		ans += popCount;
+		popCount = 0;
 	}
+	cout << ans;
+	
+	return 0;
 }

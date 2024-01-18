@@ -1,0 +1,34 @@
+﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(517,5): warning MSB8028: 중간 디렉터리(C:\Users\iamon\Desktop\MyInhaFiles\Portfolio\01. DirectX\GameCoding3D\Intermediate\Debug\)에 다른 프로젝트(Client.vcxproj)에서 공유하는 파일이 포함되어 있습니다.  이로 인해 잘못된 정리 및 다시 빌드 동작이 수행될 수 있습니다.
+  C:\Users\iamon\Desktop\MyInhaFiles\Portfolio\01. DirectX\GameCoding3D\Engine\Camera.h
+  C:\Users\iamon\Desktop\MyInhaFiles\Portfolio\01. DirectX\GameCoding3D\Engine\Component.h
+  C:\Users\iamon\Desktop\MyInhaFiles\Portfolio\01. DirectX\GameCoding3D\Engine\ConstantBuffer.h
+  C:\Users\iamon\Desktop\MyInhaFiles\Portfolio\01. DirectX\GameCoding3D\Engine\Define.h
+  C:\Users\iamon\Desktop\MyInhaFiles\Portfolio\01. DirectX\GameCoding3D\Engine\EnginePch.h
+  C:\Users\iamon\Desktop\MyInhaFiles\Portfolio\01. DirectX\GameCoding3D\Engine\Game.h
+  C:\Users\iamon\Desktop\MyInhaFiles\Portfolio\01. DirectX\GameCoding3D\Engine\GameObject.h
+  C:\Users\iamon\Desktop\MyInhaFiles\Portfolio\01. DirectX\GameCoding3D\Engine\Geometry.h
+  C:\Users\iamon\Desktop\MyInhaFiles\Portfolio\01. DirectX\GameCoding3D\Engine\GeometryHelper.h
+  C:\Users\iamon\Desktop\MyInhaFiles\Portfolio\01. DirectX\GameCoding3D\Engine\Graphics.h
+  C:\Users\iamon\Desktop\MyInhaFiles\Portfolio\01. DirectX\GameCoding3D\Engine\IExecute.h
+  C:\Users\iamon\Desktop\MyInhaFiles\Portfolio\01. DirectX\GameCoding3D\Engine\IndexBuffer.h
+  C:\Users\iamon\Desktop\MyInhaFiles\Portfolio\01. DirectX\GameCoding3D\Engine\InputManager.h
+  C:\Users\iamon\Desktop\MyInhaFiles\Portfolio\01. DirectX\GameCoding3D\Engine\MonoBehaviour.h
+  C:\Users\iamon\Desktop\MyInhaFiles\Portfolio\01. DirectX\GameCoding3D\Engine\Pass.h
+  C:\Users\iamon\Desktop\MyInhaFiles\Portfolio\01. DirectX\GameCoding3D\Engine\pch.h
+  C:\Users\iamon\Desktop\MyInhaFiles\Portfolio\01. DirectX\GameCoding3D\Engine\ResourceBase.h
+  C:\Users\iamon\Desktop\MyInhaFiles\Portfolio\01. DirectX\GameCoding3D\Engine\ResourceManager.h
+  C:\Users\iamon\Desktop\MyInhaFiles\Portfolio\01. DirectX\GameCoding3D\Engine\Shader.h
+  C:\Users\iamon\Desktop\MyInhaFiles\Portfolio\01. DirectX\GameCoding3D\Engine\SimpleMath.h
+  C:\Users\iamon\Desktop\MyInhaFiles\Portfolio\01. DirectX\GameCoding3D\Engine\Technique.h
+  C:\Users\iamon\Desktop\MyInhaFiles\Portfolio\01. DirectX\GameCoding3D\Engine\Texture.h
+  C:\Users\iamon\Desktop\MyInhaFiles\Portfolio\01. DirectX\GameCoding3D\Engine\TimeManager.h
+  C:\Users\iamon\Desktop\MyInhaFiles\Portfolio\01. DirectX\GameCoding3D\Engine\tinyxml2.h
+  C:\Users\iamon\Desktop\MyInhaFiles\Portfolio\01. DirectX\GameCoding3D\Engine\Transform.h
+  C:\Users\iamon\Desktop\MyInhaFiles\Portfolio\01. DirectX\GameCoding3D\Engine\Types.h
+  C:\Users\iamon\Desktop\MyInhaFiles\Portfolio\01. DirectX\GameCoding3D\Engine\Utils.h
+  C:\Users\iamon\Desktop\MyInhaFiles\Portfolio\01. DirectX\GameCoding3D\Engine\VertexBuffer.h
+  C:\Users\iamon\Desktop\MyInhaFiles\Portfolio\01. DirectX\GameCoding3D\Engine\VertexData.h
+  29개 파일이 복사되었습니다.
+  C:\Users\iamon\Desktop\MyInhaFiles\Portfolio\01. DirectX\GameCoding3D\Engine\SimpleMath.inl
+  1개 파일이 복사되었습니다.
+  Engine.vcxproj -> C:\Users\iamon\Desktop\MyInhaFiles\Portfolio\01. DirectX\GameCoding3D\Libraries\Lib\Engine\Engine.lib

@@ -1,0 +1,17 @@
+@startuml
+
+[*]-->Sequencer
+Sequencer-->CheckDetection
+CheckDetection : DetectPlayer
+Sequencer-->PlayAnimation0
+PlayAnimation0 : Walk Animation
+Sequencer-->PlayAudio0
+PlayAudio0 : Walk Audio
+Sequencer-->PatrolToPoint
+Sequencer-->PlayAnimation1
+PlayAnimation1 : Idle Animation
+Sequencer-->PlayAudio1
+PlayAudio1 : Idle Audio
+Sequencer-->Wait
+
+@enduml

@@ -1,0 +1,13 @@
+@startuml
+
+[*]-->Sequencer
+Sequencer : CheckMonsterDead
+Sequencer-->CheckBoolean
+CheckBoolean : isMonsterDead
+Sequencer-->Stop
+Sequencer-->PlayAnimation
+PlayAnimation : Death Animation
+Sequencer-->SetBoolean
+SetBoolean : isMonsterDead = false
+
+@enduml

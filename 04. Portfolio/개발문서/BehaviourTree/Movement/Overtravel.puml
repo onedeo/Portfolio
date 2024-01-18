@@ -1,0 +1,12 @@
+@startuml
+
+[*]-->Sequencer
+Sequencer-->CheckBoolean
+Sequencer-->PlayAnimation0
+PlayAnimation0 : Walk Animation
+Sequencer-->PlayAudio
+Sequencer-->ReturnToPoisition
+Sequencer-->PlayAnimation1
+PlayAnimation1 : Sitted Animation
+
+@enduml

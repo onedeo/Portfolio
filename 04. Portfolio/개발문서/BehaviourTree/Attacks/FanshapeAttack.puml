@@ -1,0 +1,15 @@
+@startuml
+
+[*]-->Sequencer
+Sequencer : Monster Fanshape Attack
+Sequencer-->CheckSkillUseable
+Sequencer-->Stop
+Sequencer-->PlayAnimation
+PlayAnimation : Melee Animation
+Sequencer-->PlayParticle
+Sequencer-->PlayAudio
+Sequencer-->PerformAttack
+PerformAttack : Melee Attack
+Sequencer-->Wait
+
+@enduml

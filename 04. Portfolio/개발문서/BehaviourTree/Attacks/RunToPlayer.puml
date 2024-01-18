@@ -1,0 +1,13 @@
+@startuml
+
+[*]-->Sequencer
+Sequencer : Monster Run To Player
+Sequencer-->CheckSkillUseable
+Sequencer-->PlayAnimation0
+PlayAnimation0 : Run Animation
+Sequencer-->PlayAudio
+Sequencer-->RunToPlayer
+Sequencer-->PlayAnimation1
+PlayAnimation1 : Idle Animation
+
+@enduml

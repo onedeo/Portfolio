@@ -1,0 +1,15 @@
+@startuml
+
+[*]-->Sequencer
+Sequencer-->CheckBoolean
+CheckBoolean : isOnSpawnPosition
+Sequencer-->CheckDetection
+CheckDetection : DetectPlayer
+Sequencer-->Stop
+Sequencer-->Wait
+Sequencer-->PlayAnimation
+PlayAnimation : Standup Animation
+Sequencer-->SetBoolean
+SetBoolean : isOnSpawnPosition=fasle
+
+@enduml
