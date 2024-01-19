@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b7542142c62fa842b6b976bab6daee3, type: 3}
+  m_Name: NPCData
+  m_EditorClassIdentifier: Assets.Scripts.Data.GoogleSheet.NPCDataParsingInfo, Assembly.Ellie
+  url: https://docs.google.com/spreadsheets/d/1DlHsnJDvkPX63VSBQC0I_Bg3tRGKPfGMpX1gIgggWEQ/edit#gid=602129952
+  startCell: B6
+  endColumn: H
+  tsv: "6000\t\uB9D0\uD558\uB294 \uD574\uACE8 \uBA38\uB9AC \uCCAB \uC9F8\t-\tTRUE\tTRUE\t6101;6102\r\n6001\t\uB9D0\uD558\uB294
+    \uD574\uACE8 \uBA38\uB9AC \uB458 \uC9F8\t-\tTRUE\tTRUE\t6103;6104;6105\r\n6002\t\uB9D0\uD558\uB294
+    \uD574\uACE8 \uBA38\uB9AC \uB9C9\uB0B4\t-\tTRUE\tTRUE\t6106;6107"
+  datas: []
