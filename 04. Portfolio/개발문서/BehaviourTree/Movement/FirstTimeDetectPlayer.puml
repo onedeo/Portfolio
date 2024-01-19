@@ -2,6 +2,7 @@
 
 [*]-->Sequencer
 Sequencer-->CheckBoolean
+Sequencer : FirstTimeDetectPlayer
 CheckBoolean : isOnSpawnPosition
 Sequencer-->CheckDetection
 CheckDetection : DetectPlayer

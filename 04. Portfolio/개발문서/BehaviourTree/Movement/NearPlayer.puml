@@ -2,6 +2,7 @@
 
 [*]-->Sequencer
 Sequencer-->CheckPlayerIsNear
+Sequencer : NearPlayer
 CheckPlayerIsNear : PlayerDistance>StoppingDistance
 Sequencer-->PlayAudio
 Sequencer-->LookPlayer

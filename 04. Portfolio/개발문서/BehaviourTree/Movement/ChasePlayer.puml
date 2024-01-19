@@ -2,6 +2,7 @@
 
 [*]-->Sequencer
 Sequencer-->CheckDetection
+Sequencer : ChasePlayer
 CheckDetection : Detect Chase Player
 Sequencer-->PlayAnimation
 PlayAnimation : Walk Animation

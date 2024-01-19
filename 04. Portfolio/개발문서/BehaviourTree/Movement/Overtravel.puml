@@ -2,6 +2,7 @@
 
 [*]-->Sequencer
 Sequencer-->CheckBoolean
+Sequencer : Overtravel
 Sequencer-->PlayAnimation0
 PlayAnimation0 : Walk Animation
 Sequencer-->PlayAudio
