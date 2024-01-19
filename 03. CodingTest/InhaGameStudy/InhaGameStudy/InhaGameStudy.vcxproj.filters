@@ -15,10 +15,10 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="0x03.cpp">
+    <ClCompile Include="99. Practice.cpp">
       <Filter>리소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="0x02.cpp">
+    <ClCompile Include="BFS.cpp">
       <Filter>리소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
