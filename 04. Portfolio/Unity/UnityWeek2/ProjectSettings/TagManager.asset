@@ -1,0 +1,75 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - GameManager
+  - CharacterSelectController
+  - Gold
+  - ElectricObstacle
+  - FireObstacle
+  - IceObstacle
+  - NormalObstacle
+  - TheGround
+  - Ladder
+  - Platform
+  - MissileCut
+  - EndOfMap
+  - Sword
+  - Defence
+  - Coin
+  - Floor
+  - Wall
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - Enemy
+  - Water
+  - UI
+  - Wall
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 3087337611
+    locked: 0
+  - name: Cloud
+    uniqueID: 285603799
+    locked: 0
+  - name: Item
+    uniqueID: 1111870053
+    locked: 0
+  - name: Enemy
+    uniqueID: 3510476549
+    locked: 0
+  - name: Player
+    uniqueID: 2032966101
+    locked: 0
