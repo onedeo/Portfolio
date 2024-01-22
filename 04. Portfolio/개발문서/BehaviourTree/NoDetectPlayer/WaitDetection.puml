@@ -1,7 +1,19 @@
 @startuml
 
-[*]-->Sequencer
-Sequencer-->PlayAudio
-Sequencer-->Wait
+usecase Sequence[
+    Sequence
+    
+    ---
+    WaitAndDetect
+]
+card PlayAudio[
+    PlayAudio
+    ---
+    Audio Idle
+]
+card Wait
+
+Sequence-->PlayAudio
+Sequence-->Wait
 
 @enduml

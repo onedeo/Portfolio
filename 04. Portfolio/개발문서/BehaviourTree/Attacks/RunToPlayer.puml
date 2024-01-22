@@ -1,13 +1,33 @@
 @startuml
 
-[*]-->Sequencer
-Sequencer : Monster Run To Player
-Sequencer-->CheckSkillUseable
-Sequencer-->PlayAnimation0
-PlayAnimation0 : Run Animation
-Sequencer-->PlayAudio
-Sequencer-->RunToPlayer
-Sequencer-->PlayAnimation1
-PlayAnimation1 : Idle Animation
+usecase Sequence[
+    Sequence
+    
+    ---
+    Monster Run To Player
+]
+card CheckSkillUseable
+card PlayAnimation0[
+    PlayAnimation
+    ---
+    Run Animation
+]
+card PlayAudio[
+    PlayAudio
+    ---
+    Audio Run
+]
+card RunToPlayer
+card PlayAnimation1[
+    PlayAnimation
+    ---
+    Idle Animation
+]
+
+Sequence-->CheckSkillUseable
+Sequence-->PlayAnimation0
+Sequence-->PlayAudio
+Sequence-->RunToPlayer
+Sequence-->PlayAnimation1
 
 @enduml

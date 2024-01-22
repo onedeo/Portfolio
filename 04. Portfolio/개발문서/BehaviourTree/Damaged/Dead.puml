@@ -1,13 +1,31 @@
 @startuml
 
-[*]-->Sequencer
-Sequencer : CheckMonsterDead
-Sequencer-->CheckBoolean
-CheckBoolean : isMonsterDead
-Sequencer-->Stop
-Sequencer-->PlayAnimation
-PlayAnimation : Death Animation
-Sequencer-->SetBoolean
-SetBoolean : isMonsterDead = false
+usecase Sequence[
+    Sequence
+    
+    ---
+    MonsterDead
+]
+card CheckBoolean[
+    CheckBoolean
+    ---
+    isMonsterDead
+]
+card Stop
+card PlayAnimation[
+    PlayAnimation
+    ---
+    Death Animation
+]
+card SetBoolean[
+    SetBoolean
+    ---
+    isMonsterDead=false
+]
+
+Sequence-->CheckBoolean
+Sequence-->Stop
+Sequence-->PlayAnimation
+Sequence-->SetBoolean
 
 @enduml

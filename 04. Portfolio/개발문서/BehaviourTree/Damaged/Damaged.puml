@@ -1,15 +1,35 @@
 @startuml
 
-[*]-->Sequencer
-Sequencer : MonsterDamaged
-Sequencer-->CheckBoolean
-CheckBoolean : isDamaged
-Sequencer-->StopParticle
-Sequencer-->PlayAnimation
-PlayAnimation : Damaged Animation
-Sequencer-->Wait
-Sequencer-->ChasePlayer
-Sequencer-->SetBoolean
-SetBoolean : isDamaged=false
+usecase Sequence[
+    Sequence
+    
+    ---
+    MonsterDamaged
+]
+card CheckBoolean[
+    CheckBoolean
+    ---
+    isDamaged
+]
+card StopParticle
+card PlayAnimation[
+    PlayAnimation
+    ---
+    Damaged Animation
+]
+card Wait
+card ChasePlayer
+card SetBoolean[
+    SetBoolean
+    ---
+    isDamaged=false
+]
+
+Sequence-->CheckBoolean
+Sequence-->StopParticle
+Sequence-->PlayAnimation
+Sequence-->Wait
+Sequence-->ChasePlayer
+Sequence-->SetBoolean
 
 @enduml

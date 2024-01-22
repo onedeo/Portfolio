@@ -1,16 +1,44 @@
 @startuml
 
-[*]-->Sequencer
-Sequencer-->Inverter
+usecase Sequence[
+    Sequence
+
+    ---
+    ReturnSpawnPosition
+]
+hexagon Inverter
+card CheckBoolean[
+    CheckBoolean
+    ---
+    isOnSpawnPosition
+]
+card PlayAnimaton0[
+    PlayAnimaton0
+    ---
+    Walk Animation
+]
+card PlayAudio[
+    Audio Walk
+]
+card ReturnToPosition
+card PlayAnimation1[
+    PlayAnimation1
+    ---
+    Sitted Animation
+]
+card SetBoolean[
+    isOnSpawnPosition = false
+]
+
+
+Sequence-->Inverter
 Inverter-->CheckBoolean
-CheckBoolean : isOnSpawnPosition
-Sequencer-->PlayAnimaton0
-PlayAnimaton0 : Walk Animation
-Sequencer-->PlayAudio
-Sequencer-->ReturnToPosition
-Sequencer-->PlayAnimation1
-PlayAnimation1 : Sitted Animation
-Sequencer-->SetBoolean
-SetBoolean : isOnSpawnPosition = false
+Sequence-->PlayAnimaton0
+Sequence-->PlayAudio
+Sequence-->ReturnToPosition
+Sequence-->PlayAnimation1
+Sequence-->SetBoolean
+
+
 
 @enduml

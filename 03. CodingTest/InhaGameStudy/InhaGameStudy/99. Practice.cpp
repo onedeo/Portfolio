@@ -3,61 +3,59 @@
 
 using namespace std;
 
+	int tomato[1000][1000];
 int main()
 {
-	int y, x, num;
+	cin.tie(0);
+	ios::sync_with_stdio(0);
+
+	int y, x;
 	cin >> y >> x;
-
-	int map[500][500];
-	for (int i = 0; i < y; i++)
-	{
-		for (int j = 0; j < x; j++)
-			cin >> map[i][j];
-	}
-	
-	int _y[4] = { -1, 1, 0, 0 };
-	int _x[4] = { 0, 0, -1, 1 };
-
-	int total = 0;
-	int size = 0;
-	int maxSize = 0;
-	int crntX, crntY;
-
 	queue<pair<int, int>> que;
 	for (int i = 0; i < y; i++)
 	{
 		for (int j = 0; j < x; j++)
 		{
-			if (map[i][j] == 0 || map[i][j] == -1) continue;
-			que.push(make_pair(i, j));
-			size = 0;
-			while (!que.empty())
+			cin >> tomato[i][j];
+			if (tomato[i][j] == 1)
 			{
-				size++;
-				crntY = que.front().first;
-				crntX = que.front().second;
-				map[crntY][crntX] = -1;
-				que.pop();
-				for (int k = 0; k < 4; k++)
-				{
-					int newY = crntY + _y[k];
-					int newX = crntX + _x[k];
-					if (newX < 0 || newY < 0) continue;
-					if (newX >= x || newY >= y) continue;
-					if (map[newY][newX] != 1) continue;
-					
-					map[newY][newX] = -1;
-					que.push(make_pair(newY, newX));
-				}
+				que.push({ i,j });
 			}
-			total++;
-			if (maxSize < size) maxSize = size;
 		}
 	}
+	que.push({ -5,-5 });
 
-	cout << total << "\n" << maxSize;
-	
-	
+	int _y[4] = { 0,0,1,-1 };
+	int _x[4] = { 1,-1,0,0 };
+	int days = 0;
+	while (!que.empty())
+	{
+		//-5: next day, -1 : tomato cant go, 0 : unfinished tomat, 1 : finished tomato
+		int crntY = que.front().first;
+		int crntX = que.front().second;
+		que.pop();
+		if (crntY == -5 && crntX == -5)
+		{
+			days++;
+			if (que.empty()) break;
+			que.push({ -5, -5 });
+			continue;
+		}
+		for (int i = 0; i < 4; i++)
+		{
+			int newY = crntY + _y[i];
+			int newX = crntX + _x[i];
+			if (newY < 0 || newX < 0) continue;
+			if (newY >= y || newX >= x) continue;
+			if (tomato[newY][newX] != 0) continue;
+
+			tomato[newY][newX] = 1;
+			que.push({ newY, newX });
+		}
+
+	}
+
+	cout << days;
 
 	return 0;
 }

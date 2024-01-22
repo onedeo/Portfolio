@@ -7,6 +7,12 @@ struct VertexData
 
 struct VertexTextureData
 {
+	VertexTextureData() {}
+	VertexTextureData(Vec3 position, Vec2 uv)
+	{
+		this->position = position;
+		this->uv = uv;
+	}
 	Vec3 position = { 0, 0, 0 };
 	Vec2 uv = { 0, 0 };
 };

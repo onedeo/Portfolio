@@ -1,12 +1,31 @@
 @startuml
 
-[*]-->Sequencer
-Sequencer-->CheckPlayerIsNear
-Sequencer : NearPlayer
-CheckPlayerIsNear : PlayerDistance>StoppingDistance
-Sequencer-->PlayAudio
-Sequencer-->LookPlayer
-Sequencer-->PlayAnimation
-PlayAnimation : AttackIdle Animation
+usecase Sequence[
+    Sequence
+
+    ---
+    NearPlayer
+]
+card CheckPlayerIsNear[
+    CheckPlayerIsNear
+    ---
+    PlayerDistance>StoppingDistance
+]
+card PlayAudio[
+    PlayAudio
+    ---
+    Audio AtatckIdle
+]
+card LookPlayer
+card PlayAnimation[
+    PlayAnimation
+    ---
+    AttackIdle Animation
+]
+
+Sequence-->CheckPlayerIsNear
+Sequence-->PlayAudio
+Sequence-->LookPlayer
+Sequence-->PlayAnimation
 
 @enduml

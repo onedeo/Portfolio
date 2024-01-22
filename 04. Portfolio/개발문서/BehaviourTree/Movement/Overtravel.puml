@@ -1,13 +1,38 @@
 @startuml
 
-[*]-->Sequencer
+usecase Sequencer[
+    Sequencer
+    
+    ---
+    Overtravel
+]
+card CheckBoolean[
+    CheckBoolean
+    ---
+    isOvertraveled
+]
+card PlayAnimation0[
+    PlayAnimation0
+    ---
+    Walk Animation
+]
+card PlayAudio[
+    PlayAudio
+    ---
+    Walk Audio
+]
+card ReturnToPoisition
+card PlayAnimation1[
+    PlayAnimation1
+    ---
+    SittedAnimation
+]
+
 Sequencer-->CheckBoolean
-Sequencer : Overtravel
 Sequencer-->PlayAnimation0
-PlayAnimation0 : Walk Animation
 Sequencer-->PlayAudio
 Sequencer-->ReturnToPoisition
 Sequencer-->PlayAnimation1
-PlayAnimation1 : Sitted Animation
+
 
 @enduml

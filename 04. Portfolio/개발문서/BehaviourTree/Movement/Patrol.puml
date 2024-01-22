@@ -1,18 +1,44 @@
 @startuml
+!include ActionNode.puml
 
-[*]-->Sequencer
-Sequencer-->CheckDetection
-Sequencer : Patrol
-CheckDetection : DetectPlayer
-Sequencer-->PlayAnimation0
-PlayAnimation0 : Walk Animation
-Sequencer-->PlayAudio0
-PlayAudio0 : Walk Audio
-Sequencer-->PatrolToPoint
-Sequencer-->PlayAnimation1
-PlayAnimation1 : Idle Animation
-Sequencer-->PlayAudio1
-PlayAudio1 : Idle Audio
-Sequencer-->Wait
+usecase Sequence[
+    Sequence
+
+    ---
+    Patrol
+]
+
+card PlayAnimation0[
+    PlayAnimation
+    ---
+    Walk Animation
+]
+card PlayAudio0[
+    PlayAudio
+    ---
+    Audio Walk
+]
+card PatrolToPoint
+card PlayAnimation1[
+    PlayAnimation
+    ---
+    Idle Animation
+]
+card PlayAudio1[
+    PlayAudio
+    ---
+    Audio Walk
+]
+card Wait
+
+
+Sequence-->CheckPlayerDetection
+Sequence-->PlayAnimation0
+Sequence-->PlayAudio0
+Sequence-->PatrolToPoint
+Sequence-->PlayAnimation1
+Sequence-->PlayAudio1
+Sequence-->Wait
+
 
 @enduml

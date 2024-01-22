@@ -1,16 +1,36 @@
 @startuml
 
-[*]-->Sequencer
-Sequencer-->CheckBoolean
-Sequencer : FirstTimeDetectPlayer
-CheckBoolean : isOnSpawnPosition
-Sequencer-->CheckDetection
-CheckDetection : DetectPlayer
-Sequencer-->Stop
-Sequencer-->Wait
-Sequencer-->PlayAnimation
-PlayAnimation : Standup Animation
-Sequencer-->SetBoolean
-SetBoolean : isOnSpawnPosition=fasle
+usecase Sequence[
+    Sequence
+    
+    ---
+    FirstTimeDetectPlayer
+]
+card CheckBoolean[
+    CheckBoolean
+    ---
+    isOnSpawnPosition
+]
+card CheckDetection[
+    CheckDetection
+    ---
+    Detect Player
+]
+card Stop
+card Wait
+card PlayAnimation[
+    PlayAnimation
+    ---
+    Standup Animation
+]
+card SetBoolean[
+    isOnSpawnPosition=false
+]
+Sequence-->CheckBoolean
+Sequence-->CheckDetection
+Sequence-->Stop
+Sequence-->Wait
+Sequence-->PlayAnimation
+Sequence-->SetBoolean
 
 @enduml
