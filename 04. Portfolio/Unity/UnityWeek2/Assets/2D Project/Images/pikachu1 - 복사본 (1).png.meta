@@ -1,0 +1,553 @@
+fileFormatVersion: 2
+guid: eda5c9e35f45da341b47da74d1183105
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 1
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: "pikachu1 - \uBCF5\uC0AC\uBCF8 (1)_0"
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 17
+        width: 139
+        height: 139
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6fff9330316145a4cae38b8629f51fc2
+      internalID: -1787262093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "pikachu1 - \uBCF5\uC0AC\uBCF8 (1)_1"
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 17
+        width: 130
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7a9dc8ab3ab8764bb7ef4ea89f0f836
+      internalID: 1150034133
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "pikachu1 - \uBCF5\uC0AC\uBCF8 (1)_2"
+      rect:
+        serializedVersion: 2
+        x: 286
+        y: 11
+        width: 160
+        height: 163
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4ec44fcf4bbd6343ad367d7c5bf5430
+      internalID: 1408231323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "pikachu1 - \uBCF5\uC0AC\uBCF8 (1)_3"
+      rect:
+        serializedVersion: 2
+        x: 445
+        y: 2
+        width: 121
+        height: 199
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07161a7b6b2b48f4c89709d312796847
+      internalID: -1809161221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "pikachu1 - \uBCF5\uC0AC\uBCF8 (1)_4"
+      rect:
+        serializedVersion: 2
+        x: 571
+        y: 45
+        width: 106
+        height: 201
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3bdb24110c9b70a4ebee85471a28adaf
+      internalID: -2091494288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "pikachu1 - \uBCF5\uC0AC\uBCF8 (1)_5"
+      rect:
+        serializedVersion: 2
+        x: 682
+        y: 53
+        width: 90
+        height: 199
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee1423eac60ce544b81356ce895e5777
+      internalID: -2116981379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "pikachu1 - \uBCF5\uC0AC\uBCF8 (1)_6"
+      rect:
+        serializedVersion: 2
+        x: 779
+        y: 62
+        width: 144
+        height: 163
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4847ef252ccb5894e97441640bbf1902
+      internalID: 1882906192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "pikachu1 - \uBCF5\uC0AC\uBCF8 (1)_7"
+      rect:
+        serializedVersion: 2
+        x: 935
+        y: 131
+        width: 141
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e2423d296d57dd4ab6f4aa1bd82faf5
+      internalID: 361188658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "pikachu1 - \uBCF5\uC0AC\uBCF8 (1)_8"
+      rect:
+        serializedVersion: 2
+        x: 1076
+        y: 119
+        width: 138
+        height: 138
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de579597a96563244846d2ce72c8a310
+      internalID: -666654736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "pikachu1 - \uBCF5\uC0AC\uBCF8 (1)_9"
+      rect:
+        serializedVersion: 2
+        x: 1214
+        y: 119
+        width: 113
+        height: 187
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f7f68e0b83e3e24da9c63dc0662dcb4
+      internalID: -486024467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "pikachu1 - \uBCF5\uC0AC\uBCF8 (1)_10"
+      rect:
+        serializedVersion: 2
+        x: 1333
+        y: 137
+        width: 172
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11448dde20aa46f41b4040583da24672
+      internalID: 1956106153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "pikachu1 - \uBCF5\uC0AC\uBCF8 (1)_11"
+      rect:
+        serializedVersion: 2
+        x: 1534
+        y: 45
+        width: 109
+        height: 215
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21539ef282366f6408514405c260f92f
+      internalID: -1385112642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "pikachu1 - \uBCF5\uC0AC\uBCF8 (1)_12"
+      rect:
+        serializedVersion: 2
+        x: 1643
+        y: 71
+        width: 153
+        height: 184
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b71e29d028b1514fb3c711cae723a48
+      internalID: -1122529588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "pikachu1 - \uBCF5\uC0AC\uBCF8 (1)_13"
+      rect:
+        serializedVersion: 2
+        x: 1796
+        y: 104
+        width: 150
+        height: 139
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 205ae9af2867fe445825bd3b2899e818
+      internalID: 1931452443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "pikachu1 - \uBCF5\uC0AC\uBCF8 (1)_14"
+      rect:
+        serializedVersion: 2
+        x: 1948
+        y: 65
+        width: 133
+        height: 154
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 305b34abaf6948c4e89343d5caf9f0c9
+      internalID: 632335975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "pikachu1 - \uBCF5\uC0AC\uBCF8 (1)_15"
+      rect:
+        serializedVersion: 2
+        x: 2089
+        y: 17
+        width: 139
+        height: 145
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a748f8edef98ccb46b6c84f7a2100d72
+      internalID: -546417208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "pikachu1 - \uBCF5\uC0AC\uBCF8 (1)_16"
+      rect:
+        serializedVersion: 2
+        x: 2230
+        y: 17
+        width: 149
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 331f1d730e8f81542a6bc7fcc858b03a
+      internalID: 2072597145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "pikachu1 - \uBCF5\uC0AC\uBCF8 (1)_17"
+      rect:
+        serializedVersion: 2
+        x: 2959
+        y: 17
+        width: 142
+        height: 139
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d175fbb17c55bb64287816d3f67ff0b4
+      internalID: -221880261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "pikachu1 - \uBCF5\uC0AC\uBCF8 (1)_18"
+      rect:
+        serializedVersion: 2
+        x: 2768
+        y: 17
+        width: 183
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f17fb74230e026e4ca8c02f36c61d07f
+      internalID: 453237642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      "pikachu1 - \uBCF5\uC0AC\uBCF8 (1)_0": -1787262093
+      "pikachu1 - \uBCF5\uC0AC\uBCF8 (1)_1": 1150034133
+      "pikachu1 - \uBCF5\uC0AC\uBCF8 (1)_10": 1956106153
+      "pikachu1 - \uBCF5\uC0AC\uBCF8 (1)_11": -1385112642
+      "pikachu1 - \uBCF5\uC0AC\uBCF8 (1)_12": -1122529588
+      "pikachu1 - \uBCF5\uC0AC\uBCF8 (1)_13": 1931452443
+      "pikachu1 - \uBCF5\uC0AC\uBCF8 (1)_14": 632335975
+      "pikachu1 - \uBCF5\uC0AC\uBCF8 (1)_15": -546417208
+      "pikachu1 - \uBCF5\uC0AC\uBCF8 (1)_16": 2072597145
+      "pikachu1 - \uBCF5\uC0AC\uBCF8 (1)_17": -221880261
+      "pikachu1 - \uBCF5\uC0AC\uBCF8 (1)_18": 453237642
+      "pikachu1 - \uBCF5\uC0AC\uBCF8 (1)_2": 1408231323
+      "pikachu1 - \uBCF5\uC0AC\uBCF8 (1)_3": -1809161221
+      "pikachu1 - \uBCF5\uC0AC\uBCF8 (1)_4": -2091494288
+      "pikachu1 - \uBCF5\uC0AC\uBCF8 (1)_5": -2116981379
+      "pikachu1 - \uBCF5\uC0AC\uBCF8 (1)_6": 1882906192
+      "pikachu1 - \uBCF5\uC0AC\uBCF8 (1)_7": 361188658
+      "pikachu1 - \uBCF5\uC0AC\uBCF8 (1)_8": -666654736
+      "pikachu1 - \uBCF5\uC0AC\uBCF8 (1)_9": -486024467
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
