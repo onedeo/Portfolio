@@ -1,5 +1,6 @@
 # 디렉토리 무시
 Binaries/
+Debug/
 .vs/
 x64/
 
