@@ -46,6 +46,13 @@ struct VertexOutput
 	float2 uv : TEXCOORD;
 	float3 normal : NORMAL;
 };
+struct MeshOutput
+{
+	float4 position : SV_POSITION; //SV : SystemValue
+	float3 worldPosition : POSITION1; // 조명관련 연산할 때 필요
+	float2 uv : TEXCOORD;
+	float3 normal : NORMAL;
+};
 // << : VertexOutput
 
 // >> : Sampler State
