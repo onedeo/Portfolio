@@ -16,6 +16,21 @@
     <Filter Include="Scripts">
       <UniqueIdentifier>{9c50a666-3b0e-428d-b457-7cb7ded66c22}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Shaders\01. BasicShapes">
+      <UniqueIdentifier>{8baeaaea-55a7-444e-89c9-8c6281e38120}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shaders\Common">
+      <UniqueIdentifier>{10bb9619-9f82-4d5b-b7f0-d3d27d3936d4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shaders\02.">
+      <UniqueIdentifier>{4f20a1d8-1e1e-4b27-a15f-8f7b98af9ed7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\01. BasicShapes">
+      <UniqueIdentifier>{d2d84f35-823c-4790-9b97-07fac75a2b31}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\02.">
+      <UniqueIdentifier>{b3c633c7-ba9e-443e-9467-40893368b283}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
@@ -24,37 +39,43 @@
     <ClCompile Include="Main.cpp">
       <Filter>Main</Filter>
     </ClCompile>
-    <ClCompile Include="01. TriangleDemo.cpp">
-      <Filter>Game</Filter>
-    </ClCompile>
-    <ClCompile Include="02. QuadDemo.cpp">
-      <Filter>Game</Filter>
-    </ClCompile>
-    <ClCompile Include="03. ConstBufferDemo.cpp">
-      <Filter>Game</Filter>
-    </ClCompile>
-    <ClCompile Include="04. CameraDemo.cpp">
-      <Filter>Game</Filter>
-    </ClCompile>
     <ClCompile Include="CameraScript.cpp">
       <Filter>Main\Camera</Filter>
     </ClCompile>
+    <ClCompile Include="Turning.cpp" />
+    <ClCompile Include="01. TriangleDemo.cpp">
+      <Filter>Game\01. BasicShapes</Filter>
+    </ClCompile>
+    <ClCompile Include="02. QuadDemo.cpp">
+      <Filter>Game\01. BasicShapes</Filter>
+    </ClCompile>
+    <ClCompile Include="03. ConstBufferDemo.cpp">
+      <Filter>Game\01. BasicShapes</Filter>
+    </ClCompile>
+    <ClCompile Include="04. CameraDemo.cpp">
+      <Filter>Game\01. BasicShapes</Filter>
+    </ClCompile>
     <ClCompile Include="05. TextureDemo.cpp">
-      <Filter>Game</Filter>
+      <Filter>Game\01. BasicShapes</Filter>
     </ClCompile>
     <ClCompile Include="06. SamplerDemo.cpp">
-      <Filter>Game</Filter>
+      <Filter>Game\01. BasicShapes</Filter>
     </ClCompile>
     <ClCompile Include="07. HeightMapDemo.cpp">
-      <Filter>Game</Filter>
+      <Filter>Game\01. BasicShapes</Filter>
     </ClCompile>
     <ClCompile Include="08. NormalDemo.cpp">
-      <Filter>Game</Filter>
+      <Filter>Game\01. BasicShapes</Filter>
     </ClCompile>
     <ClCompile Include="09. MeshDemo.cpp">
-      <Filter>Game</Filter>
+      <Filter>Game\01. BasicShapes</Filter>
     </ClCompile>
-    <ClCompile Include="Turning.cpp" />
+    <ClCompile Include="10. GlobalTestDemo.cpp">
+      <Filter>Game\02.</Filter>
+    </ClCompile>
+    <ClCompile Include="11. DepthStencilDemo.cpp">
+      <Filter>Game\02.</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h">
@@ -63,59 +84,71 @@
     <ClInclude Include="Main.h">
       <Filter>Main</Filter>
     </ClInclude>
-    <ClInclude Include="01. TriangleDemo.h">
-      <Filter>Game</Filter>
-    </ClInclude>
-    <ClInclude Include="02. QuadDemo.h">
-      <Filter>Game</Filter>
-    </ClInclude>
-    <ClInclude Include="03. ConstBufferDemo.h">
-      <Filter>Game</Filter>
-    </ClInclude>
-    <ClInclude Include="04. CameraDemo.h">
-      <Filter>Game</Filter>
-    </ClInclude>
     <ClInclude Include="CameraScript.h">
       <Filter>Main\Camera</Filter>
     </ClInclude>
+    <ClInclude Include="Turning.h" />
+    <ClInclude Include="01. TriangleDemo.h">
+      <Filter>Game\01. BasicShapes</Filter>
+    </ClInclude>
+    <ClInclude Include="02. QuadDemo.h">
+      <Filter>Game\01. BasicShapes</Filter>
+    </ClInclude>
+    <ClInclude Include="03. ConstBufferDemo.h">
+      <Filter>Game\01. BasicShapes</Filter>
+    </ClInclude>
+    <ClInclude Include="04. CameraDemo.h">
+      <Filter>Game\01. BasicShapes</Filter>
+    </ClInclude>
     <ClInclude Include="05. TextureDemo.h">
-      <Filter>Game</Filter>
+      <Filter>Game\01. BasicShapes</Filter>
     </ClInclude>
     <ClInclude Include="06. SamplerDemo.h">
-      <Filter>Game</Filter>
+      <Filter>Game\01. BasicShapes</Filter>
     </ClInclude>
     <ClInclude Include="07. HeightMapDemo.h">
-      <Filter>Game</Filter>
+      <Filter>Game\01. BasicShapes</Filter>
     </ClInclude>
     <ClInclude Include="08. NormalDemo.h">
-      <Filter>Game</Filter>
+      <Filter>Game\01. BasicShapes</Filter>
     </ClInclude>
     <ClInclude Include="09. MeshDemo.h">
-      <Filter>Game</Filter>
+      <Filter>Game\01. BasicShapes</Filter>
     </ClInclude>
-    <ClInclude Include="Turning.h" />
+    <ClInclude Include="10. GlobalTestDemo.h">
+      <Filter>Game\02.</Filter>
+    </ClInclude>
+    <ClInclude Include="11. DepthStencilDemo.h">
+      <Filter>Game\02.</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <FxCompile Include="..\Shaders\01. Triangle.fx">
-      <Filter>Shaders</Filter>
+      <Filter>Shaders\01. BasicShapes</Filter>
     </FxCompile>
     <FxCompile Include="..\Shaders\02. Quad.fx">
-      <Filter>Shaders</Filter>
+      <Filter>Shaders\01. BasicShapes</Filter>
     </FxCompile>
     <FxCompile Include="..\Shaders\03. ConstBuffer.fx">
-      <Filter>Shaders</Filter>
+      <Filter>Shaders\01. BasicShapes</Filter>
     </FxCompile>
     <FxCompile Include="..\Shaders\04. Texture.fx">
-      <Filter>Shaders</Filter>
+      <Filter>Shaders\01. BasicShapes</Filter>
     </FxCompile>
     <FxCompile Include="..\Shaders\05. Sampler.fx">
-      <Filter>Shaders</Filter>
+      <Filter>Shaders\01. BasicShapes</Filter>
     </FxCompile>
     <FxCompile Include="..\Shaders\06. Terrain.fx">
-      <Filter>Shaders</Filter>
+      <Filter>Shaders\01. BasicShapes</Filter>
     </FxCompile>
     <FxCompile Include="..\Shaders\07. Normal.fx">
-      <Filter>Shaders</Filter>
+      <Filter>Shaders\01. BasicShapes</Filter>
+    </FxCompile>
+    <FxCompile Include="..\Shaders\00. Global.fx">
+      <Filter>Shaders\Common</Filter>
+    </FxCompile>
+    <FxCompile Include="..\Shaders\08. GlobalTest.fx">
+      <Filter>Shaders\02.</Filter>
     </FxCompile>
   </ItemGroup>
 </Project>

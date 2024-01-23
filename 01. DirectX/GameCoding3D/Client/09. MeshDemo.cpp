@@ -9,8 +9,6 @@
 
 void MeshDemo::Init()
 {
-	_obj = make_shared<GameObject>();
-
 	// Camera
 	_camera = make_shared<GameObject>();
 	_camera->GetOrAddTransform();

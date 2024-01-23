@@ -3,6 +3,9 @@ matrix View;
 matrix Projection;
 Texture2D Texture0;
 float3 LightDir;
+//전역 변수라는 개념이 아니라 글로버 버퍼에 있는 것이다
+
+
 
 struct VertexInput
 { 

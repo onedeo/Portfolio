@@ -1,60 +1,102 @@
 #include "framework.h" //"'는 사용자가 등록한 위치 먼저 찾으라는 뜻
-
 #include "cMainGame.h"
 
 cMainGame::cMainGame()
-	:m_pD3D(NULL), m_pD3DDevice(NULL)
 {
 }
 
 cMainGame::~cMainGame()
 {
-	SAFE_RELEASE(m_pD3D);
-	SAFE_RELEASE(m_pD3DDevice);
+	DEVICE_MANAGER->Destroy();
 }
 
 void cMainGame::Setup()
 {
-	m_pD3D = Direct3DCreate9(D3D_SDK_VERSION);
-
-	D3DCAPS9 stCaps;
-	int nVertexProcessing;
-	m_pD3D->GetDeviceCaps(D3DADAPTER_DEFAULT, D3DDEVTYPE_HAL, &stCaps);
-	if (stCaps.DevCaps & D3DDEVCAPS_HWTRANSFORMANDLIGHT)
-	{
-		// 다른 하드웨어에서 계산
-		nVertexProcessing = D3DCREATE_HARDWARE_VERTEXPROCESSING;
-	}
-	else
-	{
-		// CPU에서 계산
-		nVertexProcessing = D3DCREATE_SOFTWARE_VERTEXPROCESSING;
-	}
-
-	D3DPRESENT_PARAMETERS stD3DPP;
-	ZeroMemory(&stD3DPP, sizeof(D3DPRESENT_PARAMETERS));
-	stD3DPP.SwapEffect = D3DSWAPEFFECT_DISCARD;
-	stD3DPP.Windowed = TRUE; // 개발 단계에서는 보통 윈도우로 확인하고 풀스크린으로 테스트 한다
-	stD3DPP.BackBufferFormat = D3DFMT_UNKNOWN;
-	stD3DPP.EnableAutoDepthStencil = TRUE;
-	stD3DPP.AutoDepthStencilFormat = D3DFMT_D16;
-
-	m_pD3D->CreateDevice(D3DADAPTER_DEFAULT, D3DDEVTYPE_HAL, g_hWnd, nVertexProcessing, &stD3DPP, &m_pD3DDevice);
-
-
+	Setup_Line();
+	Setup_Triangle();
+	DEVICE->SetRenderState(D3DRS_LIGHTING, false);
 }
 
 void cMainGame::Update()
 {
+	RECT rc;
+	GetClientRect(g_hWnd, &rc);
+
+	//eye matrix
+	D3DXVECTOR3 vEye = D3DXVECTOR3(0, 0, -5.0f);
+	D3DXVECTOR3 vLookAt = D3DXVECTOR3(0, 0, 0);
+	D3DXVECTOR3 vUp = D3DXVECTOR3(0, 1, 0);
+	
+	D3DXMATRIXA16 matView;
+	D3DXMatrixLookAtLH(&matView, &vEye, &vLookAt, &vUp);
+	DEVICE->SetTransform(D3DTS_VIEW, &matView);
+
+	//projection matrix
+	D3DXMATRIXA16 matProj;
+	D3DXMatrixPerspectiveFovLH(&matProj, D3DX_PI / 4.0f, rc.right / (float)rc.bottom, 1.0f, 1000.0f);
+	DEVICE->SetTransform(D3DTS_PROJECTION, &matProj);
 }
 
 void cMainGame::Render()
 {
-	m_pD3DDevice->Clear(NULL, NULL, D3DCLEAR_TARGET | D3DCLEAR_ZBUFFER, D3DCOLOR_XRGB(0, 0, 255), 1.0f, 0);
+	DEVICE->Clear(NULL, NULL, D3DCLEAR_TARGET | D3DCLEAR_ZBUFFER, D3DCOLOR_XRGB(0, 0, 0), 1.0f, 0);
 
-	m_pD3DDevice->BeginScene();
-	m_pD3DDevice->EndScene();
+	DEVICE->BeginScene();
 
-	m_pD3DDevice->Present(NULL, NULL, NULL, NULL);
+	Draw_Line();
+	Draw_Triangle();
 
+	DEVICE->EndScene();
+
+	DEVICE->Present(NULL, NULL, NULL, NULL);
+
+}
+
+void cMainGame::Setup_Line()
+{
+	ST_PC_VERTEX		v;
+	v.c = D3DCOLOR_XRGB(255, 0, 0);
+	v.p = D3DXVECTOR3(0, 2.f, 0);
+	m_vecLineVertex.push_back(v);
+	v.p = D3DXVECTOR3(0, -2.f, 0);
+	m_vecLineVertex.push_back(v);
+}
+
+void cMainGame::Draw_Line()
+{
+	D3DXMATRIXA16 matWorld;
+	D3DXMatrixIdentity(&matWorld);
+	DEVICE->SetTransform(D3DTS_WORLD, &matWorld);
+
+	DEVICE->SetFVF(ST_PC_VERTEX::FVF);
+	DEVICE->DrawPrimitiveUP(D3DPT_LINELIST, m_vecLineVertex.size() / 2, &m_vecLineVertex[0], sizeof(ST_PC_VERTEX));
+		//LINELIST : vertex개수가 2의 배수형태로 있어야 그려준다 ST_PC_VERTEX단위로 짤라서 한 vertex를 읽어라
+}
+
+void cMainGame::Setup_Triangle()
+{
+	ST_PC_VERTEX	v;
+	// 1 2
+	// 0
+	v.c = D3DCOLOR_XRGB(255, 0, 0);
+	v.p = D3DXVECTOR3(-1.0f, -1.0f, 0);
+	m_vecTriangleVertex.push_back(v);
+	v.c = D3DCOLOR_XRGB(0, 255, 0);
+	v.p = D3DXVECTOR3(-1.0f, 1.0f, 0);
+	m_vecTriangleVertex.push_back(v);
+	v.c = D3DCOLOR_XRGB(0, 0, 255);
+	v.p = D3DXVECTOR3(1.0f, 1.0f, 0);
+	m_vecTriangleVertex.push_back(v);
+}
+
+void cMainGame::Draw_Triangle()
+{
+	D3DXMATRIXA16 matWorld;
+	D3DXMatrixIdentity(&matWorld);
+	//D3DXVECTOR3 translation(2, 0, 0);
+	//D3DXMatrixTranslation(&matWorld, translation.x, translation.y, translation.z);
+	DEVICE->SetTransform(D3DTS_WORLD, &matWorld);
+
+	DEVICE->SetFVF(ST_PC_VERTEX::FVF);
+	DEVICE->DrawPrimitiveUP(D3DPT_TRIANGLELIST, m_vecTriangleVertex.size() / 3, &m_vecTriangleVertex[0], sizeof(ST_PC_VERTEX));
 }
