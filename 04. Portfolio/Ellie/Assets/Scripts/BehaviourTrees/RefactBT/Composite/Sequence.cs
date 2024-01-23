@@ -8,7 +8,6 @@ namespace Scripts.BehaviourTrees.RefactBT
     {
         public Sequence() : base() { }
         public Sequence(List<Node> childrens) : base(childrens) { }
-
         public override NodeState Evaluate()
         {
             bool anyChildIsRunning = false;

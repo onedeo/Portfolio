@@ -25,6 +25,13 @@ struct VertexColorData
 
 struct VertexTextureNormalData
 {
+	VertexTextureNormalData() {}
+	VertexTextureNormalData(Vec3 pos, Vec2 uv, Vec3 nor)
+	{
+		position = pos;
+		this->uv = uv;
+		normal = nor;
+	}
 	Vec3 position = { 0, 0, 0 };
 	Vec2 uv = { 0, 0 };
 	Vec3 normal = { 0, 0, 0 };

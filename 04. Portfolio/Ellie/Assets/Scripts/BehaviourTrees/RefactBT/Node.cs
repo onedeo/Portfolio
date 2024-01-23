@@ -29,10 +29,20 @@ namespace Scripts.BehaviourTrees.RefactBT
             foreach (Node child in children)
                 Attach(child);
         }
+        public Node(Node child)
+        {
+            Attach(child);
+        }
         protected virtual void OnStart() { }
         protected virtual void OnExit() { }
         public virtual NodeState Evaluate() => NodeState.FAILURE;
 
+        protected void SetChildren(List<Node> children)
+        {
+            foreach (Node child in children)
+                Attach(child);
+        }
+        
         private void Attach(Node node)
         {
             node.parent = this;

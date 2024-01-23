@@ -6,19 +6,11 @@ namespace Scripts.BehaviourTrees.RefactBT
 {
     public class Inverter : Node
     {
-        Transform transform;
-        Inverter(Transform transform) : base()
+        public Inverter(Node node) : base(node)
         {
-            this.transform = transform;
         }
         public override NodeState Evaluate()
         {
-            if (children.Count != 1)
-            {
-                Debug.Log(transform.name + "Inverter Node Has No or More Than 1 Child");
-                return NodeState.FAILURE;
-            }
-
             switch (children[0].Evaluate())
             {
                 case NodeState.RUNNING:

@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Scripts.BehaviourTrees.RefactBT
 {
-    public abstract class Tree : MonoBehaviour
+    public abstract class BTTree : MonoBehaviour
     {
         private Node root = null;
 
