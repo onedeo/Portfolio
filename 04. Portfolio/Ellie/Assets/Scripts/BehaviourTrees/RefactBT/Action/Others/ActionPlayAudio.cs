@@ -6,13 +6,13 @@ namespace Scripts.BehaviourTrees.RefactBT
 {
     public class ActionPlayAudio : Node
     {
-        private MonAudioType audioType;
+        private MonsterAudioType audioType;
         private bool isLoop;
         private bool isInteruptable;
         private Transform transform;
         private AudioSource audioSource;
         private MonsterAudioController audioController;
-        public ActionPlayAudio(Transform transform, MonAudioType audioType, bool isInteruptable = true, bool isLoop = true) : base()
+        public ActionPlayAudio(Transform transform, MonsterAudioType audioType, bool isInteruptable = true, bool isLoop = true) : base()
         {
             this.audioType = audioType;
             this.isLoop = isLoop;

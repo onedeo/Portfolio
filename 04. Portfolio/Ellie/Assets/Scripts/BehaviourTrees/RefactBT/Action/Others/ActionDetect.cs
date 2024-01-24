@@ -6,9 +6,7 @@ namespace Scripts.BehaviourTrees.RefactBT
 {
     public class ActionDetect : Node
     {
-
         public DetectType type;
-        private Monster monster;
         public ActionDetect(Transform transform, DetectType type)
         {
             monster = transform.GetComponent<Monster>();

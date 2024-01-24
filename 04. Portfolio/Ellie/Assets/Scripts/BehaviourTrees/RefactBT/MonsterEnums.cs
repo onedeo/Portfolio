@@ -23,4 +23,11 @@ namespace Scripts.BehaviourTrees.RefactBT
     {
         WALK,
     }
+
+    public enum MonsterAgent
+    {
+        PLAYER,
+        SPAWNPOSITION,
+        PATROL,
+    }
 }

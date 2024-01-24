@@ -139,6 +139,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="cCamera.h" />
+    <ClInclude Include="cCubePC.h" />
     <ClInclude Include="cDeviceManager.h" />
     <ClInclude Include="cMainGame.h" />
     <ClInclude Include="Define.h" />
@@ -149,6 +151,8 @@
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="cCamera.cpp" />
+    <ClCompile Include="cCubePC.cpp" />
     <ClCompile Include="cDeviceManager.cpp" />
     <ClCompile Include="cMainGame.cpp" />
     <ClCompile Include="DX3DProject.cpp" />

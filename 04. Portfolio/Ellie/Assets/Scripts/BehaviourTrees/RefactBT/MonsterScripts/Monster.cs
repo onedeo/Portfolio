@@ -1,14 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.AI;
 using UnityEngine;
 
 namespace Scripts.BehaviourTrees.RefactBT
 {
     public class Monster : MonoBehaviour
     {
+        public NavMeshAgent agent;
+
+        public MonsterCenter MonsterCenter { get; private set; }
         private DetectAI detectPlayer;
         private DetectAI detectChase;
         private bool isOnSpawnPosition;
+        public Transform SpawnTransform { get; private set; }
+
+        [SerializeField]
+        public List<Transform> patrolPoints;
+        private int patrolIndex;
 
         public bool DetectedPlayer()
         {
@@ -32,5 +41,9 @@ namespace Scripts.BehaviourTrees.RefactBT
             return false;
         }
 
+        public Transform PatrolToNextPoint()
+        {
+            return patrolPoints[patrolIndex];
+        }
     }
 }

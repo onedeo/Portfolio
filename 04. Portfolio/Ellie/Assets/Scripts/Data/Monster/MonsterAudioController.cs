@@ -12,7 +12,7 @@ public enum MonsterAudioType
     Dead,
     MoveSkill,
     MeleeAttack,
-    MeleeAttackHit, 
+    MeleeAttackHit,
     WeaponAttack,
     WeaponAttackPerform,
     WeaponAttackHit,

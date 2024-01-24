@@ -15,6 +15,7 @@ namespace Scripts.BehaviourTrees.RefactBT
     {
         protected NodeState state;
 
+        protected Monster monster;
         public Node parent;
         protected List<Node> children;
 

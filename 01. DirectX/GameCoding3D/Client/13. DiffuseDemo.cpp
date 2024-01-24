@@ -36,7 +36,7 @@ void DiffuseDemo::Init()
 		_obj->GetMeshRenderer()->SetTexture(texture);
 	}
 	{
-		_obj->AddComponent(make_shared<Turning>());
+		//_obj->AddComponent(make_shared<Turning>());
 	}
 	// Object2
 	_obj2 = make_shared<GameObject>();
@@ -61,22 +61,22 @@ void DiffuseDemo::Update()
 	_camera->Update();
 	RENDER->Update();
 	
-	Vec4 lightDiffuse{ 1.f, 1.f, 1.f, 1.f };
+	Vec4 lightDiffuse{ 0.5f };
 	_shader->GetVector("LightDiffuse")->SetFloatVector((float*)&lightDiffuse);
 
 	//이건 빛의 위치가 아니라 벡터다. 이거를 eye의 뒤에 놓는다 해서 객체가 보이는 방향으로 빛이 향하는게 아니다
-	Vec3 lightDir{ 0.f,-2.f,2.f };
+	Vec3 lightDir{ 0.f,-2.f,0.f };
 	lightDir.Normalize();
 	_shader->GetVector("LightDir")->SetFloatVector((float*)&lightDir);
 
 	{
 		Vec4 materialAmbient(1.f);
-		_shader->GetVector("MaterialDiffuse")->SetFloatVector((float*)&lightDiffuse);
+		_shader->GetVector("MaterialDiffuse")->SetFloatVector((float*)&materialAmbient);
 		_obj->Update();
 	}
 	{
 		Vec4 materialAmbient(1.f);
-		_shader->GetVector("MaterialDiffuse")->SetFloatVector((float*)&lightDiffuse);
+		_shader->GetVector("MaterialDiffuse")->SetFloatVector((float*)&materialAmbient);
 		_obj2->Update();
 	}
 }

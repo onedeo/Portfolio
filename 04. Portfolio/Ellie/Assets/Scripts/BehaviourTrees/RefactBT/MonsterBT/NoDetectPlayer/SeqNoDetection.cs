@@ -12,7 +12,7 @@ namespace Scripts.BehaviourTrees.RefactBT
             children.Add(new Hold());
             children.Add(new ActionDetect(transform, DetectType.PLAYER));
             children.Add(new FirstTimeDetectPlayer());
-            children.Add(new ActionPlayAnimation(transform, Animation.STANDUP));
+            children.Add(new ActionPlayAnimation(transform, AnimationType.STANDUP));
             children.Add(new Hold(4.0f));
             
             SetChildren(children);

@@ -1,6 +1,6 @@
 //중복 define 방지
 #ifndef _GLOBAL_FX_
-#define _GLOBAL_FX
+#define _GLOBAL_FX_
 
 // >> : Const Buffer
 cbuffer GlobalBuffer
@@ -88,7 +88,10 @@ pass name																	\
 // << : Macro
 
 // >> : Functions
-
+float3 CameraPosition()
+{
+	return -V._41_42_43;
+}
 // << : Functions
 
 #endif

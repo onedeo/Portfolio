@@ -1,40 +1,38 @@
 #include "framework.h" //"'는 사용자가 등록한 위치 먼저 찾으라는 뜻
 #include "cMainGame.h"
 
-cMainGame::cMainGame()
+cMainGame::cMainGame() : m_pCubePC(NULL), m_pCamera(NULL)
 {
+	srand(time(0));
 }
 
 cMainGame::~cMainGame()
 {
+	SAFE_DELETE(m_pCamera);
+	SAFE_DELETE(m_pCubePC);
 	DEVICE_MANAGER->Destroy();
 }
 
 void cMainGame::Setup()
 {
+	DEVICE->SetRenderState(D3DRS_LIGHTING, false);
 	Setup_Line();
 	Setup_Triangle();
-	DEVICE->SetRenderState(D3DRS_LIGHTING, false);
+	
+	m_pCubePC = new cCubePC();
+	m_pCubePC->Setup();
+
+	m_pCamera = new cCamera();
+	//m_pCamera->Setup(&m_pCubePC->GetPosition());
+	m_pCamera->Setup();
 }
 
 void cMainGame::Update()
 {
-	RECT rc;
-	GetClientRect(g_hWnd, &rc);
-
-	//eye matrix
-	D3DXVECTOR3 vEye = D3DXVECTOR3(0, 0, -5.0f);
-	D3DXVECTOR3 vLookAt = D3DXVECTOR3(0, 0, 0);
-	D3DXVECTOR3 vUp = D3DXVECTOR3(0, 1, 0);
-	
-	D3DXMATRIXA16 matView;
-	D3DXMatrixLookAtLH(&matView, &vEye, &vLookAt, &vUp);
-	DEVICE->SetTransform(D3DTS_VIEW, &matView);
-
-	//projection matrix
-	D3DXMATRIXA16 matProj;
-	D3DXMatrixPerspectiveFovLH(&matProj, D3DX_PI / 4.0f, rc.right / (float)rc.bottom, 1.0f, 1000.0f);
-	DEVICE->SetTransform(D3DTS_PROJECTION, &matProj);
+	if (m_pCubePC)
+		m_pCubePC->Update();
+	if (m_pCamera)
+		m_pCamera->Update();
 }
 
 void cMainGame::Render()
@@ -45,11 +43,17 @@ void cMainGame::Render()
 
 	Draw_Line();
 	Draw_Triangle();
+	m_pCubePC->Render();
 
 	DEVICE->EndScene();
 
 	DEVICE->Present(NULL, NULL, NULL, NULL);
+}
 
+void cMainGame::WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
+{
+	if (m_pCamera)
+		m_pCamera->WndProc(hWnd, message, wParam, lParam);
 }
 
 void cMainGame::Setup_Line()
@@ -93,10 +97,10 @@ void cMainGame::Draw_Triangle()
 {
 	D3DXMATRIXA16 matWorld;
 	D3DXMatrixIdentity(&matWorld);
-	//D3DXVECTOR3 translation(2, 0, 0);
-	//D3DXMatrixTranslation(&matWorld, translation.x, translation.y, translation.z);
+	D3DXVECTOR3 translation(-5, 0, 0);
+	D3DXMatrixTranslation(&matWorld, translation.x, translation.y, translation.z);
 	DEVICE->SetTransform(D3DTS_WORLD, &matWorld);
 
-	DEVICE->SetFVF(ST_PC_VERTEX::FVF);
+	DEVICE->SetFVF(ST_PC_VERTEX::FVF); //flexible vertex format
 	DEVICE->DrawPrimitiveUP(D3DPT_TRIANGLELIST, m_vecTriangleVertex.size() / 3, &m_vecTriangleVertex[0], sizeof(ST_PC_VERTEX));
 }

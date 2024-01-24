@@ -53,7 +53,7 @@ void AmbientDemo::Init()
 		auto texture = RESOURCES->Load<Texture>(L"echo", L"..\\Resources\\Textures\\echo.jpg");
 		_obj2->GetMeshRenderer()->SetTexture(texture);
 	}
-	RENDER->Init(_shader);
+	RENDER->Init(_shader);	
 }
 
 void AmbientDemo::Update()
@@ -64,15 +64,14 @@ void AmbientDemo::Update()
 	
 	Vec4 lightAmbient{ 1.f, 0.5f, 0.2f, 1.f };
 	_shader->GetVector("LightAmbient")->SetFloatVector((float*)&lightAmbient);
-
 	{
 		Vec4 materialAmbient(1.f);
-		_shader->GetVector("MaterialAmbient")->SetFloatVector((float*)&lightAmbient);
+		_shader->GetVector("MaterialAmbient")->SetFloatVector((float*)&materialAmbient);
 		_obj->Update();
 	}
 	{
 		Vec4 materialAmbient(1.f);
-		_shader->GetVector("MaterialAmbient")->SetFloatVector((float*)&lightAmbient);
+		_shader->GetVector("MaterialAmbient")->SetFloatVector((float*)&materialAmbient);
 		_obj2->Update();
 	}
 }

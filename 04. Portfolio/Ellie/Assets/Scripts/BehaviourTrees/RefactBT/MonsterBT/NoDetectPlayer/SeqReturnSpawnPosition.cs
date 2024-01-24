@@ -12,8 +12,8 @@ namespace Scripts.BehaviourTrees.RefactBT
             Inverter invertBool = new Inverter(new ActionAssertBoolean(transform, BooleanType.ON_SPAWN_POSITION));
             children.Add(invertBool);
             children.Add(new ActionPlayAnimation(transform, AnimationType.WALK));
-            children.Add(new ActionPlayAudio(transform, MonAudioType.WALK, true, true));
-            children.Add()
+            children.Add(new ActionPlayAudio(transform, MonsterAudioType.Move1, true, true));
+            children.Add(new ActionReturnSpawnPosition(transform));
         }
     }
 }

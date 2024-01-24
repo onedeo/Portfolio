@@ -15,7 +15,7 @@ C:/Users/iamon/Desktop/MyInhaFiles/Portfolio/04. Portfolio/Ellie
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-57920
+62899
 Successfully changed project path to: C:/Users/iamon/Desktop/MyInhaFiles/Portfolio/04. Portfolio/Ellie
 C:/Users/iamon/Desktop/MyInhaFiles/Portfolio/04. Portfolio/Ellie
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
@@ -47,11 +47,11 @@ C:/Users/iamon/Desktop/MyInhaFiles/Portfolio/04. Portfolio/Ellie
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Player connection [8364] Host "[IP] 172.30.1.73 [Port] 0 [Flags] 2 [Guid] 5609898 [EditorId] 5609898 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-O6IKSDF) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+Player connection [31228] Host "[IP] 172.30.1.73 [Port] 0 [Flags] 2 [Guid] 340475985 [EditorId] 340475985 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-O6IKSDF) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
 
-Player connection [8364] Host "[IP] 172.30.1.73 [Port] 0 [Flags] 2 [Guid] 5609898 [EditorId] 5609898 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-O6IKSDF) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [31228] Host "[IP] 172.30.1.73 [Port] 0 [Flags] 2 [Guid] 340475985 [EditorId] 340475985 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-O6IKSDF) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
 
-Refreshing native plugins compatible for Editor in 110.75 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 114.02 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2021.3.24f1 (cf10dcf7010d)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2021.3.24f1/Editor/Data/Resources/UnitySubsystems
@@ -67,14 +67,14 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2021.3.24f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2021.3.24f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2021.3.24f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56428
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56316
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.24f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.24f1/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.dll
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.24f1/Editor/Data/PlaybackEngines/AppleTVSupport/UnityEditor.AppleTV.Extensions.dll
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.24f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.005478 seconds.
+Registered in 0.007567 seconds.
 Native extension for WindowsStandalone target not found
 [usbmuxd] Start listen thread
 [usbmuxd] Listen thread started
@@ -83,88 +83,88 @@ Native extension for AppleTV target not found
 [usbmuxd] Listen thread started
 Native extension for iOS target not found
 Native extension for Android target not found
-Android Extension - Scanning For ADB Devices 170 ms
-Refreshing native plugins compatible for Editor in 104.31 ms, found 4 plugins.
+Android Extension - Scanning For ADB Devices 220 ms
+Refreshing native plugins compatible for Editor in 117.01 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.720 seconds
+- Completed reload, in  0.893 seconds
 Domain Reload Profiling:
-	ReloadAssembly (720ms)
-		BeginReloadAssembly (64ms)
+	ReloadAssembly (893ms)
+		BeginReloadAssembly (76ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (1ms)
-		EndReloadAssembly (585ms)
-			LoadAssemblies (63ms)
+		EndReloadAssembly (723ms)
+			LoadAssemblies (75ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (78ms)
+			SetupTypeCache (92ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (29ms)
-			SetupLoadedEditorAssemblies (437ms)
+			RebuildScriptCaches (24ms)
+			SetupLoadedEditorAssemblies (554ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (230ms)
+				InitializePlatformSupportModulesInManaged (290ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (104ms)
+				RefreshPlugins (117ms)
 				BeforeProcessingInitializeOnLoad (1ms)
-				ProcessInitializeOnLoadAttributes (68ms)
-				ProcessInitializeOnLoadMethodAttributes (34ms)
+				ProcessInitializeOnLoadAttributes (87ms)
+				ProcessInitializeOnLoadMethodAttributes (57ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.009276 seconds.
+Registered in 0.015103 seconds.
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory is not a mono symbol file
 Native extension for WindowsStandalone target not found
 Native extension for AppleTV target not found
 Native extension for iOS target not found
 Native extension for Android target not found
-Refreshing native plugins compatible for Editor in 104.44 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 162.30 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 [ScriptCompilation] Requested script compilation because: Recompiling scripts with coverage information.
 Code Coverage is enabled. Note that Code Coverage can affect the performance of the Editor.
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.03 seconds
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.04 seconds
 Mono: successfully reloaded assembly
-- Completed reload, in  1.537 seconds
+- Completed reload, in  1.956 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1537ms)
-		BeginReloadAssembly (84ms)
+	ReloadAssembly (1957ms)
+		BeginReloadAssembly (122ms)
 			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (4ms)
+			DisableScriptedObjects (5ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (15ms)
-		EndReloadAssembly (1367ms)
-			LoadAssemblies (74ms)
+			CreateAndSetChildDomain (19ms)
+		EndReloadAssembly (1690ms)
+			LoadAssemblies (102ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (260ms)
-			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (72ms)
-			SetupLoadedEditorAssemblies (926ms)
+			SetupTypeCache (340ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (103ms)
+			SetupLoadedEditorAssemblies (1079ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (21ms)
+				InitializePlatformSupportModulesInManaged (28ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (104ms)
-				BeforeProcessingInitializeOnLoad (89ms)
-				ProcessInitializeOnLoadAttributes (452ms)
-				ProcessInitializeOnLoadMethodAttributes (255ms)
-				AfterProcessingInitializeOnLoad (4ms)
+				RefreshPlugins (162ms)
+				BeforeProcessingInitializeOnLoad (99ms)
+				ProcessInitializeOnLoadAttributes (514ms)
+				ProcessInitializeOnLoadMethodAttributes (268ms)
+				AfterProcessingInitializeOnLoad (7ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (4ms)
+			AwakeInstancesAfterBackupRestoration (5ms)
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
-Refreshing native plugins compatible for Editor in 1.76 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 1.15 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 5445 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 68 unused Assets / (1.6 MB). Loaded Objects now: 5966.
-Memory consumption went from 257.2 MB to 255.6 MB.
-Total: 16.628100 ms (FindLiveObjects: 0.306200 ms CreateObjectMapping: 0.172000 ms MarkObjects: 15.785300 ms  DeleteObjects: 0.363500 ms)
+Unloading 5453 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 68 unused Assets / (1.6 MB). Loaded Objects now: 5974.
+Memory consumption went from 257.3 MB to 255.7 MB.
+Total: 13.346700 ms (FindLiveObjects: 0.322400 ms CreateObjectMapping: 0.170100 ms MarkObjects: 12.503200 ms  DeleteObjects: 0.350200 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
@@ -178,91 +178,61 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 181219.823203 seconds.
-  path: Assets/Scripts/Monsters/MonsterController.cs
-  artifactKey: Guid(621a599ac5e4542f98d70b1eab9692cf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/Monsters/MonsterController.cs using Guid(621a599ac5e4542f98d70b1eab9692cf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ff3fff3c48768c36242c1ca0a5ad67d6') in 0.037062 seconds 
+  Time since last request: 271554.897369 seconds.
+  path: Assets/Scripts/BehaviourTrees/RefactBT/Action/Others/ActionSetAgent.cs
+  artifactKey: Guid(2fa43b7188e8f664c9c7c6487e469495) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/BehaviourTrees/RefactBT/Action/Others/ActionSetAgent.cs using Guid(2fa43b7188e8f664c9c7c6487e469495) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '23db1687a15a9e6a44ab8727eb3d7967') in 0.022892 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000037 seconds.
-  path: Assets/Scripts/Monsters/EffectController.cs
-  artifactKey: Guid(255fe8287996f472587280a9346eed4a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/Monsters/EffectController.cs using Guid(255fe8287996f472587280a9346eed4a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c901a4afd97c91eb8e514b2825ce6791') in 0.007518 seconds 
+  Time since last request: 61.940373 seconds.
+  path: Assets/Scripts/BehaviourTrees/RefactBT/Action/Others/ActionDetect.cs
+  artifactKey: Guid(043d499293aa42a4390a6e83c4cb99f9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/BehaviourTrees/RefactBT/Action/Others/ActionDetect.cs using Guid(043d499293aa42a4390a6e83c4cb99f9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '892e05ccaf70a96aba9b49871314043e') in 0.001941 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 44.238760 seconds.
-  path: Assets/Scripts/BehaviourTrees/AbstractMonster.cs
-  artifactKey: Guid(8631542cc5459504ea0a01833690526d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/BehaviourTrees/AbstractMonster.cs using Guid(8631542cc5459504ea0a01833690526d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6db80ea0b9017a381bcec24322c23985') in 0.007990 seconds 
+  Time since last request: 72.583240 seconds.
+  path: Assets/Scripts/BehaviourTrees/RefactBT/Action/Others/ActionDetect.cs
+  artifactKey: Guid(043d499293aa42a4390a6e83c4cb99f9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/BehaviourTrees/RefactBT/Action/Others/ActionDetect.cs using Guid(043d499293aa42a4390a6e83c4cb99f9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bc227456d1e3fd160759d5d7b03d5b43') in 0.001648 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 29.851958 seconds.
-  path: Assets/Scripts/BehaviourTrees/Actions/CommonMonster/CheckDetection.cs
-  artifactKey: Guid(cdc991d5625f242ecb40bf0ea84dccf0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/BehaviourTrees/Actions/CommonMonster/CheckDetection.cs using Guid(cdc991d5625f242ecb40bf0ea84dccf0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2054ee3a63f9f3b9faa39318620e790c') in 0.006320 seconds 
+  Time since last request: 28.645545 seconds.
+  path: Assets/Scripts/BehaviourTrees/RefactBT/Action/Others/ActionSetAgent.cs
+  artifactKey: Guid(2fa43b7188e8f664c9c7c6487e469495) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/BehaviourTrees/RefactBT/Action/Others/ActionSetAgent.cs using Guid(2fa43b7188e8f664c9c7c6487e469495) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4595ae80e7457a115b3e02f6fbe18ed5') in 0.001153 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 3.682844 seconds.
-  path: Assets/Scripts/BehaviourTrees/Actions/CommonMonster/ChasePlayerDetect.cs
-  artifactKey: Guid(790472a7b814ee549af99704f5cb47bf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/BehaviourTrees/Actions/CommonMonster/ChasePlayerDetect.cs using Guid(790472a7b814ee549af99704f5cb47bf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bc1e8905adfc062ab23c6320d4ba0f65') in 0.006736 seconds 
+  Time since last request: 22.952009 seconds.
+  path: Assets/Scripts/BehaviourTrees/RefactBT/MonsterEnums.cs
+  artifactKey: Guid(34ec2dfd0e16c964dbf7724084a387ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/BehaviourTrees/RefactBT/MonsterEnums.cs using Guid(34ec2dfd0e16c964dbf7724084a387ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1d6dae35c0818ae74ecaf00c500c40c0') in 0.001593 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 2.042490 seconds.
-  path: Assets/Scripts/Monsters/Others/DistanceDetectedAI.cs
-  artifactKey: Guid(a66237c2e40504e6aa9967dd9008537e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/Monsters/Others/DistanceDetectedAI.cs using Guid(a66237c2e40504e6aa9967dd9008537e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ab8b432dac6c05818f7ea206e94cb8ed') in 0.006988 seconds 
+  Time since last request: 40.805045 seconds.
+  path: Assets/Scripts/BehaviourTrees/RefactBT/MonsterEnums.cs
+  artifactKey: Guid(34ec2dfd0e16c964dbf7724084a387ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/BehaviourTrees/RefactBT/MonsterEnums.cs using Guid(34ec2dfd0e16c964dbf7724084a387ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bb6aa9a3a9120d5920fdcc72c0c5c780') in 0.001110 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 13.431316 seconds.
-  path: Assets/Prefabs/Monster/Stage1/NormalSkeleton/NormalSkeleton.prefab
-  artifactKey: Guid(722e47c41d4fa485080bce801bd9c64c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Monster/Stage1/NormalSkeleton/NormalSkeleton.prefab using Guid(722e47c41d4fa485080bce801bd9c64c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7a0a04c2063b4361717179e05f335774') in 0.501496 seconds 
+  Time since last request: 6.270890 seconds.
+  path: Assets/Scripts/BehaviourTrees/RefactBT/Action/Others/ActionAssertBoolean.cs
+  artifactKey: Guid(d03ebd505f40b8249a122df0bc7cb63d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/BehaviourTrees/RefactBT/Action/Others/ActionAssertBoolean.cs using Guid(d03ebd505f40b8249a122df0bc7cb63d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1ffcbbdf95d502efe4ce46c60811ff15') in 0.001422 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 38.960726 seconds.
-  path: Assets/Scripts/Monsters/AbstractClass/AbstractMonster.cs
-  artifactKey: Guid(56ad471763dddc14bb7b3cad4a047e17) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/Monsters/AbstractClass/AbstractMonster.cs using Guid(56ad471763dddc14bb7b3cad4a047e17) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3a044a384ce0ebbe6545593bfccd032c') in 0.001896 seconds 
+  Time since last request: 481.953802 seconds.
+  path: Assets/Scripts/BehaviourTrees/RefactBT/MonsterCenter.cs
+  artifactKey: Guid(e00ddba27eae54f4c9c0047857e7f8ba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/BehaviourTrees/RefactBT/MonsterCenter.cs using Guid(e00ddba27eae54f4c9c0047857e7f8ba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '46267f9c95df45f68ce72265b08998b5') in 0.001924 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 14.059271 seconds.
-  path: Assets/Scripts/BehaviourTrees/RefactBT/MonsterScripts
-  artifactKey: Guid(787bc717fcdfef94683485579e3628f1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/BehaviourTrees/RefactBT/MonsterScripts using Guid(787bc717fcdfef94683485579e3628f1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '61c795d76b0983b53a1995b64d334c58') in 0.006369 seconds 
+  Time since last request: 26.663161 seconds.
+  path: Assets/Prefabs/Player.prefab
+  artifactKey: Guid(24af405b7fd2e884fad826c0c835c212) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Player.prefab using Guid(24af405b7fd2e884fad826c0c835c212) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '69a0b0f919923ec0f68d0d2db0ffa0cd') in 0.425968 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 28.180079 seconds.
-  path: Assets/Scripts/BehaviourTrees/RefactBT/MonsterScripts/DetectPlayerAI.cs
-  artifactKey: Guid(8108a8ebe4f917b4da690f55a86530ef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/BehaviourTrees/RefactBT/MonsterScripts/DetectPlayerAI.cs using Guid(8108a8ebe4f917b4da690f55a86530ef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '392c2a29881eadd48404623c0e45407a') in 0.006071 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 16.000294 seconds.
-  path: Assets/Scripts/BehaviourTrees/RefactBT/MonsterScripts/DetectAI.prefab
-  artifactKey: Guid(8539e1649c9e2914f833a1f63ad04057) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/BehaviourTrees/RefactBT/MonsterScripts/DetectAI.prefab using Guid(8539e1649c9e2914f833a1f63ad04057) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '779cf3add1f42dbf7225c8d87a1ddf36') in 0.007745 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 48.463203 seconds.
-  path: Assets/Scripts/BehaviourTrees/RefactBT/MonsterScripts/AbstractMonster.cs
-  artifactKey: Guid(8631542cc5459504ea0a01833690526d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/BehaviourTrees/RefactBT/MonsterScripts/AbstractMonster.cs using Guid(8631542cc5459504ea0a01833690526d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c9eb27d36e70b67496d17e0ec9cb034e') in 0.002366 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 33.028726 seconds.
-  path: Assets/Scripts/BehaviourTrees/RefactBT/MonsterScripts/MonsterAbstract.cs
-  artifactKey: Guid(8631542cc5459504ea0a01833690526d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/BehaviourTrees/RefactBT/MonsterScripts/MonsterAbstract.cs using Guid(8631542cc5459504ea0a01833690526d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ea053f3e04185977b6294532802137fa') in 0.006184 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 55.431936 seconds.
-  path: Assets/Scripts/BehaviourTrees/AbstractMonster.cs
-  artifactKey: Guid(d8c323030c188ba4d909d857430d96c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/BehaviourTrees/AbstractMonster.cs using Guid(d8c323030c188ba4d909d857430d96c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a74224c0cb9a64ee3999f641ff87a405') in 0.003846 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 22.814173 seconds.
-  path: Assets/Scripts/BehaviourTrees/RefactBT/MonsterScripts/MonsterAbstract.cs
-  artifactKey: Guid(8631542cc5459504ea0a01833690526d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/BehaviourTrees/RefactBT/MonsterScripts/MonsterAbstract.cs using Guid(8631542cc5459504ea0a01833690526d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '84ab8d0d505b45c254d7eac08eb76afe') in 0.002142 seconds 
+  Time since last request: 11.196202 seconds.
+  path: Assets/Resources/Extern/UI/Player
+  artifactKey: Guid(4c8ff8f107664bd40b93e8e32105b3d3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Extern/UI/Player using Guid(4c8ff8f107664bd40b93e8e32105b3d3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cea56113b41e2f485eddf9293d45cea4') in 0.003508 seconds 

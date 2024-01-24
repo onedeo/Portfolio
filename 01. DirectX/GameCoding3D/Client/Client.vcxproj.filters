@@ -85,6 +85,15 @@
     <ClCompile Include="14. SpecularDemo.cpp">
       <Filter>Game\02.Lighting</Filter>
     </ClCompile>
+    <ClCompile Include="15. EmissiveDemo.cpp">
+      <Filter>Game\02.Lighting</Filter>
+    </ClCompile>
+    <ClCompile Include="16. LightingDemo.cpp">
+      <Filter>Game\02.Lighting</Filter>
+    </ClCompile>
+    <ClCompile Include="17. MaterialDemo.cpp">
+      <Filter>Game\02.Lighting</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h">
@@ -139,6 +148,15 @@
     <ClInclude Include="14. SpecularDemo.h">
       <Filter>Game\02.Lighting</Filter>
     </ClInclude>
+    <ClInclude Include="15. EmissiveDemo.h">
+      <Filter>Game\02.Lighting</Filter>
+    </ClInclude>
+    <ClInclude Include="16. LightingDemo.h">
+      <Filter>Game\02.Lighting</Filter>
+    </ClInclude>
+    <ClInclude Include="17. MaterialDemo.h">
+      <Filter>Game\02.Lighting</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <FxCompile Include="..\Shaders\01. Triangle.fx">
@@ -175,6 +193,15 @@
       <Filter>Shaders\02. Lighting</Filter>
     </FxCompile>
     <FxCompile Include="..\Shaders\11. Lighting_Specular.fx">
+      <Filter>Shaders\02. Lighting</Filter>
+    </FxCompile>
+    <FxCompile Include="..\Shaders\12. Lighting_Emissive.fx">
+      <Filter>Shaders\02. Lighting</Filter>
+    </FxCompile>
+    <FxCompile Include="..\Shaders\00. Light.fx">
+      <Filter>Shaders\Common</Filter>
+    </FxCompile>
+    <FxCompile Include="..\Shaders\13. Lighting.fx">
       <Filter>Shaders\02. Lighting</Filter>
     </FxCompile>
   </ItemGroup>

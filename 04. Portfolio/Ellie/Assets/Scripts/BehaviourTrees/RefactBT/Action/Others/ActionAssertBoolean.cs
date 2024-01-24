@@ -6,9 +6,8 @@ namespace Scripts.BehaviourTrees.RefactBT
 {
     public class ActionAssertBoolean : Node
     {
-        private Monster monster;
         private BooleanType type;
-        public AssertBoolean(Transform transform, BooleanType type)
+        public ActionAssertBoolean(Transform transform, BooleanType type)
         {
             monster = transform.GetComponent<Monster>();
             this.type = type;
