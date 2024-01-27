@@ -14,7 +14,7 @@ namespace Scripts.BehaviourTrees.RefactBT
     public class Node
     {
         protected NodeState state;
-
+        //몬스터 노드가 노드를 상속받아서 몬스터 전용 노드를 만들면 더 좋을듯
         protected Monster monster;
         public Node parent;
         protected List<Node> children;

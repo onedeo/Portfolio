@@ -6,7 +6,7 @@ namespace Scripts.BehaviourTrees.RefactBT
 {
     public class SeqReturnSpawnPosition : Sequence
     {
-        SeqReturnSpawnPosition(Transform transform)
+        public SeqReturnSpawnPosition(Transform transform)
         {
             List<Node> children = new();
             Inverter invertBool = new Inverter(new ActionAssertBoolean(transform, BooleanType.ON_SPAWN_POSITION));

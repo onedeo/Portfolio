@@ -1,5 +1,9 @@
 #pragma once
 
+#define D3DXVECTOR3 VECTOR3
+#define D3DXMATRIXA16 MATRIX16
+#define D3DCOLOR_XRGB qfqfqfqf
+
 //포인터를 delete가 아닌 release를 해준다
 #define SAFE_RELEASE(p) {if(p) p->Release();p=NULL;}
 //COM객체가 아닌게 확실할 때만 사용

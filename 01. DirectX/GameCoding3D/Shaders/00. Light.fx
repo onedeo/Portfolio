@@ -83,7 +83,7 @@ float4 ComputeLight(float3 normal, float2 uv, float3 worldPosition)
 
 		// min, max, x 넣으면 부드럽게 보간해주는 함수 : smoothstep
 		emissive = smoothstep(0.0f, 1.0f, emissive);
-		emissive = pow(emissive, 2);
+		emissive = pow(emissive, 10);
 
 		emissiveColor = GlobalLight.emissive * Material.emissive * emissive;
 	}
@@ -91,6 +91,25 @@ float4 ComputeLight(float3 normal, float2 uv, float3 worldPosition)
 	return ambientColor + diffuseColor + emissiveColor + specularColor;
 
 }
+
+void ComputeNormalMapping(inout float3 normal, float3 tangent, float2 uv) //넣은 매개변수 자체를 변경하는것 (레퍼런스, 포인터와 유사)
+{
+	float4 map = NormalMap.Sample(LinearSampler, uv); // [0, 255] 범위에서 [0,1]사이로 변환
+	
+	if (any(map.rgb) == false) return;
+
+	float3 N = normalize(normal); // z
+	float3 T = normalize(tangent); // x
+	float3 B = normalize(cross(N, T)); // y
+	float3x3 TBN = float3x3(T, B, N); // TangentSpace -> WorldSpace
+
+	// [0, 1] 범위에서 [-1, 1] 범위로 변환
+	float3 tangentSpaceNormal = (map.rgb * 2.0f - 1.0f);
+	float3 worldNormal = mul(tangentSpaceNormal, TBN);
+
+	normal = worldNormal;
+}
+
 // << : Functons
 
 #endif

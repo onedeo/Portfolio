@@ -1,6 +1,8 @@
 #pragma once
-#include "cCubePC.h"
-#include "cCamera.h"
+
+class cCamera;
+class cCubePC;
+class cGrid;
 
 class cMainGame
 {
@@ -14,6 +16,7 @@ private:
 
 	cCamera* m_pCamera;
 	cCubePC* m_pCubePC;
+	cGrid* m_pGrid;
 
 public:
 	void Setup();

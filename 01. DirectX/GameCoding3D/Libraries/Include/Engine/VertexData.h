@@ -36,3 +36,20 @@ struct VertexTextureNormalData
 	Vec2 uv = { 0, 0 };
 	Vec3 normal = { 0, 0, 0 };
 };
+
+struct VertexTextureNormalTangentData
+{
+	VertexTextureNormalTangentData() {}
+	VertexTextureNormalTangentData(Vec3 pos, Vec2 uv, Vec3 normal, Vec3 tan)
+	{
+		position = pos;
+		this->uv = uv;
+		this->normal = normal;
+		tangent = tan;
+	}
+	Vec3 position = { 0,0,0 };
+	Vec2 uv = { 0,0 };
+	Vec3 normal = { 0,0,0 };
+	Vec3 tangent = { 0,0,0 };
+	//normal과 tangent를 가지고 있으면 bitangent를 외적해서 구할 수 있다
+};

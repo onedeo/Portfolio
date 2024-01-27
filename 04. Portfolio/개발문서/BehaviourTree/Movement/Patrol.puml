@@ -1,5 +1,4 @@
 @startuml
-!include ActionNode.puml
 
 usecase Sequence[
     Sequence
@@ -7,7 +6,7 @@ usecase Sequence[
     ---
     Patrol
 ]
-
+card CheckPlayerDetection
 card PlayAnimation0[
     PlayAnimation
     ---
@@ -27,9 +26,10 @@ card PlayAnimation1[
 card PlayAudio1[
     PlayAudio
     ---
-    Audio Walk
+    Audio Idle
 ]
 card Wait
+
 
 
 Sequence-->CheckPlayerDetection

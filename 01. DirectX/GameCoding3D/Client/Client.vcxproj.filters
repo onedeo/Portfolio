@@ -25,10 +25,10 @@
     <Filter Include="Game\01. BasicShapes">
       <UniqueIdentifier>{d2d84f35-823c-4790-9b97-07fac75a2b31}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Shaders\02. Lighting">
+    <Filter Include="Shaders\02.Lighting, Material">
       <UniqueIdentifier>{4f20a1d8-1e1e-4b27-a15f-8f7b98af9ed7}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Game\02.Lighting">
+    <Filter Include="Game\02. Lighting, Material">
       <UniqueIdentifier>{b3c633c7-ba9e-443e-9467-40893368b283}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
@@ -71,28 +71,31 @@
       <Filter>Game\01. BasicShapes</Filter>
     </ClCompile>
     <ClCompile Include="10. GlobalTestDemo.cpp">
-      <Filter>Game\02.Lighting</Filter>
+      <Filter>Game\02. Lighting, Material</Filter>
     </ClCompile>
     <ClCompile Include="11. DepthStencilDemo.cpp">
-      <Filter>Game\02.Lighting</Filter>
+      <Filter>Game\02. Lighting, Material</Filter>
     </ClCompile>
     <ClCompile Include="12. AmbientDemo.cpp">
-      <Filter>Game\02.Lighting</Filter>
+      <Filter>Game\02. Lighting, Material</Filter>
     </ClCompile>
     <ClCompile Include="13. DiffuseDemo.cpp">
-      <Filter>Game\02.Lighting</Filter>
+      <Filter>Game\02. Lighting, Material</Filter>
     </ClCompile>
     <ClCompile Include="14. SpecularDemo.cpp">
-      <Filter>Game\02.Lighting</Filter>
+      <Filter>Game\02. Lighting, Material</Filter>
     </ClCompile>
     <ClCompile Include="15. EmissiveDemo.cpp">
-      <Filter>Game\02.Lighting</Filter>
+      <Filter>Game\02. Lighting, Material</Filter>
     </ClCompile>
     <ClCompile Include="16. LightingDemo.cpp">
-      <Filter>Game\02.Lighting</Filter>
+      <Filter>Game\02. Lighting, Material</Filter>
     </ClCompile>
     <ClCompile Include="17. MaterialDemo.cpp">
-      <Filter>Game\02.Lighting</Filter>
+      <Filter>Game\02. Lighting, Material</Filter>
+    </ClCompile>
+    <ClCompile Include="18. NormalMappingDemo.cpp">
+      <Filter>Game\02. Lighting, Material</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -134,28 +137,31 @@
       <Filter>Game\01. BasicShapes</Filter>
     </ClInclude>
     <ClInclude Include="10. GlobalTestDemo.h">
-      <Filter>Game\02.Lighting</Filter>
+      <Filter>Game\02. Lighting, Material</Filter>
     </ClInclude>
     <ClInclude Include="11. DepthStencilDemo.h">
-      <Filter>Game\02.Lighting</Filter>
+      <Filter>Game\02. Lighting, Material</Filter>
     </ClInclude>
     <ClInclude Include="12. AmbientDemo.h">
-      <Filter>Game\02.Lighting</Filter>
+      <Filter>Game\02. Lighting, Material</Filter>
     </ClInclude>
     <ClInclude Include="13. DiffuseDemo.h">
-      <Filter>Game\02.Lighting</Filter>
+      <Filter>Game\02. Lighting, Material</Filter>
     </ClInclude>
     <ClInclude Include="14. SpecularDemo.h">
-      <Filter>Game\02.Lighting</Filter>
+      <Filter>Game\02. Lighting, Material</Filter>
     </ClInclude>
     <ClInclude Include="15. EmissiveDemo.h">
-      <Filter>Game\02.Lighting</Filter>
+      <Filter>Game\02. Lighting, Material</Filter>
     </ClInclude>
     <ClInclude Include="16. LightingDemo.h">
-      <Filter>Game\02.Lighting</Filter>
+      <Filter>Game\02. Lighting, Material</Filter>
     </ClInclude>
     <ClInclude Include="17. MaterialDemo.h">
-      <Filter>Game\02.Lighting</Filter>
+      <Filter>Game\02. Lighting, Material</Filter>
+    </ClInclude>
+    <ClInclude Include="18. NormalMappingDemo.h">
+      <Filter>Game\02. Lighting, Material</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -184,25 +190,28 @@
       <Filter>Shaders\Common</Filter>
     </FxCompile>
     <FxCompile Include="..\Shaders\08. GlobalTest.fx">
-      <Filter>Shaders\02. Lighting</Filter>
+      <Filter>Shaders\02.Lighting, Material</Filter>
     </FxCompile>
     <FxCompile Include="..\Shaders\09. Lighting_Ambient.fx">
-      <Filter>Shaders\02. Lighting</Filter>
+      <Filter>Shaders\02.Lighting, Material</Filter>
     </FxCompile>
     <FxCompile Include="..\Shaders\10. Lighting_Diffuse.fx">
-      <Filter>Shaders\02. Lighting</Filter>
+      <Filter>Shaders\02.Lighting, Material</Filter>
     </FxCompile>
     <FxCompile Include="..\Shaders\11. Lighting_Specular.fx">
-      <Filter>Shaders\02. Lighting</Filter>
+      <Filter>Shaders\02.Lighting, Material</Filter>
     </FxCompile>
     <FxCompile Include="..\Shaders\12. Lighting_Emissive.fx">
-      <Filter>Shaders\02. Lighting</Filter>
+      <Filter>Shaders\02.Lighting, Material</Filter>
     </FxCompile>
     <FxCompile Include="..\Shaders\00. Light.fx">
       <Filter>Shaders\Common</Filter>
     </FxCompile>
     <FxCompile Include="..\Shaders\13. Lighting.fx">
-      <Filter>Shaders\02. Lighting</Filter>
+      <Filter>Shaders\02.Lighting, Material</Filter>
+    </FxCompile>
+    <FxCompile Include="..\Shaders\14. NormalMapping.fx">
+      <Filter>Shaders\02.Lighting, Material</Filter>
     </FxCompile>
   </ItemGroup>
 </Project>

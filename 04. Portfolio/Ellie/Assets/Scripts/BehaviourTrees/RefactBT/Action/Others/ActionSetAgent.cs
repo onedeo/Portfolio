@@ -1,12 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine.AI;
 using UnityEngine;
+using UnityEngine.AI;
 
 namespace Scripts.BehaviourTrees.RefactBT
 {
     public class ActionSetAgent : Node
     {
+        //using 제거 (성능차이 있음)
         private MonsterAgent destination;
         NavMeshAgent agent;
 

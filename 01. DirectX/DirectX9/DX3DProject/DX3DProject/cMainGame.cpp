@@ -1,5 +1,8 @@
 #include "framework.h" //"'는 사용자가 등록한 위치 먼저 찾으라는 뜻
 #include "cMainGame.h"
+#include "cCubePC.h"
+#include "cCamera.h"
+#include "cGrid.h"
 
 cMainGame::cMainGame() : m_pCubePC(NULL), m_pCamera(NULL)
 {
@@ -10,14 +13,16 @@ cMainGame::~cMainGame()
 {
 	SAFE_DELETE(m_pCamera);
 	SAFE_DELETE(m_pCubePC);
+	SAFE_DELETE(m_pGrid);
+
 	DEVICE_MANAGER->Destroy();
 }
 
 void cMainGame::Setup()
 {
 	DEVICE->SetRenderState(D3DRS_LIGHTING, false);
-	Setup_Line();
-	Setup_Triangle();
+	//Setup_Line();
+	//Setup_Triangle();
 	
 	m_pCubePC = new cCubePC();
 	m_pCubePC->Setup();
@@ -25,6 +30,9 @@ void cMainGame::Setup()
 	m_pCamera = new cCamera();
 	//m_pCamera->Setup(&m_pCubePC->GetPosition());
 	m_pCamera->Setup();
+
+	m_pGrid = new cGrid();
+	m_pGrid->Setup();
 }
 
 void cMainGame::Update()
@@ -41,9 +49,11 @@ void cMainGame::Render()
 
 	DEVICE->BeginScene();
 
-	Draw_Line();
-	Draw_Triangle();
-	m_pCubePC->Render();
+	//Draw_Line();
+	//Draw_Triangle();
+	
+	if (m_pGrid)	m_pGrid->Render();
+	if (m_pCubePC) m_pCubePC->Render();
 
 	DEVICE->EndScene();
 

@@ -7,12 +7,14 @@ namespace Scripts.BehaviourTrees.RefactBT
 {
     public class Monster : MonoBehaviour
     {
+
+
         public NavMeshAgent agent;
 
         public MonsterCenter MonsterCenter { get; private set; }
         private DetectAI detectPlayer;
         private DetectAI detectChase;
-        private bool isOnSpawnPosition;
+        private bool isOnSpawnPosition; //상태로 FSM으로 관리
         public Transform SpawnTransform { get; private set; }
 
         [SerializeField]

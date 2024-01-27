@@ -6,7 +6,7 @@ namespace Scripts.BehaviourTrees.RefactBT
 {
     public class SeqNoDetection : Sequence
     {
-        SeqNoDetection(Transform transform)
+        public SeqNoDetection(Transform transform)
         {
             List<Node> children = new();
             children.Add(new Hold());

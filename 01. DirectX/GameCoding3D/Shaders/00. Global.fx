@@ -8,6 +8,7 @@ cbuffer GlobalBuffer
 	matrix V;		// View
 	matrix P;		// Projection
 	matrix VP;	// View * Projection
+	matrix VInv;
 };
 
 cbuffer TransformBuffer
@@ -37,6 +38,14 @@ struct VertexTextureNormal
 	float2 uv : TEXCOORD;
 	float3 normal : NORMAL;
 };
+
+struct VertexTextureNormalTangent
+{
+	float4 position : POSITION;
+	float2 uv : TEXCOORD;
+	float3 normal : NORMAL;
+	float3 tangent : TANGENT;
+};
 // << : VertexData
 
 // >> : VertexOutput
@@ -52,6 +61,7 @@ struct MeshOutput
 	float3 worldPosition : POSITION1; // 조명관련 연산할 때 필요
 	float2 uv : TEXCOORD;
 	float3 normal : NORMAL;
+	float3 tangent : TANGENT;
 };
 // << : VertexOutput
 
@@ -89,8 +99,8 @@ pass name																	\
 
 // >> : Functions
 float3 CameraPosition()
-{
-	return -V._41_42_43;
+{	
+	return VInv._41_42_43;
 }
 // << : Functions
 
