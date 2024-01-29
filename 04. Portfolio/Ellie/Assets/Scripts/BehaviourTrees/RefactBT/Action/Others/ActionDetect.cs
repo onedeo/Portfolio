@@ -4,17 +4,23 @@ using UnityEngine;
 
 namespace Scripts.BehaviourTrees.RefactBT
 {
-    public class ActionDetect : Node
+    public class ActionDetect : MonsterNode
     {
         public DetectType type;
         public ActionDetect(Transform transform, DetectType type)
         {
-            monster = transform.GetComponent<Monster>();
-            if (monster == null) Debug.Log(transform.name + "Has No Monster Component");
+            if (monster == null)
+                monster = transform.GetComponent<Monster>();
         }
 
         public override NodeState Evaluate()
         {
+            if (monster == null)
+            {
+                Debug.Log(transform.name + "Has No Monster Component");
+                return NodeState.FAILURE;
+            }
+
             switch (type)
             {
                 case DetectType.PLAYER:

@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Scripts.BehaviourTrees.RefactBT
 {
-    public class ActionPatrolToPoint : Node
+    public class ActionPatrolToPoint : MonsterNode
     {
         public ActionPatrolToPoint(Transform transform)
         {

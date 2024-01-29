@@ -5,10 +5,9 @@ using UnityEngine;
 
 namespace Scripts.BehaviourTrees.RefactBT
 {
-    public class ActionReturnSpawnPosition : Node
+    public class ActionReturnSpawnPosition : MonsterNode
     {
         private MonsterAgent destination;
-        NavMeshAgent agent;
 
         public ActionReturnSpawnPosition(Transform transform)
         {
@@ -19,9 +18,23 @@ namespace Scripts.BehaviourTrees.RefactBT
         }
         public override NodeState Evaluate()
         {
-            if (agent == null) return NodeState.FAILURE;
+            if (agent == null)
+            {
+                Debug.Log(transform.name + "Has No NavMeshAgent");
+                return NodeState.FAILURE;
+            }
+            if (monster == null)
+            {
+                Debug.Log(transform.name + "Has No Monster Component");
+                return NodeState.FAILURE;
+            }
 
-            if (monster.GetBoolean(BooleanType.ON_SPAWN_POSITION)) return NodeState.SUCCESS;
+            float distance = Vector3.SqrMagnitude(transform.position - monster.SpawnPosition);
+            if (distance > 0.5f)
+            {
+                isOnSpawnPosition = true;
+                return NodeState.SUCCESS;
+            }
             else return NodeState.RUNNING;
         }
     }

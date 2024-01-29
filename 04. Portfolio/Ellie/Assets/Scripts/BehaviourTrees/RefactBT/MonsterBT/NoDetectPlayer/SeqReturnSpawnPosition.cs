@@ -9,10 +9,11 @@ namespace Scripts.BehaviourTrees.RefactBT
         public SeqReturnSpawnPosition(Transform transform)
         {
             List<Node> children = new();
-            Inverter invertBool = new Inverter(new ActionAssertBoolean(transform, BooleanType.ON_SPAWN_POSITION));
+            Inverter invertBool = new Inverter(new ActionAssertBoolean(transform, tree));
             children.Add(invertBool);
             children.Add(new ActionPlayAnimation(transform, AnimationType.WALK));
             children.Add(new ActionPlayAudio(transform, MonsterAudioType.Move1, true, true));
+            children.Add(new ActionSetAgent(transform, MonsterAgent.SPAWNPOSITION));
             children.Add(new ActionReturnSpawnPosition(transform));
         }
     }

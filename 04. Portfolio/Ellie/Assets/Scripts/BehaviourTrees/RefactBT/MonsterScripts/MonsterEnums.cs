@@ -15,10 +15,6 @@ namespace Scripts.BehaviourTrees.RefactBT
         WALK,
 
     }
-    public enum BooleanType
-    {
-        ON_SPAWN_POSITION,
-    }
     public enum MonAudioType
     {
         WALK,

@@ -4,14 +4,11 @@ using UnityEngine;
 
 namespace Scripts.BehaviourTrees.RefactBT
 {
-    public class ActionPlayAudio : Node
+    public class ActionPlayAudio : MonsterNode
     {
         private MonsterAudioType audioType;
         private bool isLoop;
         private bool isInteruptable;
-        private Transform transform;
-        private AudioSource audioSource;
-        private MonsterAudioController audioController;
         public ActionPlayAudio(Transform transform, MonsterAudioType audioType, bool isInteruptable = true, bool isLoop = true) : base()
         {
             this.audioType = audioType;
@@ -24,9 +21,11 @@ namespace Scripts.BehaviourTrees.RefactBT
         {
             if (audioSource == null)
                 audioSource = transform.GetComponent<AudioSource>();
+
             if (audioController == null)
                 audioController = transform.GetComponent<MonsterAudioController>();
         }
+
         public override NodeState Evaluate()
         {
             if (audioSource == null)

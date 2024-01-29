@@ -14,8 +14,7 @@ namespace Scripts.BehaviourTrees.RefactBT
         public MonsterCenter MonsterCenter { get; private set; }
         private DetectAI detectPlayer;
         private DetectAI detectChase;
-        private bool isOnSpawnPosition; //상태로 FSM으로 관리
-        public Transform SpawnTransform { get; private set; }
+        public Vector3 SpawnPosition { get; private set; }
 
         [SerializeField]
         public List<Transform> patrolPoints;
@@ -31,21 +30,8 @@ namespace Scripts.BehaviourTrees.RefactBT
             if (detectChase.IsDetected) return true;
             return false;
         }
-        public bool GetBoolean(BooleanType type)
-        {
-            switch (type)
-            {
-                case BooleanType.ON_SPAWN_POSITION:
-                    return isOnSpawnPosition;
-            }
-
-            Debug.Log(gameObject.name + "Trying to Access Boolean Does Not Have");
-            return false;
-        }
-
-        public Transform PatrolToNextPoint()
-        {
-            return patrolPoints[patrolIndex];
-        }
+        //public Transform PatrolToNextPoint()
+        //    return patrolPoints[patrolIndex];
+        //}
     }
 }

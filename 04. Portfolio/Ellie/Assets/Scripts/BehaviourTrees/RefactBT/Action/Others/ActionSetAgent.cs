@@ -3,11 +3,9 @@ using UnityEngine.AI;
 
 namespace Scripts.BehaviourTrees.RefactBT
 {
-    public class ActionSetAgent : Node
+    public class ActionSetAgent : MonsterNode
     {
-        //using 제거 (성능차이 있음)
         private MonsterAgent destination;
-        NavMeshAgent agent;
 
         public ActionSetAgent(Transform transform, MonsterAgent destination)
         {
@@ -21,7 +19,11 @@ namespace Scripts.BehaviourTrees.RefactBT
 
         public override NodeState Evaluate()
         {
-            if (agent == null) return NodeState.FAILURE;
+            if (agent == null)
+            {
+                Debug.Log(transform.name + "Has No NavMeshAgent");
+                return NodeState.FAILURE;
+            }
 
             switch (destination)
             {
@@ -29,10 +31,10 @@ namespace Scripts.BehaviourTrees.RefactBT
                     agent.destination = monster.MonsterCenter.Player.position;
                     break;
                 case MonsterAgent.SPAWNPOSITION:
-                    agent.destination = monster.SpawnTransform.position;
+                    agent.destination = monster.SpawnPosition;
                     break;
                 case MonsterAgent.PATROL:
-                    agent.destination = monster.PatrolToNextPoint().position;
+                    //agent.destination = monster.PatrolToNextPoint().position;
                     break;
             }
             return NodeState.SUCCESS;

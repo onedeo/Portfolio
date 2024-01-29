@@ -4,18 +4,18 @@ using UnityEngine;
 
 namespace Scripts.BehaviourTrees.RefactBT
 {
-    public class ActionAssertBoolean : Node
+    public class ActionAssertBoolean : MonsterNode
     {
-        private BooleanType type;
-        public ActionAssertBoolean(Transform transform, BooleanType type)
+        private bool boolean;
+        public ActionAssertBoolean(Transform transform, bool boolean)
         {
-            monster = transform.GetComponent<Monster>();
-            this.type = type;
+            this.boolean = boolean;
         }
 
         public override NodeState Evaluate()
         {
-            if (monster.GetBoolean(type)) return NodeState.SUCCESS;
+
+            if (boolean) return NodeState.SUCCESS;
             else return NodeState.FAILURE;
         }
 

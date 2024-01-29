@@ -8,13 +8,13 @@ namespace Scripts.BehaviourTrees.RefactBT
     {
         public SeqNoDetection(Transform transform)
         {
-            List<Node> children = new();
-            children.Add(new Hold());
-            children.Add(new ActionDetect(transform, DetectType.PLAYER));
-            children.Add(new FirstTimeDetectPlayer());
-            children.Add(new ActionPlayAnimation(transform, AnimationType.STANDUP));
-            children.Add(new Hold(4.0f));
-            
+            List<Node> children = new()
+            {
+                new Hold(),
+                new ActionDetect(transform, DetectType.PLAYER),
+                new ActionPlayAnimation(transform, AnimationType.STANDUP, true),
+            };
+
             SetChildren(children);
         }
     }
