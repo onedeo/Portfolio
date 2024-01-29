@@ -1,9 +1,5 @@
 #pragma once
 
-#define D3DXVECTOR3 VECTOR3
-#define D3DXMATRIXA16 MATRIX16
-#define D3DCOLOR_XRGB qfqfqfqf
-
 //포인터를 delete가 아닌 release를 해준다
 #define SAFE_RELEASE(p) {if(p) p->Release();p=NULL;}
 //COM객체가 아닌게 확실할 때만 사용
@@ -20,3 +16,14 @@
 						static class_name instance;					\
 						return &instance;									\
 					}
+
+#define SYNTHESIZE(varType, varName, funName) \
+         protected : varType varName; \
+         public: inline varType Get##funName(void) const { return varName; } \
+            public : inline void Set##funName(varType var) {varName = var; } 
+
+#define SYNTHESIZE_PASS_BY_REF (varType, varName, funName)							\
+					protected : varType varName;																	\
+					public: inline varType& Get##funName	(void) {return varName;}			\
+					public: inline void Set##funName(varName var) { varName = var; }	
+	//##하면 함수 이름이 funName으로 된다

@@ -13,9 +13,6 @@
     <Filter Include="Main\Camera">
       <UniqueIdentifier>{e3f04440-b2f4-40de-bae5-a9d3d7dc812d}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Scripts">
-      <UniqueIdentifier>{9c50a666-3b0e-428d-b457-7cb7ded66c22}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Shaders\01. BasicShapes">
       <UniqueIdentifier>{8baeaaea-55a7-444e-89c9-8c6281e38120}</UniqueIdentifier>
     </Filter>
@@ -161,6 +158,12 @@
       <Filter>Game\02. Lighting, Material</Filter>
     </ClInclude>
     <ClInclude Include="18. NormalMappingDemo.h">
+      <Filter>Game\02. Lighting, Material</Filter>
+    </ClInclude>
+    <ClInclude Include="BasicShapes.h">
+      <Filter>Game\01. BasicShapes</Filter>
+    </ClInclude>
+    <ClInclude Include="LightingMaterial.h">
       <Filter>Game\02. Lighting, Material</Filter>
     </ClInclude>
   </ItemGroup>

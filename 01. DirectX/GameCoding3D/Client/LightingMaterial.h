@@ -1,0 +1,10 @@
+#pragma once
+#include "10. GlobalTestDemo.h"
+#include "11. DepthStencilDemo.h"
+#include "12. AmbientDemo.h"
+#include "13. DiffuseDemo.h"
+#include "14. SpecularDemo.h"
+#include "15. EmissiveDemo.h"
+#include "16. LightingDemo.h"
+#include "17. MaterialDemo.h"
+#include "18. NormalMappingDemo.h"

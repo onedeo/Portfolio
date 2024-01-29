@@ -36,7 +36,9 @@
     <ClInclude Include="16. LightingDemo.h" />
     <ClInclude Include="17. MaterialDemo.h" />
     <ClInclude Include="18. NormalMappingDemo.h" />
+    <ClInclude Include="BasicShapes.h" />
     <ClInclude Include="CameraScript.h" />
+    <ClInclude Include="LightingMaterial.h" />
     <ClInclude Include="Main.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="01. TriangleDemo.h" />
