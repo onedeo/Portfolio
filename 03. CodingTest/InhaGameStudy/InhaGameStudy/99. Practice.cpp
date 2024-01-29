@@ -3,10 +3,11 @@
 
 using namespace std;
 
-	int tomato[1000][1000];
+int tomato[1000][1000];
+
 int main()
 {
-	cin.tie(0);
+    cin.tie(0);
 	ios::sync_with_stdio(0);
 
 	int y, x;
