@@ -60,8 +60,9 @@ void Converter::ReadModelData(aiNode* node, int32 index, int32 parent)
 	if (parent >= 0)
 		matParent = _bones[parent]->transform;
 
-	// Local(Root) Transform
+	// Local(Root) Transform (root까지 가는 행렬(부모가 몇개든))
 	bone->transform = bone->transform * matParent;
+
 	_bones.push_back(bone);
 
 	// Mesh

@@ -30,8 +30,11 @@
     <ClCompile Include="AsTypes.cpp">
       <Filter>Main</Filter>
     </ClCompile>
-    <ClCompile Include="FileUtils.cpp">
-      <Filter>Utils</Filter>
+    <ClCompile Include="01. StaticMeshDemo.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
+    <ClCompile Include="02. ImGUIDemo.cpp">
+      <Filter>Game</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -53,8 +56,11 @@
     <ClInclude Include="AsTypes.h">
       <Filter>Main</Filter>
     </ClInclude>
-    <ClInclude Include="FileUtils.h">
-      <Filter>Utils</Filter>
+    <ClInclude Include="01. StaticMeshDemo.h">
+      <Filter>Game</Filter>
+    </ClInclude>
+    <ClInclude Include="02. ImGUIDemo.h">
+      <Filter>Game</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

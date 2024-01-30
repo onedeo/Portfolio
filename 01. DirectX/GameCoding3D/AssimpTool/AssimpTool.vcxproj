@@ -145,20 +145,22 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="01. StaticMeshDemo.h" />
+    <ClInclude Include="02. ImGUIDemo.h" />
     <ClInclude Include="AssimpTool.h" />
     <ClInclude Include="AsTypes.h" />
     <ClInclude Include="CameraScript.h" />
     <ClInclude Include="Converter.h" />
-    <ClInclude Include="FileUtils.h" />
     <ClInclude Include="Main.h" />
     <ClInclude Include="pch.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="01. StaticMeshDemo.cpp" />
+    <ClCompile Include="02. ImGUIDemo.cpp" />
     <ClCompile Include="AssimpTool.cpp" />
     <ClCompile Include="AsTypes.cpp" />
     <ClCompile Include="CameraScript.cpp" />
     <ClCompile Include="Converter.cpp" />
-    <ClCompile Include="FileUtils.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>

@@ -8,6 +8,7 @@ enum class ComponentType : uint8
 	// 한개만 있을 수 있음
 	Transform,
 	MeshRenderer,
+	ModelRenderer,
 	Camera,
 	Animator,
 

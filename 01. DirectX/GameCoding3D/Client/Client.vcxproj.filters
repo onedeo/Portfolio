@@ -28,6 +28,12 @@
     <Filter Include="Game\02. Lighting, Material">
       <UniqueIdentifier>{b3c633c7-ba9e-443e-9467-40893368b283}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Game\03. Model">
+      <UniqueIdentifier>{ef363d6d-36bd-4c5b-9d81-c22c8ec1f849}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shaders\03. Model">
+      <UniqueIdentifier>{99b20663-294c-4d62-9866-da4dd4df76b4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
@@ -215,6 +221,9 @@
     </FxCompile>
     <FxCompile Include="..\Shaders\14. NormalMapping.fx">
       <Filter>Shaders\02.Lighting, Material</Filter>
+    </FxCompile>
+    <FxCompile Include="..\Shaders\15. StaticModel.fx">
+      <Filter>Shaders\03. Model</Filter>
     </FxCompile>
   </ItemGroup>
 </Project>
