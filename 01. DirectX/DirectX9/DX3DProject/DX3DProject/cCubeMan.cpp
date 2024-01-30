@@ -31,7 +31,7 @@ void cCubeMan::Setup()
 	m_stMtl.Diffuse = D3DXCOLOR(0.7f, 0.7f, 0.7f, 1.0f);
 	m_stMtl.Specular = D3DXCOLOR(0.7f, 0.7f, 0.7f, 1.0f);
 
-	// TO DO : 个, 赣府, 个烹 殿 积己
+	// Parts
 	cBody* pBody = new cBody();
 	pBody->Setup();
 	pBody->SetParentWorldTM(&m_matWorld);
@@ -43,18 +43,22 @@ void cCubeMan::Setup()
 
 	cLeftArm* pLeftArm = new cLeftArm();
 	pLeftArm->Setup();
+	pLeftArm->SetRotDeltaX(-0.1f);
 	m_pRoot->AddChild(pLeftArm);
 
 	cRightArm* pRightArm = new cRightArm();
 	pRightArm->Setup();
+	pRightArm->SetRotDeltaX(0.1f);
 	m_pRoot->AddChild(pRightArm);
 
 	cLeftLeg* pLeftleg = new cLeftLeg();
 	pLeftleg->Setup();
+	pLeftleg->SetRotDeltaX(-0.1f);
 	m_pRoot->AddChild(pLeftleg);
 
 	cRightLeg* pRightLeg= new cRightLeg();
 	pRightLeg->Setup();
+	pRightLeg->SetRotDeltaX(0.1f);
 	m_pRoot->AddChild(pRightLeg);
 }
 

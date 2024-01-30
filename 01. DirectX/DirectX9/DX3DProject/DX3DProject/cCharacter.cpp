@@ -33,7 +33,7 @@ void cCharacter::Update()
 	m_vDirection = D3DXVECTOR3(0, 0, 1);
 
 	D3DXVec3TransformNormal(&m_vDirection, &m_vDirection, &matRotation);
-	D3DXMatrixTranslation(&matTranslation, m_vPosition.x, m_vPosition.y, m_vPosition.z);
+	D3DXMatrixTranslation(&matTranslation, m_vPosition.x, m_vPosition.y+0.9f, m_vPosition.z);
 	// S R T
 	m_matWorld = matRotation * matTranslation;
 }

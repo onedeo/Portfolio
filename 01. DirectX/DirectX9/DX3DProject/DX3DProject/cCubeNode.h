@@ -9,6 +9,7 @@ public :
 
 	SYNTHESIZE(D3DXMATRIXA16*, m_pParentWorldTM, ParentWorldTM);
 	SYNTHESIZE(float, m_fRotDeltaX, RotDeltaX);
+	float m_fRotX;
 
 	virtual void AddChild(cCubeNode* pChild);
 	virtual void Destroy();

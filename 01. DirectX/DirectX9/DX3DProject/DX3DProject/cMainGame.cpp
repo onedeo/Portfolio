@@ -10,6 +10,7 @@ cMainGame::cMainGame()
 	, m_pCamera(NULL)
 	, m_pGrid(NULL)
 	, m_pCubeMan(NULL)
+	, m_pTexture(NULL)
 {
 	srand(time(0));
 }
@@ -21,12 +22,13 @@ cMainGame::~cMainGame()
 	SAFE_DELETE(m_pGrid);
 	SAFE_DELETE(m_pCubeMan);
 
+	SAFE_RELEASE(m_pTexture);
+
 	DEVICE_MANAGER->Destroy();
 }
 
 void cMainGame::Setup()
 {
-	DEVICE->SetRenderState(D3DRS_LIGHTING, false);
 	//Setup_Line();
 	//Setup_Triangle();
 	//Cube
@@ -46,6 +48,9 @@ void cMainGame::Setup()
 	m_pGrid->Setup();
 
 	Setup_Light();
+	Setup_Texture();
+
+	DEVICE->SetRenderState(D3DRS_LIGHTING, false);
 }
 
 void cMainGame::Update()
@@ -66,7 +71,8 @@ void cMainGame::Render()
 
 	//Draw_Line();
 	//Draw_Triangle();
-	
+	Draw_Texture();
+
 	if (m_pGrid)	m_pGrid->Render();
 	//if (m_pCubePC) m_pCubePC->Render();
 	if (m_pCubeMan) m_pCubeMan->Render();
@@ -145,4 +151,67 @@ void cMainGame::Setup_Light()
 	stLight.Direction = vDir;
 	DEVICE->SetLight(0, &stLight);
 	DEVICE->LightEnable(0, true);
+}
+
+void cMainGame::Setup_Texture()
+{
+	D3DXCreateTextureFromFile(DEVICE, L"../Image/faker.jpeg", &m_pTexture);
+	ST_PT_VERTEX v;
+
+	v.p = D3DXVECTOR3(0, 0, 0);
+	v.t = D3DXVECTOR2(0, 1);
+	m_vecTexVertex.push_back(v);
+
+	v.p = D3DXVECTOR3(0, 7, 0);
+	v.t = D3DXVECTOR2(0, 0);
+	m_vecTexVertex.push_back(v);
+
+	v.p = D3DXVECTOR3(5, 7, 0);
+	v.t = D3DXVECTOR2(1, 0);
+	m_vecTexVertex.push_back(v);
+
+	v.p = D3DXVECTOR3(0, 0, 0);
+	v.t = D3DXVECTOR2(0, 1);
+	m_vecTexVertex.push_back(v);
+
+	v.p = D3DXVECTOR3(5, 7, 0);
+	v.t = D3DXVECTOR2(1, 0);
+	m_vecTexVertex.push_back(v);
+
+	v.p = D3DXVECTOR3(5, 0, 0);
+	v.t = D3DXVECTOR2(1, 1);
+	m_vecTexVertex.push_back(v);
+
+
+	// 반대편
+	v.p = D3DXVECTOR3(0, 0, 0);
+	v.t = D3DXVECTOR2(0, 1);
+	m_vecTexVertex.push_back(v);
+
+	v.p = D3DXVECTOR3(-2, 2, 0);
+	v.t = D3DXVECTOR2(1, 0);
+	m_vecTexVertex.push_back(v);
+
+	v.p = D3DXVECTOR3(0, 2, 0);
+	v.t = D3DXVECTOR2(0, 0);
+	m_vecTexVertex.push_back(v);
+
+}
+
+void cMainGame::Draw_Texture()
+{
+	DEVICE->SetRenderState(D3DRS_CULLMODE, D3DCULL_NONE);
+
+	DEVICE->SetRenderState(D3DRS_LIGHTING, false);
+
+	D3DXMATRIXA16 matWorld;
+	D3DXMatrixIdentity(&matWorld);
+	DEVICE->SetTransform(D3DTS_WORLD, &matWorld);
+	DEVICE->SetTexture(0, m_pTexture);
+	
+	DEVICE->SetFVF(ST_PT_VERTEX::FVF);
+	DEVICE->DrawPrimitiveUP(D3DPT_TRIANGLELIST, m_vecTexVertex.size() / 3, &m_vecTexVertex[0], sizeof(ST_PT_VERTEX));
+	
+	//한개의 texture적용하고 나서 더이상 적용 안할거면 NULL로 세팅 해줘야 한다
+	DEVICE->SetTexture(0, NULL);
 }
