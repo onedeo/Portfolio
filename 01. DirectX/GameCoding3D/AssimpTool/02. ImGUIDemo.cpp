@@ -10,48 +10,50 @@
 #include "Model.h"
 #include "ModelRenderer.h"
 
-void IMGUIDemo::Init()
+void ImGUIDemo::Init()
 {
-	//Setup Dear ImGui context
-	IMGUI_CHECKVERSION();
-	ImGui::CreateContext();
-	ImGuiIO& io = ImGui::GetIO(); (void)io;
-	io.ConfigFlags |= ImGuiConfigFlags_NavEnableKeyboard;     // Enable Keyboard Controls
-	io.ConfigFlags |= ImGuiConfigFlags_NavEnableGamepad;      // Enable Gamepad Controls
-
-	//Setup Dear ImGui style
-	ImGui::StyleColorsDark();
-	ImGui::StyleColorsLight();
-
-	//Setup Platform / Renderer backends
-	ImGui_ImplWin32_Init(&GAME->GetGameDesc().hWnd);
-	ImGui_ImplDX11_Init(DEVICE.Get(), DC.Get());
+	//// Setup Dear ImGui context
+	//IMGUI_CHECKVERSION();
+	//ImGui::CreateContext();
+	//ImGuiIO& io = ImGui::GetIO(); (void)io;
+	//io.ConfigFlags |= ImGuiConfigFlags_NavEnableKeyboard;     // Enable Keyboard Controls
+	//io.ConfigFlags |= ImGuiConfigFlags_NavEnableGamepad;      // Enable Gamepad Controls
+	//
+	//// Setup Dear ImGui style
+	//ImGui::StyleColorsDark();
+	//ImGui::StyleColorsLight();
+	//
+	//// Setup Platform/Renderer backends
+	//ImGui_ImplWin32_Init(GAME->GetGameDesc().hWnd);
+	//ImGui_ImplDX11_Init(DEVICE.Get(), DC.Get());
 }
 
-void IMGUIDemo::Update()
+void ImGUIDemo::Update()
 {
-	//Start the Dear ImGui frame
-	ImGui_ImplDX11_NewFrame();
-	ImGui_ImplWin32_NewFrame();
-	ImGui::NewFrame();
+	// Start the Dear ImGui frame
+	//ImGui_ImplDX11_NewFrame();
+	//ImGui_ImplWin32_NewFrame();
+	//ImGui::NewFrame();
 
-	//UI
+	// UI
 	Test();
+
+
 }
 
-void IMGUIDemo::Render()
+void ImGUIDemo::Render()
 {
 	// Rendering
-	ImGui::Render();
+	//ImGui::Render();
 
 	//const float clear_color_with_alpha[4] = { clear_color.x * clear_color.w, clear_color.y * clear_color.w, clear_color.z * clear_color.w, clear_color.w };
-	//g_pd3dDeviceContext->OMSetRenderTargets(1, &g_mainRenderTargetView, NULL);
-	//g_pd3dDeviceContext->ClearRenderTargetView(g_mainRenderTargetView, clear_color_with_alpha);
+	////DC->OMSetRenderTargets(1, &g_mainRenderTargetView, NULL);
+	//DC->ClearRenderTargetView(g_mainRenderTargetView, clear_color_with_alpha);
 
-	ImGui_ImplDX11_RenderDrawData(ImGui::GetDrawData());
+	//ImGui_ImplDX11_RenderDrawData(ImGui::GetDrawData());
 }
 
-void IMGUIDemo::Test()
+void ImGUIDemo::Test()
 {
 	// 1. Show the big demo window (Most of the sample code is in ImGui::ShowDemoWindow()! You can browse its code to learn more about Dear ImGui!).
 	if (show_demo_window)
@@ -80,13 +82,11 @@ void IMGUIDemo::Test()
 		ImGui::End();
 	}
 
-	// Rookiss
+	// TestCode
 	{
-		ImGui::Begin("Rookiss", nullptr,
-			ImGuiWindowFlags_NoTitleBar |
-			ImGuiWindowFlags_NoMove);
+		ImGui::Begin("onedeo, hello", nullptr, ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoMove);
 
-		ImGui::Text("Rookiss Hello ImGui!");
+		ImGui::Text("onedeo Hello ImGui!");
 
 		ImGui::End();
 	}

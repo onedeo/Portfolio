@@ -10,11 +10,13 @@
 
 cCubeMan::cCubeMan()
 	: m_pRoot(NULL)
+	, m_pTexture(NULL)
 {
 }
 
 cCubeMan::~cCubeMan()
 {
+	SAFE_RELEASE(m_pTexture);
 	if (m_pRoot)
 		m_pRoot->Destroy();
 }
@@ -22,6 +24,9 @@ cCubeMan::~cCubeMan()
 void cCubeMan::Setup()
 {
 	cCharacter::Setup();
+
+	// Texture
+	D3DXCreateTextureFromFile(DEVICE, L"../Image/batman.png", &m_pTexture);
 
 	// Material
 	ZeroMemory(&m_stMtl, sizeof(D3DMATERIAL9));
@@ -75,12 +80,15 @@ void cCubeMan::Render()
 		DEVICE->SetRenderState(D3DRS_LIGHTING, true);
 		DEVICE->SetMaterial(&m_stMtl);
 
+		cCharacter::Render();
+
 		D3DXMATRIXA16 matWorld;
 		D3DXMatrixIdentity(&matWorld);
 
 		DEVICE->SetTransform(D3DTS_WORLD, &matWorld);
-
+		DEVICE->SetTexture(0, m_pTexture);
 		if (m_pRoot) m_pRoot->Render();
+		DEVICE->SetTexture(0, NULL);
 
 		DEVICE->SetRenderState(D3DRS_LIGHTING, false);
 	}
