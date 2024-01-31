@@ -11,5 +11,15 @@ namespace Scripts.BehaviourTrees.RefactBT
             if (monster == null)
                 monster = transform.GetComponent<Monster>();
         }
+
+        public override NodeState Evaluate()
+        {
+            if(monster ==null)
+            {
+                Debug.Log(transform.name + "Has No Monster Component");
+                return NodeState.FAILURE;
+            }
+            
+        }
     }
 }

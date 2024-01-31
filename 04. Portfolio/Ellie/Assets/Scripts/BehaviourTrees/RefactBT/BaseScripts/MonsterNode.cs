@@ -7,6 +7,7 @@ namespace Scripts.BehaviourTrees.RefactBT
 {
     public class MonsterNode : Node
     {
+        protected MonsterBehaviourTree tree;
         protected Monster monster;
         protected NavMeshAgent agent;
         protected AudioSource audioSource;
@@ -14,7 +15,7 @@ namespace Scripts.BehaviourTrees.RefactBT
         protected Transform transform;
         protected Animator animator;
 
-
-        protected bool isOnSpawnPosition = true;
+        public MonsterNode() : base() { }
+        public MonsterNode(List<Node> children) : base(children) { }
     }
 }

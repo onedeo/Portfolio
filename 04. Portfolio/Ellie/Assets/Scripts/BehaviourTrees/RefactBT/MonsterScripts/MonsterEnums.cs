@@ -4,6 +4,17 @@ using UnityEngine;
 
 namespace Scripts.BehaviourTrees.RefactBT
 {
+    public enum MonsterData
+    {
+        MONSTER,
+        AGENT,
+        AUDIO,
+        AUDIO_CON,
+        TRANSFORM,
+        ANIMATOR,
+        
+    }
+
     public enum DetectType
     {
         PLAYER,

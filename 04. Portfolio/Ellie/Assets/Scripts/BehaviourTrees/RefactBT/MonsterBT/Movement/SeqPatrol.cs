@@ -9,10 +9,10 @@ namespace Scripts.BehaviourTrees.RefactBT
         public SeqPatrol(Transform transform)
         {
             List<Node> children = new();
-            children.Add(new ActionDetect(transform, DetectType.PLAYER));
-            children.Add(new ActionPlayAnimation(transform, AnimationType.WALK));
-            children.Add(new ActionPlayAudio(transform, MonsterAudioType.Move1));
-            //children.Add(new ActionPa())
+            new ActionDetect(transform, DetectType.PLAYER);
+            new ActionPlayAnimation(transform, AnimationType.WALK);
+            new ActionPlayAudio(transform, MonsterAudioType.Move1);
+            new 
         }
 
     }
