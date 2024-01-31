@@ -41,8 +41,8 @@ void cMainGame::Setup()
 
 	//camera
 	m_pCamera = new cCamera();
-	//m_pCamera->Setup(&m_pCubePC->GetPosition());
-	m_pCamera->Setup();
+	m_pCamera->Setup(&m_pCubeMan->GetPosition());
+	//m_pCamera->Setup();
 
 	m_pGrid = new cGrid();
 	m_pGrid->Setup();

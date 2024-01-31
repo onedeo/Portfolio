@@ -70,8 +70,8 @@ struct VertexTextureNormalTangentBlendData
 	Vec2 uv = { 0,0 };
 	Vec3 normal = { 0,0,0 };
 	Vec3 tangent = { 0,0,0 };
-	Vec4 blendIndices = { 0,0,0,0 };
-	Vec4 blendWeights = { 0,0,0,0 };
+	Vec4 blendIndices = { 0,0,0,0 }; // bone
+	Vec4 blendWeights = { 0,0,0,0 }; // bone 영향 비율 (4개, 비율)
 };
 
 using ModelVertexType = VertexTextureNormalTangentBlendData;

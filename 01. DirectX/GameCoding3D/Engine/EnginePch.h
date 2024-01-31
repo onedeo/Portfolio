@@ -65,7 +65,7 @@ using namespace Microsoft::WRL;
 #include "InputManager.h"
 #include "TimeManager.h"
 #include "ResourceManager.h"
-
+#include "ImGuiManager.h"
 
 // Engine
 #include "VertexData.h"

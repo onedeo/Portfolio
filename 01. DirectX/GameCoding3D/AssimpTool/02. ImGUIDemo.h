@@ -1,7 +1,7 @@
 #pragma once
 #include "IExecute.h"
 
-class IMGUIDemo : public IExecute
+class ImGUIDemo : public IExecute
 {
 public:
 	void Init() override;

@@ -1,13 +1,13 @@
 #pragma once
 
 #define DECLARE_SINGLE(classname)			\
-private:									\
-	classname() { }							\
-public:										\
-	static classname* GetInstance()			\
-	{										\
-		static classname s_instance;		\
-		return &s_instance;					\
+private:															\
+	classname() { }											\
+public:															\
+	static classname* GetInstance()				\
+	{																\
+		static classname s_instance;				\
+		return &s_instance;								\
 	}
 
 #define GET_SINGLE(classname)	classname::GetInstance()
@@ -22,3 +22,4 @@ public:										\
 #define DT									TIME->GetDeltaTime()
 #define RESOURCES					GET_SINGLE(ResourceManager)
 #define RENDER							GET_SINGLE(RenderManager)
+#define GUI									GET_SINGLE(ImGuiManager)
