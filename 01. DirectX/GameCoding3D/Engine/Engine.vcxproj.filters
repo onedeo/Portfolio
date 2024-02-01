@@ -180,6 +180,7 @@
     <ClInclude Include="imgui.h">
       <Filter>98. Utils\ImGUI</Filter>
     </ClInclude>
+    <ClInclude Include="ModelAnimator.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
@@ -311,6 +312,7 @@
     <ClCompile Include="imgui_demo.cpp">
       <Filter>98. Utils\ImGUI</Filter>
     </ClCompile>
+    <ClCompile Include="ModelAnimator.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="SimpleMath.inl">

@@ -22,9 +22,6 @@
     <Filter Include="Game\01. BasicShapes">
       <UniqueIdentifier>{d2d84f35-823c-4790-9b97-07fac75a2b31}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Shaders\02.Lighting, Material">
-      <UniqueIdentifier>{4f20a1d8-1e1e-4b27-a15f-8f7b98af9ed7}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Game\02. Lighting, Material">
       <UniqueIdentifier>{b3c633c7-ba9e-443e-9467-40893368b283}</UniqueIdentifier>
     </Filter>
@@ -33,6 +30,9 @@
     </Filter>
     <Filter Include="Shaders\03. Model">
       <UniqueIdentifier>{99b20663-294c-4d62-9866-da4dd4df76b4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shaders\02. Lighting, Material">
+      <UniqueIdentifier>{4f20a1d8-1e1e-4b27-a15f-8f7b98af9ed7}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -199,30 +199,33 @@
       <Filter>Shaders\Common</Filter>
     </FxCompile>
     <FxCompile Include="..\Shaders\08. GlobalTest.fx">
-      <Filter>Shaders\02.Lighting, Material</Filter>
+      <Filter>Shaders\02. Lighting, Material</Filter>
     </FxCompile>
     <FxCompile Include="..\Shaders\09. Lighting_Ambient.fx">
-      <Filter>Shaders\02.Lighting, Material</Filter>
+      <Filter>Shaders\02. Lighting, Material</Filter>
     </FxCompile>
     <FxCompile Include="..\Shaders\10. Lighting_Diffuse.fx">
-      <Filter>Shaders\02.Lighting, Material</Filter>
+      <Filter>Shaders\02. Lighting, Material</Filter>
     </FxCompile>
     <FxCompile Include="..\Shaders\11. Lighting_Specular.fx">
-      <Filter>Shaders\02.Lighting, Material</Filter>
+      <Filter>Shaders\02. Lighting, Material</Filter>
     </FxCompile>
     <FxCompile Include="..\Shaders\12. Lighting_Emissive.fx">
-      <Filter>Shaders\02.Lighting, Material</Filter>
+      <Filter>Shaders\02. Lighting, Material</Filter>
     </FxCompile>
     <FxCompile Include="..\Shaders\00. Light.fx">
       <Filter>Shaders\Common</Filter>
     </FxCompile>
     <FxCompile Include="..\Shaders\13. Lighting.fx">
-      <Filter>Shaders\02.Lighting, Material</Filter>
+      <Filter>Shaders\02. Lighting, Material</Filter>
     </FxCompile>
     <FxCompile Include="..\Shaders\14. NormalMapping.fx">
-      <Filter>Shaders\02.Lighting, Material</Filter>
+      <Filter>Shaders\02. Lighting, Material</Filter>
     </FxCompile>
     <FxCompile Include="..\Shaders\15. StaticModel.fx">
+      <Filter>Shaders\03. Model</Filter>
+    </FxCompile>
+    <FxCompile Include="..\Shaders\16. Animation.fx">
       <Filter>Shaders\03. Model</Filter>
     </FxCompile>
   </ItemGroup>

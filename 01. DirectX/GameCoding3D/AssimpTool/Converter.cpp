@@ -559,11 +559,9 @@ void Converter::WriteAnimationData(shared_ptr<asAnimation> animation, wstring fi
 	file->Write<uint32>(animation->frameCount);
 
 	file->Write<uint32>(animation->keyframes.size());
-
 	for (shared_ptr<asKeyframe> keyframe : animation->keyframes)
 	{
 		file->Write<string>(keyframe->boneName);
-
 		file->Write<uint32>(keyframe->transforms.size());
 		file->Write(&keyframe->transforms[0], sizeof(asKeyframeData) * keyframe->transforms.size());
 	}
