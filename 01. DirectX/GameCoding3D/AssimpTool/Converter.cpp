@@ -36,7 +36,7 @@ void Converter::ExportModelData(wstring savePath)
 	ReadSkinData();
 
 	//Write CSV File
-	/*{
+	{
 		FILE* file;
 		::fopen_s(&file, "../Vertices.csv", "w");
 
@@ -69,7 +69,7 @@ void Converter::ExportModelData(wstring savePath)
 	}
 
 
-	WriteModelFile(finalPath);*/
+	WriteModelFile(finalPath);
 }
 
 void Converter::ExportMaterialData(wstring savePath)
@@ -81,7 +81,7 @@ void Converter::ExportMaterialData(wstring savePath)
 
 void Converter::ExportAnimationData(wstring savePath, uint32 index)
 {
-	wstring finalPath = _modelPath + _texturePath + savePath + L".clip";
+	wstring finalPath = _modelPath + savePath + L".clip";
 	assert(index < _scene->mNumAnimations);
 
 	shared_ptr<asAnimation> animation = ReadAnimationData(_scene->mAnimations[index]);
