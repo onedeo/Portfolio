@@ -14,7 +14,6 @@ namespace Scripts.BehaviourTrees.RefactBT
     public class Node
     {
         protected NodeState state;
-        protected Tree tree;
 
         public Node parent;
         protected List<Node> children;

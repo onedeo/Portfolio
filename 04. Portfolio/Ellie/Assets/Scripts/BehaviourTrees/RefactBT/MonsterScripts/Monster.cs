@@ -7,14 +7,13 @@ namespace Scripts.BehaviourTrees.RefactBT
 {
     public class Monster : MonoBehaviour
     {
-
-
         public NavMeshAgent agent;
 
         public MonsterCenter MonsterCenter { get; private set; }
+        public Vector3 SpawnPosition { get; private set; }
+
         private DetectAI detectPlayer;
         private DetectAI detectChase;
-        public Vector3 SpawnPosition { get; private set; }
 
         [SerializeField]
         public List<Transform> patrolPoints;

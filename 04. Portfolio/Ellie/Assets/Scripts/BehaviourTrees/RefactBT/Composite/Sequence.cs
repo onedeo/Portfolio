@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Scripts.BehaviourTrees.RefactBT
 {
-    public class Sequence : Node
+    public class Sequence : MonsterNode
     {
         public Sequence() : base() { }
         public Sequence(List<Node> childrens) : base(childrens) { }

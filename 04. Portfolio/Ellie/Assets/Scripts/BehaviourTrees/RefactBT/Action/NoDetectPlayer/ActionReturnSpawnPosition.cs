@@ -32,7 +32,7 @@ namespace Scripts.BehaviourTrees.RefactBT
             float distance = Vector3.SqrMagnitude(transform.position - monster.SpawnPosition);
             if (distance > 0.5f)
             {
-                isOnSpawnPosition = true;
+                tree.IsOnSpawnPosition = true;
                 return NodeState.SUCCESS;
             }
             else return NodeState.RUNNING;
