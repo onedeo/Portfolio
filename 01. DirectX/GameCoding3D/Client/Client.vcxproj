@@ -144,6 +144,8 @@
     <FxCompile Include="..\Shaders\14. NormalMapping.fx" />
     <FxCompile Include="..\Shaders\15. StaticModel.fx" />
     <FxCompile Include="..\Shaders\16. Animation.fx" />
+    <FxCompile Include="..\Shaders\17. Tween.fx" />
+    <FxCompile Include="..\Shaders\18. Sky.fx" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

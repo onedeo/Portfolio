@@ -90,6 +90,11 @@ SamplerState PointSampler
 	AddressU = Wrap;
 	AddressV = Wrap;
 };
+
+RasterizerState FrontCounterClockwiseTrue
+{
+	FrontCounterClockwise = true;
+};
 // << : Sampler State
 
 // >> : Rasterizer State

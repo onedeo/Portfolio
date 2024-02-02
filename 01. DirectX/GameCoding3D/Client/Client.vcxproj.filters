@@ -228,5 +228,11 @@
     <FxCompile Include="..\Shaders\16. Animation.fx">
       <Filter>Shaders\03. Model</Filter>
     </FxCompile>
+    <FxCompile Include="..\Shaders\17. Tween.fx">
+      <Filter>Shaders\03. Model</Filter>
+    </FxCompile>
+    <FxCompile Include="..\Shaders\18. Sky.fx">
+      <Filter>Shaders\03. Model</Filter>
+    </FxCompile>
   </ItemGroup>
 </Project>
