@@ -23,7 +23,7 @@ void DepthStencilDemo::Init()
 	_obj->GetOrAddTransform();
 	_obj->AddComponent(make_shared<MeshRenderer>());
 	{
-		_obj->GetMeshRenderer()->SetShader(_shader);
+		//_obj->GetMeshRenderer()->SetShader(_shader);
 	}
 	{
 		RESOURCES->Init();
@@ -32,7 +32,7 @@ void DepthStencilDemo::Init()
 	}
 	{
 		auto texture = RESOURCES->Load<Texture>(L"echo", L"..\\Resources\\Textures\\echo.jpg");
-		_obj->GetMeshRenderer()->SetTexture(texture);
+		//_obj->GetMeshRenderer()->SetTexture(texture);
 	}
 	{
 		_obj->AddComponent(make_shared<Turning>());
@@ -42,7 +42,7 @@ void DepthStencilDemo::Init()
 	_obj2->GetOrAddTransform()->SetPosition(Vec3{ 0.5f, 0.f, 2.f });
 	_obj2->AddComponent(make_shared<MeshRenderer>());
 	{
-		_obj2->GetMeshRenderer()->SetShader(_shader);
+		//_obj2->GetMeshRenderer()->SetShader(_shader);
 	}
 	{
 		auto mesh = RESOURCES->Get<Mesh>(L"Cube");
@@ -50,7 +50,7 @@ void DepthStencilDemo::Init()
 	}
 	{
 		auto texture = RESOURCES->Load<Texture>(L"echo", L"..\\Resources\\Textures\\echo.jpg");
-		_obj2->GetMeshRenderer()->SetTexture(texture);
+		//_obj2->GetMeshRenderer()->SetTexture(texture);
 	}
 	RENDER->Init(_shader);
 }

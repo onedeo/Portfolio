@@ -21,6 +21,7 @@ WPARAM Game::Run(GameDesc& desc)
 	TIME->Init();
 	INPUT->Init(_desc.hWnd);
 	GUI->Init();
+	RESOURCES->Init();
 	
 	_desc.app->Init();
 
@@ -92,7 +93,7 @@ LRESULT CALLBACK Game::WndProc(HWND handle, UINT message, WPARAM wParam, LPARAM 
 	case WM_CLOSE:
 	case WM_DESTROY:
 		PostQuitMessage(0);
-		break;
+		break; 
 	default:
 		return ::DefWindowProc(handle, message, wParam, lParam);
 	}
@@ -103,7 +104,11 @@ void Game::Update()
 	TIME->Update();
 	INPUT->Update();
 
+	ShowFPS();
+
 	GRAPHICS->RenderBegin();
+
+	SCENE->Update();
 
 	GUI->Update();
 	_desc.app->Update();
@@ -111,5 +116,15 @@ void Game::Update()
 	GUI->Render();
 
 	GRAPHICS->RenderEnd();
+}
+
+void Game::ShowFPS()
+{
+	uint32 fps = GET_SINGLE(TimeManager)->GetFps();
+
+	WCHAR text[100] = L"";
+	::wsprintf(text, L"FPS : %d", fps);
+
+	::SetWindowText(_desc.hWnd, text);
 }
 

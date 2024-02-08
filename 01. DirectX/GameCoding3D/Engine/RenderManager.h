@@ -37,6 +37,7 @@ struct MaterialDesc
 // Bone
 #define MAX_MODEL_TRANSFORMS 250
 #define MAX_MODEL_KEYFRAMES 500
+#define MAX_MODEL_INSTANCE 500
 
 struct BoneDesc
 {
@@ -80,6 +81,11 @@ struct TweenDesc
 	KeyframeDesc next;
 };
 
+struct InstancedTweenDesc
+{
+	TweenDesc tweens[MAX_MODEL_INSTANCE];
+};
+
 class RenderManager
 {
 	DECLARE_SINGLE(RenderManager);
@@ -94,7 +100,7 @@ public:
 	void PushMaterialData(const MaterialDesc& desc);
 	void PushBoneData(const BoneDesc& desc);
 	void PushKeyframeData(const KeyframeDesc& desc);
-	void PushTweenData(const TweenDesc& desc);
+	void PushTweenData(const InstancedTweenDesc& desc);
 
 private:
 	shared_ptr<Shader> _shader;
@@ -123,8 +129,8 @@ private:
 	shared_ptr<ConstantBuffer<KeyframeDesc>> _keyframeBuffer;
 	ComPtr<ID3DX11EffectConstantBuffer> _keyframeEffectBuffer;
 
-	TweenDesc _tweenDesc;
-	shared_ptr<ConstantBuffer<TweenDesc>> _tweenBuffer;
+	InstancedTweenDesc _tweenDesc;
+	shared_ptr<ConstantBuffer<InstancedTweenDesc>> _tweenBuffer;
 	ComPtr<ID3DX11EffectConstantBuffer> _tweenEffectBuffer;
 };
 

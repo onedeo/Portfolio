@@ -16,16 +16,20 @@ public:
 
 	void SetMesh(shared_ptr<Mesh> mesh) { _mesh = mesh; }
 	void SetMaterial(shared_ptr<Material> material) { _material = material; }
+	void SetPass(uint8 pass) { _pass = pass; }
+	
+	void RenderInstancing(shared_ptr<class InstancingBuffer>& buffer);
+	InstanceID GetInstanceID();
 
 	// Legacy
 	void SetTexture(shared_ptr<Texture> texture) {  }
 	void SetShader(shared_ptr<Shader> shader) {  }
 
+
 private:
 	shared_ptr<Mesh> _mesh;
 	shared_ptr<Material> _material;
-	/*_material 안으로 들어간다
-	shared_ptr<Texture> _texture;
-	shared_ptr<Shader> _shader;*/
+	uint8 _pass = 0;
+
 };
 

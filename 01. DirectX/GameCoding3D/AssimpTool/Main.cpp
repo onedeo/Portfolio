@@ -20,7 +20,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	desc.clearColor = Color(0.f, 0.2f, 0.f, 0.f);
 	//desc.app = make_shared<ImGUIDemo>();
 	//desc.app = make_shared<StaticMeshDemo>(); 
-	desc.app = make_shared<SkyDemo>();
+	desc.app = make_shared<AssimpTool>();
 
 	GAME->Run(desc);
 

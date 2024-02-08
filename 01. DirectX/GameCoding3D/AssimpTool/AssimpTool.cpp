@@ -54,6 +54,12 @@ void AssimpTool::Init()
 		converter->ExportMaterialData(L"Kachujin/Kachujin");
 		converter->ExportModelData(L"Kachujin/Kachujin");
 	}
+	{// Dool
+		shared_ptr<Converter> converter = make_shared<Converter>();
+		converter->ReadAssetFile(L"Dool/Dool.fbx");
+		converter->ExportModelData(L"Dool/Dool");
+
+	}
 	// Animation
 	{
 		shared_ptr<Converter> converter = make_shared<Converter>();
