@@ -76,13 +76,13 @@ void NormalMappingDemo::Init()
 
 		_obj2->GetMeshRenderer()->SetMaterial(material);
 	}
-	RENDER->Init(_shader);
+	//
 }
 
 void NormalMappingDemo::Update()
 {
 	_camera->Update();
-	RENDER->Update();
+	//
 	{
 		LightDesc lightDesc;
 		lightDesc.ambient = Vec4(0.5f);
@@ -90,7 +90,7 @@ void NormalMappingDemo::Update()
 		lightDesc.specular = Vec4(1.f, 1.f, 1.f, 1.f);
 		lightDesc.emissive = Vec4(0.f, 1, 0, 0);
 		lightDesc.direction = Vec3(0.f, 0.f, 1.f);
-		RENDER->PushLightData(lightDesc);
+		//
 	}
 
 	{
@@ -100,7 +100,7 @@ void NormalMappingDemo::Update()
 		desc.specular = Vec4(1.f);
 		//desc.emissive = Color(0.f, 0.f, 0.f, 0.f);
 
-		RENDER->PushMaterialData(desc);
+//
 		_obj->Update();
 	}
 
@@ -111,7 +111,7 @@ void NormalMappingDemo::Update()
 		desc.specular = Color(0.5f, 0.5f, 0.5f, 1.f);
 		//desc.emissive = Color(0.f, 1.f, 0.f, 1.f);
 
-		RENDER->PushMaterialData(desc);
+//
 		_obj2->Update();
 	}
 }

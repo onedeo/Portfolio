@@ -15,18 +15,19 @@ public:
 	virtual ~Camera();
 
 	virtual void Update() override;
+	void UpdateMatrix();
 
 	ProjectionType GetProjectionType() { return _type; }
 	float SetNear(float value) { _near = value; }
 	float Setfar(float value) { _far = value; }
 	float SetFOV(float value) { _fov = value; }
 	float SetWidth(float value) { _width= value; }
-	float SetHeight(float value) { _height= value; }
-	
+	float SetHeight(float value) { _height= value; }	
 
 	void SetProjectionType(ProjectionType type) { _type = type; }
-		
-	void UpdateMatrix();
+
+	Matrix& GetViewMatrix() { return _matView; }
+	Matrix& GetProjectionMatrix() { return _matProjection; }		
 	
 private:
 	ProjectionType _type = ProjectionType::Perspective;

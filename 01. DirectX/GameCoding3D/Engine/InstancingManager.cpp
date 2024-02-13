@@ -134,7 +134,7 @@ void InstancingManager::RenderAnimRenderer(vector<shared_ptr<GameObject>>& gameO
 				tweenDesc->tweens[i] = gameObject->GetModelAnimator()->GetTweenDesc();
 			}
 
-			RENDER->PushTweenData(*tweenDesc.get());
+			vec[0]->GetModelAnimator()->GetShader()->PushTweenData(*tweenDesc.get());
 
 			// 그려주기
 			shared_ptr<InstancingBuffer>& buffer = _buffers[instanceId];

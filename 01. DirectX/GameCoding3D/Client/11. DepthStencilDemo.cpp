@@ -52,14 +52,14 @@ void DepthStencilDemo::Init()
 		auto texture = RESOURCES->Load<Texture>(L"echo", L"..\\Resources\\Textures\\echo.jpg");
 		//_obj2->GetMeshRenderer()->SetTexture(texture);
 	}
-	RENDER->Init(_shader);
+	////
 }
 
 void DepthStencilDemo::Update()
 {
 	_camera->Update();
 
-	RENDER->Update();
+	////
 	
 	//DepthStencil이 없으면 그리는 순서대로 앞/뒤가 결정된다 (2d같이)
 	_obj->Update();

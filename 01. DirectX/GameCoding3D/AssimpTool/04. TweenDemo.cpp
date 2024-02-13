@@ -25,13 +25,13 @@ void TweenDemo::Init()
 	// Model
 	CreateKachujuin();
 
-	RENDER->Init(_shader);
+	//
 }
 
 void TweenDemo::Update()
 {
 	_camera->Update();
-	RENDER->Update();
+	//
 
 	{
 		LightDesc lightDesc;
@@ -39,7 +39,7 @@ void TweenDemo::Update()
 		lightDesc.diffuse = Vec4(1.f);
 		lightDesc.specular = Vec4(0.f);
 		lightDesc.direction = Vec3(1.f, 0.f, 1.f);
-		RENDER->PushLightData(lightDesc);
+		//
 	}
 	{
 		_obj->Update();

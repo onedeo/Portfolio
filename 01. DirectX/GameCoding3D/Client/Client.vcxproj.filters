@@ -37,6 +37,15 @@
     <Filter Include="Shaders\04. Instancing">
       <UniqueIdentifier>{0e2c38c5-3772-4bb9-bd7b-d127e1ade5b2}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Game\05. Extra">
+      <UniqueIdentifier>{dcd521d5-e676-4933-898b-6c1fa952d4ae}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shaders\05. Extra">
+      <UniqueIdentifier>{ffa4e1a7-0b67-499c-a80c-bea054a91e70}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\06. Collision">
+      <UniqueIdentifier>{2f84668f-f803-45a1-9d91-e2b1ee7ed050}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
@@ -120,6 +129,24 @@
     </ClCompile>
     <ClCompile Include="24. SceneDemo.cpp">
       <Filter>Game\04. Instancing</Filter>
+    </ClCompile>
+    <ClCompile Include="25. RawBufferDemo.cpp">
+      <Filter>Game\05. Extra</Filter>
+    </ClCompile>
+    <ClCompile Include="26. GroupDemo.cpp">
+      <Filter>Game\05. Extra</Filter>
+    </ClCompile>
+    <ClCompile Include="27. TextureBufferDemo.cpp">
+      <Filter>Game\05. Extra</Filter>
+    </ClCompile>
+    <ClCompile Include="28. StructuredBufferDemo.cpp">
+      <Filter>Game\05. Extra</Filter>
+    </ClCompile>
+    <ClCompile Include="29. ViewportDemo.cpp">
+      <Filter>Game\05. Extra</Filter>
+    </ClCompile>
+    <ClCompile Include="30. CollisionDemo.cpp">
+      <Filter>Game\06. Collision</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -211,6 +238,27 @@
     <ClInclude Include="24. SceneDemo.h">
       <Filter>Game\04. Instancing</Filter>
     </ClInclude>
+    <ClInclude Include="25. RawBufferDemo.h">
+      <Filter>Game\05. Extra</Filter>
+    </ClInclude>
+    <ClInclude Include="Instancing.h">
+      <Filter>Game\04. Instancing</Filter>
+    </ClInclude>
+    <ClInclude Include="26. GroupDemo.h">
+      <Filter>Game\05. Extra</Filter>
+    </ClInclude>
+    <ClInclude Include="27. TextureBufferDemo.h">
+      <Filter>Game\05. Extra</Filter>
+    </ClInclude>
+    <ClInclude Include="28. StructuredBufferDemo.h">
+      <Filter>Game\05. Extra</Filter>
+    </ClInclude>
+    <ClInclude Include="29. ViewportDemo.h">
+      <Filter>Game\05. Extra</Filter>
+    </ClInclude>
+    <ClInclude Include="30. CollisionDemo.h">
+      <Filter>Game\06. Collision</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <FxCompile Include="..\Shaders\01. Triangle.fx">
@@ -290,6 +338,18 @@
     </FxCompile>
     <FxCompile Include="..\Shaders\00. Render.fx">
       <Filter>Shaders\Common</Filter>
+    </FxCompile>
+    <FxCompile Include="..\Shaders\24. RawBuffer.fx">
+      <Filter>Shaders\05. Extra</Filter>
+    </FxCompile>
+    <FxCompile Include="..\Shaders\25. Group.fx">
+      <Filter>Shaders\05. Extra</Filter>
+    </FxCompile>
+    <FxCompile Include="..\Shaders\26. TextureBuffer.fx">
+      <Filter>Shaders\05. Extra</Filter>
+    </FxCompile>
+    <FxCompile Include="..\Shaders\27. StructuredBuffer.fx">
+      <Filter>Shaders\05. Extra</Filter>
     </FxCompile>
   </ItemGroup>
 </Project>

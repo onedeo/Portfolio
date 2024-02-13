@@ -37,14 +37,14 @@ void GlobalTestDemo::Init()
 	{
 		_obj->AddComponent(make_shared<Turning>());
 	}
-	RENDER->Init(_shader);
+	////
 }
 
 void GlobalTestDemo::Update()
 {
 	_camera->Update();
 
-	RENDER->Update();
+	////
 	
 	_obj->Update();
 }

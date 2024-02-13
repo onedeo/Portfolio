@@ -44,13 +44,13 @@ void MeshInstancingDemo::Init()
 		_objs.push_back(obj);
 	}
 
-	RENDER->Init(_shader);
+	//
 }
 
 void MeshInstancingDemo::Update()
 {
 	_camera->Update();
-	RENDER->Update();
+	//
 
 	{
 		LightDesc lightDesc;
@@ -58,7 +58,7 @@ void MeshInstancingDemo::Update()
 		lightDesc.diffuse = Vec4(1.f);
 		lightDesc.specular = Vec4(0.1f);
 		lightDesc.direction = Vec3(1.f, 0.f, 1.f);
-		RENDER->PushLightData(lightDesc);
+		//
 	}
 
 	INSTANCING->Render(_objs);

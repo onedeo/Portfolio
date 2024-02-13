@@ -53,13 +53,13 @@ void EmissiveDemo::Init()
 		auto texture = RESOURCES->Load<Texture>(L"echo", L"..\\Resources\\Textures\\echo.jpg");
 		_obj2->GetMeshRenderer()->SetTexture(texture);
 	}
-	RENDER->Init(_shader);
+	////
 }
 
 void EmissiveDemo::Update()
 {
 	_camera->Update();
-	RENDER->Update();
+	////
 	
 	{
 		Vec4 materialEmissive(1.f, 0.f, 0.f, 1.f);

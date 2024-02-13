@@ -84,4 +84,3 @@ using namespace Microsoft::WRL;
 #include "Texture.h"
 #include "MeshRenderer.h"
 #include "Mesh.h"
-#include "RenderManager.h"

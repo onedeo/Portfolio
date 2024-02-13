@@ -42,8 +42,15 @@
     <ClInclude Include="22. AnimInstancingDemo.h" />
     <ClInclude Include="23. RenderDemo.h" />
     <ClInclude Include="24. SceneDemo.h" />
+    <ClInclude Include="25. RawBufferDemo.h" />
+    <ClInclude Include="26. GroupDemo.h" />
+    <ClInclude Include="27. TextureBufferDemo.h" />
+    <ClInclude Include="28. StructuredBufferDemo.h" />
+    <ClInclude Include="29. ViewportDemo.h" />
+    <ClInclude Include="30. CollisionDemo.h" />
     <ClInclude Include="BasicShapes.h" />
     <ClInclude Include="CameraScript.h" />
+    <ClInclude Include="Instancing.h" />
     <ClInclude Include="LightingMaterial.h" />
     <ClInclude Include="Main.h" />
     <ClInclude Include="pch.h" />
@@ -74,6 +81,12 @@
     <ClCompile Include="22. AnimInstancingDemo.cpp" />
     <ClCompile Include="23. RenderDemo.cpp" />
     <ClCompile Include="24. SceneDemo.cpp" />
+    <ClCompile Include="25. RawBufferDemo.cpp" />
+    <ClCompile Include="26. GroupDemo.cpp" />
+    <ClCompile Include="27. TextureBufferDemo.cpp" />
+    <ClCompile Include="28. StructuredBufferDemo.cpp" />
+    <ClCompile Include="29. ViewportDemo.cpp" />
+    <ClCompile Include="30. CollisionDemo.cpp" />
     <ClCompile Include="CameraScript.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="pch.cpp">
@@ -164,6 +177,10 @@
     <FxCompile Include="..\Shaders\21. ModelInstancing.fx" />
     <FxCompile Include="..\Shaders\22. AnimInstancing.fx" />
     <FxCompile Include="..\Shaders\23. Render.fx" />
+    <FxCompile Include="..\Shaders\24. RawBuffer.fx" />
+    <FxCompile Include="..\Shaders\25. Group.fx" />
+    <FxCompile Include="..\Shaders\26. TextureBuffer.fx" />
+    <FxCompile Include="..\Shaders\27. StructuredBuffer.fx" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
