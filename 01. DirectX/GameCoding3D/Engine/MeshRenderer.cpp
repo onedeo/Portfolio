@@ -31,8 +31,6 @@ void MeshRenderer::RenderInstancing(shared_ptr<class InstancingBuffer>& buffer)
 
 	// GlobalData
 	shader->PushGlobalData(Camera::S_MatView, Camera::S_MatProjection);
-	auto world = GetTransform()->GetWorldMatrix();
-	shader->PushTransformData(TransformDesc{ world });
 
 	// Light
 	auto lightObj = SCENE->GetCurrentScene()->GetLight();
@@ -41,6 +39,10 @@ void MeshRenderer::RenderInstancing(shared_ptr<class InstancingBuffer>& buffer)
 
 	// Light
 	_material->Update();
+
+	auto world = GetTransform()->GetWorldMatrix();
+	shader->PushTransformData(TransformDesc{ world });
+	
 
 	// IA
 	_mesh->GetVertexBuffer()->PushData();

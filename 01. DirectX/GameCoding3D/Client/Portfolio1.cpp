@@ -76,10 +76,11 @@ void Portfolio1::SetSceneBasic()
 		auto obj = make_shared<GameObject>();
 		obj->GetOrAddTransform()->SetPosition(Vec3(0.f,0.5f, 0.f));
 		obj->AddComponent(make_shared<MeshRenderer>());
-		obj->GetMeshRenderer()->SetMaterial(RESOURCES->Get<Material>(L"Veigar"));
+		obj->GetMeshRenderer()->SetMaterial(RESOURCES->Get<Material>(L"Circles"));
 		auto mesh = RESOURCES->Get<Mesh>(L"Sphere");
 		obj->GetMeshRenderer()->SetMesh(mesh);
 		obj->SetName("Sphere");
+		obj->AddComponent(make_shared<Turning>());
 
 		_scenes[BASIC]->Add(obj);
 	}
@@ -107,6 +108,7 @@ void Portfolio1::SetSceneBasic()
 		obj->GetMeshRenderer()->SetMesh(mesh);
 		auto material = RESOURCES->Get<Material>(L"Leather");
 		obj->GetMeshRenderer()->SetMaterial(material);
+		obj->AddComponent(make_shared<Turning>());
 
 		_scenes[BASIC]->Add(obj);
 	}
@@ -187,9 +189,6 @@ void Portfolio1::SetSceneBasic()
 			_scenes[BASIC]->Add(obj[i]);
 	}
 
-
-
-
 	// Ellie
 	{
 		auto m1 = make_shared<Model>();
@@ -201,6 +200,8 @@ void Portfolio1::SetSceneBasic()
 		obj->GetOrAddTransform()->SetScale(Vec3(0.01f));
 		obj->AddComponent(make_shared<ModelRenderer>(_shader));
 		obj->GetModelRenderer()->SetModel(m1);
+		obj->AddComponent(make_shared<Turning>());
+
 		_scenes[BASIC]->Add(obj);
 	}
 
@@ -315,6 +316,27 @@ void Portfolio1::LoadTextures()
 			desc.diffuse = Vec4(1.f);
 			desc.specular = Vec4(1.f);
 			RESOURCES->Add(L"Leather", material);
+		}
+	}
+	// TextureCircles
+	{
+		if (!RESOURCES->Exists<Texture>(L"Circles"))
+		{
+			auto material = make_shared<Material>();
+			material->SetShader(_shader);
+			{
+				auto diffuseTexture = RESOURCES->Load<Texture>(L"Circles", L"..\\Resources\\Textures\\Circles.png");
+				material->SetDiffuseMap(diffuseTexture);
+			}
+			{
+				auto normalTexture = RESOURCES->Load<Texture>(L"LeatherNormal", L"..\\Resources\\Textures\\Circles_Normal.png");
+				material->SetNormalMap(normalTexture);
+			}
+			MaterialDesc& desc = material->GetMaterialDesc();
+			desc.ambient = Vec4(1.f);
+			desc.diffuse = Vec4(1.f);
+			desc.specular = Vec4(1.f);
+			RESOURCES->Add(L"Circles", material);
 		}
 	}
 }

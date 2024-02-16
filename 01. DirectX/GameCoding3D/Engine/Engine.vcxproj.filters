@@ -240,7 +240,7 @@
     <ClInclude Include="MathUtils.h">
       <Filter>99. Headers\Math</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\..\..\Downloads\A-19)+NormalMapping\Engine\ResourceManager.h">
+    <ClInclude Include="ResourceManager.h">
       <Filter>02. Managers</Filter>
     </ClInclude>
   </ItemGroup>
@@ -422,7 +422,7 @@
     <ClCompile Include="MathUtils.cpp">
       <Filter>99. Headers\Math</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\..\Downloads\A-19)+NormalMapping\Engine\ResourceManager.cpp">
+    <ClCompile Include="ResourceManager.cpp">
       <Filter>02. Managers</Filter>
     </ClCompile>
   </ItemGroup>
