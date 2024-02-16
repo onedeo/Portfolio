@@ -10,6 +10,7 @@
 #include "28. StructuredBufferDemo.h"
 #include "29. ViewportDemo.h"
 #include "30. CollisionDemo.h"
+#include "Portfolio1.h"
 
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nShowCmd)
 {
@@ -18,10 +19,10 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	desc.hInstance = hInstance;
 	desc.vsync = false;
 	desc.hWnd = NULL;
-	desc.width = 800;
-	desc.height = 600;
+	desc.width = 1200;
+	desc.height = 800;
 	desc.clearColor = Color(0.f, 0.2f, 0.f, 0.f);
-	desc.app = make_shared<CollisionDemo>(); //실행할 앱을 넣어주면된다 : 실행 단위
+	desc.app = make_shared<Portfolio1>();
 
 	GAME->Run(desc);
 

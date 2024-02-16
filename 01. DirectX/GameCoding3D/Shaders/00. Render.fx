@@ -7,8 +7,6 @@
 #define MAX_MODEL_KEYFRAMES 500
 #define MAX_MODEL_INSTANCE 500
 
-// >> : Mesh Render
-
 struct VertexMesh
 {
     float4 position : POSITION;
@@ -20,6 +18,17 @@ struct VertexMesh
     matrix world : INST;
 };
 
+// >> : WireFrameMode
+VertexOutput VS_Wireframe(VertexMesh input)
+{
+    VertexOutput output;
+    output.position = input.position;
+
+    return output;
+}
+// << : WireFrameMode
+
+// >> : Mesh Render
 MeshOutput VS_Mesh(VertexMesh input)
 {
     MeshOutput output;
@@ -29,6 +38,7 @@ MeshOutput VS_Mesh(VertexMesh input)
     output.position = mul(output.position, VP);
     output.uv = input.uv;
     output.normal = input.normal;
+    output.tangent = input.tangent;
 
     return output;
 }
@@ -69,6 +79,7 @@ MeshOutput VS_Model(VertexModel input)
     output.position = mul(output.position, VP);
     output.uv = input.uv;
     output.normal = input.normal;
+    output.tangent = input.tangent;
 
     return output;
 }

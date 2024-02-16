@@ -22,6 +22,9 @@ public:
 	template<typename T>
 	shared_ptr<T> Get(const wstring& key);
 
+	template<typename T>
+	bool Exists(const wstring& key);
+
 	shared_ptr<Texture> GetOrAddTexture(const wstring& key, const wstring& path);
 
 	template<typename T>
@@ -81,6 +84,12 @@ shared_ptr<T> ResourceManager::Get(const wstring& key)
 		return static_pointer_cast<T>(findIt->second);
 
 	return nullptr;
+}
+
+template<typename T>
+bool ResourceManager::Exists(const wstring& key)
+{
+	return Get<T>(key) != nullptr;
 }
 
 template<typename T>

@@ -179,7 +179,7 @@ void Converter::ReadSkinData()
 		vector<asBoneWeight> tempVertexBoneWeights;
 		tempVertexBoneWeights.resize(mesh->vertices.size());
 
-		// Bone을 순회하면서 연관된 vertexID, weight를 구해석 ㅣ록
+		// Bone을 순회하면서 연관된 vertexID, weight를 구해석 기록
 		for (uint32 b = 0; b < srcMesh->mNumBones; b++)
 		{
 			aiBone* srcMeshBone = srcMesh->mBones[b];

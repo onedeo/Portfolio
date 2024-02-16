@@ -148,6 +148,9 @@
     <ClCompile Include="30. CollisionDemo.cpp">
       <Filter>Game\06. Collision</Filter>
     </ClCompile>
+    <ClCompile Include="Portfolio1.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h">
@@ -258,6 +261,9 @@
     </ClInclude>
     <ClInclude Include="30. CollisionDemo.h">
       <Filter>Game\06. Collision</Filter>
+    </ClInclude>
+    <ClInclude Include="Portfolio1.h">
+      <Filter>Game</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -65,6 +65,7 @@ struct VertexOutput
 	float4 position : SV_POSITION; //SV : SystemValue
 	float2 uv : TEXCOORD;
 	float3 normal : NORMAL;
+    float3 tangetn : TANGENT;
 };
 struct MeshOutput
 {

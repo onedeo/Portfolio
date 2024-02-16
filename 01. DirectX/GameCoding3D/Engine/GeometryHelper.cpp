@@ -747,3 +747,416 @@ void GeometryHelper::CreateSphere(shared_ptr<Geometry<VertexTextureNormalTangent
 
 	geometry->SetIndices(idx);
 }
+
+
+
+void GeometryHelper::CreateVertexIndex(vector<VertexTextureNormalTangentData>& _vtx, vector<uint32>& _idx)
+{
+	vector<VertexTextureNormalTangentData> vtx(8);
+
+	// vertices
+	//front 4 vertices
+	vtx[0].position.x = -0.5f;	vtx[0].position.y = -0.5f;	vtx[0].position.z = -0.5f;
+	vtx[1].position.x = -0.5f;	vtx[1].position.y = 0.5f;	vtx[1].position.z = -0.5f;
+	vtx[2].position.x = 0.5f;	vtx[2].position.y = 0.5f;	vtx[2].position.z = -0.5f;
+	vtx[3].position.x = 0.5f;	vtx[3].position.y = -0.5f;	vtx[3].position.z = -0.5f;
+	// back 4 vertices
+	vtx[4].position.x = -0.5f;	vtx[4].position.y = -0.5f;	vtx[4].position.z = 0.5f;
+	vtx[5].position.x = -0.5f;	vtx[5].position.y = 0.5f;	vtx[5].position.z = 0.5f;
+	vtx[6].position.x = 0.5f;	vtx[6].position.y = 0.5f;	vtx[6].position.z = 0.5f;
+	vtx[7].position.x = 0.5f;	vtx[7].position.y = -0.5f;	vtx[7].position.z = 0.5f;
+
+
+	// indices
+	vector<uint32> idx;
+	// : front
+	idx.push_back(0); idx.push_back(1); idx.push_back(2);
+	idx.push_back(0); idx.push_back(2); idx.push_back(3);
+	// : back
+	idx.push_back(4); idx.push_back(6); idx.push_back(5);
+	idx.push_back(4); idx.push_back(7); idx.push_back(6);
+	// : left
+	idx.push_back(4); idx.push_back(5); idx.push_back(1);
+	idx.push_back(4); idx.push_back(1); idx.push_back(0);
+	// : right
+	idx.push_back(3); idx.push_back(2); idx.push_back(6);
+	idx.push_back(3); idx.push_back(6); idx.push_back(7);
+	// : top
+	idx.push_back(1); idx.push_back(5); idx.push_back(6);
+	idx.push_back(1); idx.push_back(6); idx.push_back(2);
+	// : bottom
+	idx.push_back(4); idx.push_back(0); idx.push_back(3);
+	idx.push_back(4); idx.push_back(3); idx.push_back(7);
+
+	for (uint32 i = 0; i < idx.size(); i += 3)
+	{
+		_vtx[i + 0] = vtx[idx[i + 0]];
+		_vtx[i + 1] = vtx[idx[i + 1]];
+		_vtx[i + 2] = vtx[idx[i + 2]];
+	}
+
+
+	for (int i = 0; i < idx.size(); i++)
+		_idx[i] = i;
+
+	Vec3 u, v, n;
+
+	//normal vector ±¸ÇÏ±â 
+	for (int i = 0; i < 36; i += 3)
+	{
+		u = _vtx[i + 1].position - _vtx[i + 0].position;
+		v = _vtx[i + 2].position - _vtx[i + 0].position;
+		n = XMVector3Cross(u, v);
+		n.Normalize();
+
+		_vtx[i + 0].normal = n;
+		_vtx[i + 1].normal = n;
+		_vtx[i + 2].normal = n;
+	}
+}
+
+void GeometryHelper::CreateBody(shared_ptr<Geometry<VertexTextureNormalTangentData>> geometry)
+{
+	vector<VertexTextureNormalTangentData> _vtx(36);
+	vector<uint32> _idx(36);
+
+	CreateVertexIndex(_vtx, _idx);
+
+	// UV mapping
+	{
+		VertexTextureNormalTangentData v;
+		_vtx[0].uv.x = (float)32 / 64;				_vtx[0].uv.y = (float)32 / 32;
+		_vtx[1].uv.x = (float)32 / 64;				_vtx[1].uv.y = (float)20 / 32;
+		_vtx[2].uv.x = (float)40 / 64;				_vtx[2].uv.y = (float)20 / 32;
+		_vtx[3].uv.x = (float)32 / 64;				_vtx[3].uv.y = (float)32 / 32;
+		_vtx[4].uv.x = (float)40 / 64;				_vtx[4].uv.y = (float)20 / 32;
+		_vtx[5].uv.x = (float)40 / 64;				_vtx[5].uv.y = (float)32 / 32;
+
+		_vtx[6].uv.x = (float)28 / 64;				_vtx[6].uv.y = (float)32 / 32;
+		_vtx[7].uv.x = (float)20 / 64;				_vtx[7].uv.y = (float)20 / 32;
+		_vtx[8].uv.x = (float)28 / 64;				_vtx[8].uv.y = (float)20 / 32;
+		_vtx[9].uv.x = (float)28 / 64;				_vtx[9].uv.y = (float)32 / 32;
+		_vtx[10].uv.x = (float)20 / 64;				_vtx[10].uv.y = (float)32 / 32;
+		_vtx[11].uv.x = (float)20 / 64;				_vtx[11].uv.y = (float)20 / 32;
+
+		_vtx[12].uv.x = (float)28 / 64;				_vtx[12].uv.y = (float)32 / 32;
+		_vtx[13].uv.x = (float)28 / 64;				_vtx[13].uv.y = (float)20 / 32;
+		_vtx[14].uv.x = (float)32 / 64;				_vtx[14].uv.y = (float)20 / 32;
+		_vtx[15].uv.x = (float)28 / 64;				_vtx[15].uv.y = (float)32 / 32;
+		_vtx[16].uv.x = (float)32 / 64;				_vtx[16].uv.y = (float)20 / 32;
+		_vtx[17].uv.x = (float)32 / 64;				_vtx[17].uv.y = (float)32 / 32;
+
+		_vtx[18].uv.x = (float)16 / 64;				_vtx[18].uv.y = (float)32 / 32;
+		_vtx[19].uv.x = (float)16 / 64;				_vtx[19].uv.y = (float)20 / 32;
+		_vtx[20].uv.x = (float)20 / 64;				_vtx[20].uv.y = (float)20 / 32;
+		_vtx[21].uv.x = (float)16 / 64;				_vtx[21].uv.y = (float)32 / 32;
+		_vtx[22].uv.x = (float)20 / 64;				_vtx[22].uv.y = (float)20 / 32;
+		_vtx[23].uv.x = (float)20 / 64;				_vtx[23].uv.y = (float)32 / 32;
+
+		_vtx[24].uv.x = (float)28 / 64;				_vtx[24].uv.y = (float)16 / 32;
+		_vtx[25].uv.x = (float)28 / 64;				_vtx[25].uv.y = (float)20 / 32;
+		_vtx[26].uv.x = (float)20 / 64;				_vtx[26].uv.y = (float)20 / 32;
+		_vtx[27].uv.x = (float)28 / 64;				_vtx[27].uv.y = (float)16 / 32;
+		_vtx[28].uv.x = (float)20 / 64;				_vtx[28].uv.y = (float)20 / 32;
+		_vtx[29].uv.x = (float)20 / 64;				_vtx[29].uv.y = (float)16 / 32;
+
+		_vtx[30].uv.x = (float)28 / 64;				_vtx[30].uv.y = (float)16 / 32;
+		_vtx[31].uv.x = (float)28 / 64;				_vtx[31].uv.y = (float)20 / 32;
+		_vtx[32].uv.x = (float)36 / 64;				_vtx[32].uv.y = (float)20 / 32;
+		_vtx[33].uv.x = (float)28 / 64;				_vtx[33].uv.y = (float)16 / 32;
+		_vtx[34].uv.x = (float)36 / 64;				_vtx[34].uv.y = (float)20 / 32;
+		_vtx[35].uv.x = (float)36 / 64;				_vtx[35].uv.y = (float)20 / 32;
+	}
+
+	geometry->SetVertices(_vtx);
+	geometry->SetIndices(_idx);
+}
+
+void GeometryHelper::CreateHead(shared_ptr<Geometry<VertexTextureNormalTangentData>> geometry)
+{
+	vector<VertexTextureNormalTangentData> _vtx(36);
+	vector<uint32> _idx(36);
+
+	CreateVertexIndex(_vtx, _idx);
+
+	// UV Mapping
+	{
+		_vtx[0].uv.x = (float)24 / 64;   _vtx[0].uv.y = (float)16 / 32;
+		_vtx[1].uv.x = (float)24 / 64;   _vtx[1].uv.y = (float)8 / 32;
+		_vtx[2].uv.x = (float)32 / 64;   _vtx[2].uv.y = (float)8 / 32;
+
+		_vtx[3].uv.x = (float)24 / 64;   _vtx[3].uv.y = (float)16 / 32;
+		_vtx[4].uv.x = (float)32 / 64;   _vtx[4].uv.y = (float)8 / 32;
+		_vtx[5].uv.x = (float)32 / 64;   _vtx[5].uv.y = (float)16 / 32;
+
+		_vtx[6].uv.x = (float)16 / 64;   _vtx[6].uv.y = (float)16 / 32;
+		_vtx[7].uv.x = (float)8 / 64;      _vtx[7].uv.y = (float)8 / 32;
+		_vtx[8].uv.x = (float)16 / 64;   _vtx[8].uv.y = (float)8 / 32;
+
+		_vtx[9].uv.x = (float)16 / 64;   _vtx[9].uv.y = (float)16 / 32;
+		_vtx[10].uv.x = (float)8 / 64;   _vtx[10].uv.y = (float)16 / 32;
+		_vtx[11].uv.x = (float)8 / 64;   _vtx[11].uv.y = (float)8 / 32;
+
+		_vtx[12].uv.x = (float)16 / 64;   _vtx[12].uv.y = (float)16 / 32;
+		_vtx[13].uv.x = (float)16 / 64;   _vtx[13].uv.y = (float)8 / 32;
+		_vtx[14].uv.x = (float)24 / 64;   _vtx[14].uv.y = (float)8 / 32;
+
+		_vtx[15].uv.x = (float)16 / 64;   _vtx[15].uv.y = (float)16 / 32;
+		_vtx[16].uv.x = (float)24 / 64;   _vtx[16].uv.y = (float)8 / 32;
+		_vtx[17].uv.x = (float)25 / 64;   _vtx[17].uv.y = (float)16 / 32;
+
+		_vtx[18].uv.x = (float)0 / 64;   _vtx[18].uv.y = (float)16 / 32;
+		_vtx[19].uv.x = (float)0 / 64;   _vtx[19].uv.y = (float)8 / 32;
+		_vtx[20].uv.x = (float)8 / 64;   _vtx[20].uv.y = (float)8 / 32;
+
+		_vtx[21].uv.x = (float)0 / 64;   _vtx[21].uv.y = (float)16 / 32;
+		_vtx[22].uv.x = (float)8 / 64;   _vtx[22].uv.y = (float)8 / 32;
+		_vtx[23].uv.x = (float)8 / 64;   _vtx[23].uv.y = (float)16 / 32;
+
+		// : Head uvop
+		_vtx[24].uv.x = (float)16 / 64;   _vtx[24].uv.y = (float)0 / 32;
+		_vtx[25].uv.x = (float)16 / 64;   _vtx[25].uv.y = (float)8 / 32;
+		_vtx[26].uv.x = (float)8 / 64;   _vtx[26].uv.y = (float)8 / 32;
+
+		_vtx[27].uv.x = (float)16 / 64;   _vtx[27].uv.y = (float)0 / 32;
+		_vtx[28].uv.x = (float)8 / 64;   _vtx[28].uv.y = (float)8 / 32;
+		_vtx[29].uv.x = (float)8 / 64;   _vtx[29].uv.y = (float)0 / 32;
+
+		_vtx[30].uv.x = (float)24 / 64;   _vtx[30].uv.y = (float)0 / 32;
+		_vtx[31].uv.x = (float)24 / 64;   _vtx[31].uv.y = (float)8 / 32;
+		_vtx[32].uv.x = (float)16 / 64;   _vtx[32].uv.y = (float)8 / 32;
+
+		_vtx[33].uv.x = (float)24 / 64;   _vtx[33].uv.y = (float)0 / 32;
+		_vtx[34].uv.x = (float)16 / 64;   _vtx[34].uv.y = (float)8 / 32;
+		_vtx[35].uv.x = (float)16 / 64;   _vtx[35].uv.y = (float)0 / 32;
+	}
+
+	geometry->SetVertices(_vtx);
+	geometry->SetIndices(_idx);
+}
+
+void GeometryHelper::CreateLArm(shared_ptr<Geometry<VertexTextureNormalTangentData>> geometry)
+{
+	vector<VertexTextureNormalTangentData> _vtx(36);
+	vector<uint32> _idx(36);
+
+	CreateVertexIndex(_vtx, _idx);
+
+	// UV Mapping
+	{
+
+		_vtx[0].uv.x = (float)48 / 64;   _vtx[0].uv.y = (float)32 / 32;
+		_vtx[1].uv.x = (float)48 / 64;   _vtx[1].uv.y = (float)20 / 32;
+		_vtx[2].uv.x = (float)44 / 64;   _vtx[2].uv.y = (float)20 / 32;
+		_vtx[3].uv.x = (float)48 / 64;   _vtx[3].uv.y = (float)32 / 32;
+		_vtx[4].uv.x = (float)44 / 64;   _vtx[4].uv.y = (float)20 / 32;
+		_vtx[5].uv.x = (float)44 / 64;   _vtx[5].uv.y = (float)32 / 32;
+
+		_vtx[6].uv.x = (float)52 / 64;   _vtx[6].uv.y = (float)32 / 32;
+		_vtx[7].uv.x = (float)56 / 64;   _vtx[7].uv.y = (float)20 / 32;
+		_vtx[8].uv.x = (float)52 / 64;   _vtx[8].uv.y = (float)20 / 32;
+		_vtx[9].uv.x = (float)52 / 64;   _vtx[9].uv.y = (float)32 / 32;
+		_vtx[10].uv.x = (float)56 / 64;   _vtx[10].uv.y = (float)32 / 32;
+		_vtx[11].uv.x = (float)56 / 64;   _vtx[11].uv.y = (float)20 / 32;
+
+		_vtx[18].uv.x = (float)44 / 64;   _vtx[12].uv.y = (float)32 / 32;
+		_vtx[19].uv.x = (float)44 / 64;   _vtx[13].uv.y = (float)20 / 32;
+		_vtx[20].uv.x = (float)40 / 64;   _vtx[14].uv.y = (float)20 / 32;
+		_vtx[21].uv.x = (float)44 / 64;   _vtx[15].uv.y = (float)32 / 32;
+		_vtx[22].uv.x = (float)40 / 64;   _vtx[16].uv.y = (float)20 / 32;
+		_vtx[23].uv.x = (float)40 / 64;   _vtx[17].uv.y = (float)32 / 32;
+
+		_vtx[12].uv.x = (float)52 / 64;   _vtx[18].uv.y = (float)32 / 32;
+		_vtx[13].uv.x = (float)52 / 64;   _vtx[19].uv.y = (float)20 / 32;
+		_vtx[14].uv.x = (float)48 / 64;   _vtx[20].uv.y = (float)20 / 32;
+		_vtx[15].uv.x = (float)52 / 64;   _vtx[21].uv.y = (float)32 / 32;
+		_vtx[16].uv.x = (float)48 / 64;   _vtx[22].uv.y = (float)20 / 32;
+		_vtx[17].uv.x = (float)48 / 64;   _vtx[23].uv.y = (float)32 / 32;
+
+		_vtx[24].uv.x = (float)48 / 64;   _vtx[24].uv.y = (float)20 / 32;
+		_vtx[25].uv.x = (float)48 / 64;   _vtx[25].uv.y = (float)16 / 32;
+		_vtx[26].uv.x = (float)44 / 64;   _vtx[26].uv.y = (float)16 / 32;
+		_vtx[27].uv.x = (float)48 / 64;   _vtx[27].uv.y = (float)20 / 32;
+		_vtx[28].uv.x = (float)44 / 64;   _vtx[28].uv.y = (float)16 / 32;
+		_vtx[29].uv.x = (float)44 / 64;   _vtx[29].uv.y = (float)20 / 32;
+
+		_vtx[30].uv.x = (float)52 / 64;   _vtx[30].uv.y = (float)16 / 32;
+		_vtx[31].uv.x = (float)52 / 64;   _vtx[31].uv.y = (float)20 / 32;
+		_vtx[32].uv.x = (float)48 / 64;   _vtx[32].uv.y = (float)20 / 32;
+		_vtx[33].uv.x = (float)52 / 64;   _vtx[33].uv.y = (float)16 / 32;
+		_vtx[34].uv.x = (float)48 / 64;   _vtx[34].uv.y = (float)20 / 32;
+		_vtx[35].uv.x = (float)48 / 64;   _vtx[35].uv.y = (float)16 / 32;
+	}
+
+	geometry->SetVertices(_vtx);
+	geometry->SetIndices(_idx);
+}
+
+void GeometryHelper::CreateRArm(shared_ptr<Geometry<VertexTextureNormalTangentData>> geometry)
+{
+	vector<VertexTextureNormalTangentData> _vtx(36);
+	vector<uint32> _idx(36);
+
+	CreateVertexIndex(_vtx, _idx);
+
+	// UV Mapping
+	{
+		_vtx[0].uv.x = (float)44 / 64;   _vtx[0].uv.y = (float)32 / 32;
+		_vtx[1].uv.x = (float)44 / 64;   _vtx[1].uv.y = (float)20 / 32;
+		_vtx[2].uv.x = (float)48 / 64;   _vtx[2].uv.y = (float)20 / 32;
+		_vtx[3].uv.x = (float)44 / 64;   _vtx[3].uv.y = (float)32 / 32;
+		_vtx[4].uv.x = (float)48 / 64;   _vtx[4].uv.y = (float)20 / 32;
+		_vtx[5].uv.x = (float)48 / 64;   _vtx[5].uv.y = (float)32 / 32;
+
+		_vtx[6].uv.x = (float)56 / 64;   _vtx[6].uv.y = (float)32 / 32;
+		_vtx[7].uv.x = (float)52 / 64;   _vtx[7].uv.y = (float)20 / 32;
+		_vtx[8].uv.x = (float)56 / 64;   _vtx[8].uv.y = (float)20 / 32;
+		_vtx[9].uv.x = (float)56 / 64;   _vtx[9].uv.y = (float)32 / 32;
+		_vtx[10].uv.x = (float)52 / 64;   _vtx[10].uv.y = (float)32 / 32;
+		_vtx[11].uv.x = (float)52 / 64;   _vtx[11].uv.y = (float)20 / 32;
+
+		_vtx[12].uv.x = (float)40 / 64;   _vtx[12].uv.y = (float)32 / 32;
+		_vtx[13].uv.x = (float)40 / 64;   _vtx[13].uv.y = (float)20 / 32;
+		_vtx[14].uv.x = (float)44 / 64;   _vtx[14].uv.y = (float)20 / 32;
+		_vtx[15].uv.x = (float)40 / 64;   _vtx[15].uv.y = (float)32 / 32;
+		_vtx[16].uv.x = (float)44 / 64;   _vtx[16].uv.y = (float)20 / 32;
+		_vtx[17].uv.x = (float)44 / 64;   _vtx[17].uv.y = (float)32 / 32;
+
+		_vtx[18].uv.x = (float)48 / 64;   _vtx[18].uv.y = (float)32 / 32;
+		_vtx[19].uv.x = (float)48 / 64;   _vtx[19].uv.y = (float)20 / 32;
+		_vtx[20].uv.x = (float)52 / 64;   _vtx[20].uv.y = (float)20 / 32;
+		_vtx[21].uv.x = (float)48 / 64;   _vtx[21].uv.y = (float)32 / 32;
+		_vtx[22].uv.x = (float)52 / 64;   _vtx[22].uv.y = (float)20 / 32;
+		_vtx[23].uv.x = (float)52 / 64;   _vtx[23].uv.y = (float)32 / 32;
+
+		_vtx[24].uv.x = (float)44 / 64;   _vtx[24].uv.y = (float)20 / 32;
+		_vtx[25].uv.x = (float)44 / 64;   _vtx[25].uv.y = (float)16 / 32;
+		_vtx[26].uv.x = (float)48 / 64;   _vtx[26].uv.y = (float)16 / 32;
+		_vtx[27].uv.x = (float)44 / 64;   _vtx[27].uv.y = (float)20 / 32;
+		_vtx[28].uv.x = (float)48 / 64;   _vtx[28].uv.y = (float)16 / 32;
+		_vtx[29].uv.x = (float)48 / 64;   _vtx[29].uv.y = (float)20 / 32;
+
+		_vtx[30].uv.x = (float)48 / 64;   _vtx[30].uv.y = (float)16 / 32;
+		_vtx[31].uv.x = (float)48 / 64;   _vtx[31].uv.y = (float)20 / 32;
+		_vtx[32].uv.x = (float)52 / 64;   _vtx[32].uv.y = (float)20 / 32;
+		_vtx[33].uv.x = (float)48 / 64;   _vtx[33].uv.y = (float)16 / 32;
+		_vtx[34].uv.x = (float)52 / 64;   _vtx[34].uv.y = (float)20 / 32;
+		_vtx[35].uv.x = (float)52 / 64;   _vtx[35].uv.y = (float)16 / 32;
+	}
+
+	geometry->SetVertices(_vtx);
+	geometry->SetIndices(_idx);
+}
+
+void GeometryHelper::CreateLLeg(shared_ptr<Geometry<VertexTextureNormalTangentData>> geometry)
+{
+	vector<VertexTextureNormalTangentData> _vtx(36);
+	vector<uint32> _idx(36);
+
+	CreateVertexIndex(_vtx, _idx);
+
+	// UV Mapping
+	{
+		_vtx[0].uv.x = (float)4 / 64;   _vtx[0].uv.y = (float)32 / 32;
+		_vtx[1].uv.x = (float)4 / 64;   _vtx[1].uv.y = (float)20 / 32;
+		_vtx[2].uv.x = (float)8 / 64;   _vtx[2].uv.y = (float)20 / 32;
+		_vtx[3].uv.x = (float)4 / 64;   _vtx[3].uv.y = (float)32 / 32;
+		_vtx[4].uv.x = (float)8 / 64;   _vtx[4].uv.y = (float)20 / 32;
+		_vtx[5].uv.x = (float)8 / 64;   _vtx[5].uv.y = (float)32 / 32;
+
+		_vtx[6].uv.x = (float)16 / 64;   _vtx[6].uv.y = (float)32 / 32;
+		_vtx[7].uv.x = (float)12 / 64;   _vtx[7].uv.y = (float)20 / 32;
+		_vtx[8].uv.x = (float)16 / 64;   _vtx[8].uv.y = (float)20 / 32;
+		_vtx[9].uv.x = (float)16 / 64;   _vtx[9].uv.y = (float)32 / 32;
+		_vtx[10].uv.x = (float)12 / 64;   _vtx[10].uv.y = (float)32 / 32;
+		_vtx[11].uv.x = (float)12 / 64;   _vtx[11].uv.y = (float)20 / 32;
+
+		_vtx[12].uv.x = (float)0 / 64;   _vtx[12].uv.y = (float)32 / 32;
+		_vtx[13].uv.x = (float)0 / 64;   _vtx[13].uv.y = (float)20 / 32;
+		_vtx[14].uv.x = (float)4 / 64;   _vtx[14].uv.y = (float)20 / 32;
+		_vtx[15].uv.x = (float)0 / 64;   _vtx[15].uv.y = (float)32 / 32;
+		_vtx[16].uv.x = (float)4 / 64;   _vtx[16].uv.y = (float)20 / 32;
+		_vtx[17].uv.x = (float)4 / 64;   _vtx[17].uv.y = (float)32 / 32;
+
+		_vtx[18].uv.x = (float)8 / 64;   _vtx[18].uv.y = (float)32 / 32;
+		_vtx[19].uv.x = (float)8 / 64;   _vtx[19].uv.y = (float)20 / 32;
+		_vtx[20].uv.x = (float)12 / 64;   _vtx[20].uv.y = (float)20 / 32;
+		_vtx[21].uv.x = (float)8 / 64;   _vtx[21].uv.y = (float)32 / 32;
+		_vtx[22].uv.x = (float)12 / 64;   _vtx[22].uv.y = (float)20 / 32;
+		_vtx[23].uv.x = (float)12 / 64;   _vtx[23].uv.y = (float)32 / 32;
+
+		_vtx[24].uv.x = (float)4 / 64;   _vtx[24].uv.y = (float)20 / 32;
+		_vtx[25].uv.x = (float)4 / 64;   _vtx[25].uv.y = (float)16 / 32;
+		_vtx[26].uv.x = (float)8 / 64;   _vtx[26].uv.y = (float)16 / 32;
+		_vtx[27].uv.x = (float)4 / 64;   _vtx[27].uv.y = (float)20 / 32;
+		_vtx[28].uv.x = (float)8 / 64;   _vtx[28].uv.y = (float)16 / 32;
+		_vtx[29].uv.x = (float)8 / 64;   _vtx[29].uv.y = (float)20 / 32;
+
+		_vtx[30].uv.x = (float)8 / 64;   _vtx[30].uv.y = (float)16 / 32;
+		_vtx[31].uv.x = (float)8 / 64;   _vtx[31].uv.y = (float)20 / 32;
+		_vtx[32].uv.x = (float)12 / 64;   _vtx[32].uv.y = (float)20 / 32;
+		_vtx[33].uv.x = (float)8 / 64;   _vtx[33].uv.y = (float)16 / 32;
+		_vtx[34].uv.x = (float)12 / 64;   _vtx[34].uv.y = (float)20 / 32;
+		_vtx[35].uv.x = (float)12 / 64;   _vtx[35].uv.y = (float)16 / 32;
+	}
+
+	geometry->SetVertices(_vtx);
+	geometry->SetIndices(_idx);
+}
+
+void GeometryHelper::CreateRLeg(shared_ptr<Geometry<VertexTextureNormalTangentData>> geometry)
+{
+	vector<VertexTextureNormalTangentData> _vtx(36);
+	vector<uint32> _idx(36);
+
+	CreateVertexIndex(_vtx, _idx);
+
+	// UV Mapping
+	{
+		_vtx[0].uv.x = (float)8 / 64;   _vtx[0].uv.y = (float)32 / 32;
+		_vtx[1].uv.x = (float)8 / 64;   _vtx[1].uv.y = (float)20 / 32;
+		_vtx[2].uv.x = (float)4 / 64;   _vtx[2].uv.y = (float)20 / 32;
+		_vtx[3].uv.x = (float)8 / 64;   _vtx[3].uv.y = (float)32 / 32;
+		_vtx[4].uv.x = (float)4 / 64;   _vtx[4].uv.y = (float)20 / 32;
+		_vtx[5].uv.x = (float)4 / 64;   _vtx[5].uv.y = (float)32 / 32;
+
+		_vtx[6].uv.x = (float)12 / 64;   _vtx[6].uv.y = (float)32 / 32;
+		_vtx[7].uv.x = (float)16 / 64;   _vtx[7].uv.y = (float)20 / 32;
+		_vtx[8].uv.x = (float)12 / 64;   _vtx[8].uv.y = (float)20 / 32;
+		_vtx[9].uv.x = (float)12 / 64;   _vtx[9].uv.y = (float)32 / 32;
+		_vtx[10].uv.x = (float)16 / 64;   _vtx[10].uv.y = (float)32 / 32;
+		_vtx[11].uv.x = (float)16 / 64;   _vtx[11].uv.y = (float)20 / 32;
+
+		_vtx[18].uv.x = (float)4 / 64;   _vtx[12].uv.y = (float)32 / 32;
+		_vtx[19].uv.x = (float)4 / 64;   _vtx[13].uv.y = (float)20 / 32;
+		_vtx[20].uv.x = (float)0 / 64;   _vtx[14].uv.y = (float)20 / 32;
+		_vtx[21].uv.x = (float)4 / 64;   _vtx[15].uv.y = (float)32 / 32;
+		_vtx[22].uv.x = (float)0 / 64;   _vtx[16].uv.y = (float)20 / 32;
+		_vtx[23].uv.x = (float)0 / 64;   _vtx[17].uv.y = (float)32 / 32;
+
+		_vtx[12].uv.x = (float)12 / 64;   _vtx[18].uv.y = (float)32 / 32;
+		_vtx[13].uv.x = (float)12 / 64;   _vtx[19].uv.y = (float)20 / 32;
+		_vtx[14].uv.x = (float)8 / 64;   _vtx[20].uv.y = (float)20 / 32;
+		_vtx[15].uv.x = (float)12 / 64;   _vtx[21].uv.y = (float)32 / 32;
+		_vtx[16].uv.x = (float)8 / 64;   _vtx[22].uv.y = (float)20 / 32;
+		_vtx[17].uv.x = (float)8 / 64;   _vtx[23].uv.y = (float)32 / 32;
+
+		_vtx[24].uv.x = (float)8 / 64;   _vtx[24].uv.y = (float)20 / 32;
+		_vtx[25].uv.x = (float)8 / 64;   _vtx[25].uv.y = (float)16 / 32;
+		_vtx[26].uv.x = (float)4 / 64;   _vtx[26].uv.y = (float)16 / 32;
+		_vtx[27].uv.x = (float)8 / 64;   _vtx[27].uv.y = (float)20 / 32;
+		_vtx[28].uv.x = (float)4 / 64;   _vtx[28].uv.y = (float)16 / 32;
+		_vtx[29].uv.x = (float)4 / 64;   _vtx[29].uv.y = (float)20 / 32;
+
+		_vtx[30].uv.x = (float)12 / 64;   _vtx[30].uv.y = (float)16 / 32;
+		_vtx[31].uv.x = (float)12 / 64;   _vtx[31].uv.y = (float)20 / 32;
+		_vtx[32].uv.x = (float)8 / 64;   _vtx[32].uv.y = (float)20 / 32;
+		_vtx[33].uv.x = (float)12 / 64;   _vtx[33].uv.y = (float)16 / 32;
+		_vtx[34].uv.x = (float)8 / 64;   _vtx[34].uv.y = (float)20 / 32;
+		_vtx[35].uv.x = (float)8 / 64;   _vtx[35].uv.y = (float)16 / 32;
+	}
+
+	geometry->SetVertices(_vtx);
+	geometry->SetIndices(_idx);
+}
+

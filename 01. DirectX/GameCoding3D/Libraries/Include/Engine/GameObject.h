@@ -35,11 +35,14 @@ public:
 
 	shared_ptr<Transform> GetOrAddTransform();
 
+	string GetName() { return _name; }
+	void SetName(string name) { _name = name; }
+
 	void AddComponent(shared_ptr<Component> component);
 
 protected:
 	std::array<shared_ptr<Component>, FIXED_COMPONENT_COUNT> _components; //1개만 들어가는 것이기에 array로 크기를 지정
 	vector<shared_ptr<MonoBehaviour>> _scripts;
-
+	string _name;
 };
 

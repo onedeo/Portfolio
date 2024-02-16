@@ -1,2 +1,35 @@
-﻿  DX3DProject.cpp
-  DX3DProject.vcxproj -> C:\Users\iamon\Desktop\MyInhaFiles\Portfolio\01. DirectX\DirectX9\DX3DProject\Debug\DX3DProject.exe
+﻿  cBody.cpp
+C:\Users\한창신\Desktop\Portfolio\01. DirectX\DirectX9\DX3DProject\DX3DProject\framework.h(15,10): fatal error C1083: Cannot open include file: 'd3dx9.h': No such file or directory
+  cCamera.cpp
+C:\Users\한창신\Desktop\Portfolio\01. DirectX\DirectX9\DX3DProject\DX3DProject\framework.h(15,10): fatal error C1083: Cannot open include file: 'd3dx9.h': No such file or directory
+  cCharacter.cpp
+C:\Users\한창신\Desktop\Portfolio\01. DirectX\DirectX9\DX3DProject\DX3DProject\framework.h(15,10): fatal error C1083: Cannot open include file: 'd3dx9.h': No such file or directory
+  cCubeMan.cpp
+C:\Users\한창신\Desktop\Portfolio\01. DirectX\DirectX9\DX3DProject\DX3DProject\framework.h(15,10): fatal error C1083: Cannot open include file: 'd3dx9.h': No such file or directory
+  cCubeNode.cpp
+C:\Users\한창신\Desktop\Portfolio\01. DirectX\DirectX9\DX3DProject\DX3DProject\framework.h(15,10): fatal error C1083: Cannot open include file: 'd3dx9.h': No such file or directory
+  cCubePC.cpp
+C:\Users\한창신\Desktop\Portfolio\01. DirectX\DirectX9\DX3DProject\DX3DProject\framework.h(15,10): fatal error C1083: Cannot open include file: 'd3dx9.h': No such file or directory
+  cCubePNT.cpp
+C:\Users\한창신\Desktop\Portfolio\01. DirectX\DirectX9\DX3DProject\DX3DProject\framework.h(15,10): fatal error C1083: Cannot open include file: 'd3dx9.h': No such file or directory
+  cDeviceManager.cpp
+C:\Users\한창신\Desktop\Portfolio\01. DirectX\DirectX9\DX3DProject\DX3DProject\framework.h(15,10): fatal error C1083: Cannot open include file: 'd3dx9.h': No such file or directory
+  cGizmo.cpp
+C:\Users\한창신\Desktop\Portfolio\01. DirectX\DirectX9\DX3DProject\DX3DProject\framework.h(15,10): fatal error C1083: Cannot open include file: 'd3dx9.h': No such file or directory
+  cGrid.cpp
+C:\Users\한창신\Desktop\Portfolio\01. DirectX\DirectX9\DX3DProject\DX3DProject\framework.h(15,10): fatal error C1083: Cannot open include file: 'd3dx9.h': No such file or directory
+  cHead.cpp
+C:\Users\한창신\Desktop\Portfolio\01. DirectX\DirectX9\DX3DProject\DX3DProject\framework.h(15,10): fatal error C1083: Cannot open include file: 'd3dx9.h': No such file or directory
+  cLeftArm.cpp
+C:\Users\한창신\Desktop\Portfolio\01. DirectX\DirectX9\DX3DProject\DX3DProject\framework.h(15,10): fatal error C1083: Cannot open include file: 'd3dx9.h': No such file or directory
+  cLeftLeg.cpp
+C:\Users\한창신\Desktop\Portfolio\01. DirectX\DirectX9\DX3DProject\DX3DProject\framework.h(15,10): fatal error C1083: Cannot open include file: 'd3dx9.h': No such file or directory
+  cMainGame.cpp
+C:\Users\한창신\Desktop\Portfolio\01. DirectX\DirectX9\DX3DProject\DX3DProject\framework.h(15,10): fatal error C1083: Cannot open include file: 'd3dx9.h': No such file or directory
+  cRightArm.cpp
+C:\Users\한창신\Desktop\Portfolio\01. DirectX\DirectX9\DX3DProject\DX3DProject\framework.h(15,10): fatal error C1083: Cannot open include file: 'd3dx9.h': No such file or directory
+  cRightLeg.cpp
+C:\Users\한창신\Desktop\Portfolio\01. DirectX\DirectX9\DX3DProject\DX3DProject\framework.h(15,10): fatal error C1083: Cannot open include file: 'd3dx9.h': No such file or directory
+  DX3DProject.cpp
+C:\Users\한창신\Desktop\Portfolio\01. DirectX\DirectX9\DX3DProject\DX3DProject\framework.h(15,10): fatal error C1083: Cannot open include file: 'd3dx9.h': No such file or directory
+  Generating Code...

@@ -59,7 +59,7 @@ void SkyDemo::Update()
 	_camera->Update();
 	//
 
-	{
+	{		
 		LightDesc lightDesc;
 		lightDesc.ambient = Vec4(0.4f);
 		lightDesc.diffuse = Vec4(1.f);

@@ -38,7 +38,7 @@ struct MathUtils
 	static bool SpherePlane(const Sphere3D& sphere, const Plane3D& plane);
 
 	static bool AABBAABB(const AABB3D& aabb1, const AABB3D& aabb2);
-	static bool AABBOBB(const AA)
+	//static bool AABBOBB(const AA)
 	// << : Intersection
 
 };

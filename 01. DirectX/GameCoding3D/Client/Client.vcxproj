@@ -55,6 +55,7 @@
     <ClInclude Include="Main.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="01. TriangleDemo.h" />
+    <ClInclude Include="Portfolio1.h" />
     <ClInclude Include="Turning.h" />
   </ItemGroup>
   <ItemGroup>
@@ -94,6 +95,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="01. TriangleDemo.cpp" />
+    <ClCompile Include="Portfolio1.cpp" />
     <ClCompile Include="Turning.cpp" />
   </ItemGroup>
   <ItemGroup>

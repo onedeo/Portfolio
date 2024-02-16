@@ -17,7 +17,8 @@ void Transform::Update()
 {
 }
 
-Vec3 ToEulerAngles(Quaternion q) {
+Vec3 ToEulerAngles(Quaternion q)
+{
 	Vec3 angles;
 
 	// roll (x-axis rotation)
@@ -28,7 +29,7 @@ Vec3 ToEulerAngles(Quaternion q) {
 	// pitch (y-axis rotation)
 	double sinp = std::sqrt(1 + 2 * (q.w * q.y - q.x * q.z));
 	double cosp = std::sqrt(1 - 2 * (q.w * q.y - q.x * q.z));
-	angles.y = 2 * std::atan2(sinp, cosp) - 3.14158f / 2;
+	angles.y = 2 * std::atan2(sinp, cosp) - 3.14159f / 2;
 
 	// yaw (z-axis rotation)
 	double siny_cosp = 2 * (q.w * q.z + q.x * q.y);
@@ -60,11 +61,7 @@ void Transform::UpdateTransform()
 	Quaternion quat;
 	_matWorld.Decompose(_scale, quat, _position);
 	_rotation = ToEulerAngles(quat);
-
-	//(1 0 0) x matWorld -> right
-	//TransformCoord	: 
-	//TransformNormal	
-	
+		
 	//Childeren
 	for (const shared_ptr<Transform>& child : _children)
 		child->UpdateTransform();
@@ -78,7 +75,8 @@ void Transform::SetScale(const Vec3& worldScale)
 		Vec3 scale = worldScale;
 		scale.x /= parentScale.x;
 		scale.y /= parentScale.y;
-		scale.z /= parentScale.z;		
+		scale.z /= parentScale.z;
+		SetLocalScale(scale);
 	}
 	else
 	{
