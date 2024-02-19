@@ -46,6 +46,17 @@ struct VertexTextureNormalTangent
 	float3 normal : NORMAL;
 	float3 tangent : TANGENT;
 };
+
+struct VertexTextureNormalTangentBlend
+{
+	float4 position : POSITION;
+	float2 uv : TEXCOORD;
+	float3 normal : NORMAL;
+	float3 tangent : TANGENT;
+	float4 blendIndices : BLEND_INDICIES;
+	float4 blendWeights : BLEND_WEIGHTS;
+};
+
 // << : VertexData
 
 // >> : VertexOutput
@@ -54,6 +65,7 @@ struct VertexOutput
 	float4 position : SV_POSITION; //SV : SystemValue
 	float2 uv : TEXCOORD;
 	float3 normal : NORMAL;
+    float3 tangetn : TANGENT;
 };
 struct MeshOutput
 {
@@ -78,6 +90,11 @@ SamplerState PointSampler
 	Filter = MIN_MAG_MIP_POINT;
 	AddressU = Wrap;
 	AddressV = Wrap;
+};
+
+RasterizerState FrontCounterClockwiseTrue
+{
+	FrontCounterClockwise = true;
 };
 // << : Sampler State
 

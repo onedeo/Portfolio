@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Materials>
+    <Material>
+        <Name>EYES</Name>
+        <DiffuseFile></DiffuseFile>
+        <SpecularFile></SpecularFile>
+        <NormalFile></NormalFile>
+        <Ambient R="0" G="0" B="0" A="1"/>
+        <Diffuse R="0.80000001" G="0.80000001" B="0.80000001" A="1"/>
+        <Specular R="0.80000001" G="0.80000001" B="0.80000001" A="36"/>
+        <Emissive R="0" G="0" B="0" A="1"/>
+    </Material>
+    <Material>
+        <Name>STONE</Name>
+        <DiffuseFile>diffuso.tif</DiffuseFile>
+        <SpecularFile>diffuso.tif</SpecularFile>
+        <NormalFile>normal.png</NormalFile>
+        <Ambient R="0" G="0" B="0" A="1"/>
+        <Diffuse R="0.33720022" G="0.29967874" B="0.29541513" A="1"/>
+        <Specular R="0.33720022" G="0.29967874" B="0.29541513" A="6.0247908"/>
+        <Emissive R="0" G="0" B="0" A="1"/>
+    </Material>
+</Materials>

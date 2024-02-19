@@ -22,17 +22,29 @@
     <Filter Include="Game\01. BasicShapes">
       <UniqueIdentifier>{d2d84f35-823c-4790-9b97-07fac75a2b31}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Shaders\02.Lighting, Material">
-      <UniqueIdentifier>{4f20a1d8-1e1e-4b27-a15f-8f7b98af9ed7}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Game\02. Lighting, Material">
       <UniqueIdentifier>{b3c633c7-ba9e-443e-9467-40893368b283}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Game\03. Model">
-      <UniqueIdentifier>{ef363d6d-36bd-4c5b-9d81-c22c8ec1f849}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Shaders\03. Model">
       <UniqueIdentifier>{99b20663-294c-4d62-9866-da4dd4df76b4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shaders\02. Lighting, Material">
+      <UniqueIdentifier>{4f20a1d8-1e1e-4b27-a15f-8f7b98af9ed7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\04. Instancing">
+      <UniqueIdentifier>{745b62be-b6e8-437a-b16c-56d5e9f440f7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shaders\04. Instancing">
+      <UniqueIdentifier>{0e2c38c5-3772-4bb9-bd7b-d127e1ade5b2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\05. Extra">
+      <UniqueIdentifier>{dcd521d5-e676-4933-898b-6c1fa952d4ae}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shaders\05. Extra">
+      <UniqueIdentifier>{ffa4e1a7-0b67-499c-a80c-bea054a91e70}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\06. Collision">
+      <UniqueIdentifier>{2f84668f-f803-45a1-9d91-e2b1ee7ed050}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -99,6 +111,45 @@
     </ClCompile>
     <ClCompile Include="18. NormalMappingDemo.cpp">
       <Filter>Game\02. Lighting, Material</Filter>
+    </ClCompile>
+    <ClCompile Include="19. InstancingDemo.cpp">
+      <Filter>Game\04. Instancing</Filter>
+    </ClCompile>
+    <ClCompile Include="20. MeshInstancingDemo.cpp">
+      <Filter>Game\04. Instancing</Filter>
+    </ClCompile>
+    <ClCompile Include="21. ModelInstancingDemo.cpp">
+      <Filter>Game\04. Instancing</Filter>
+    </ClCompile>
+    <ClCompile Include="22. AnimInstancingDemo.cpp">
+      <Filter>Game\04. Instancing</Filter>
+    </ClCompile>
+    <ClCompile Include="23. RenderDemo.cpp">
+      <Filter>Game\04. Instancing</Filter>
+    </ClCompile>
+    <ClCompile Include="24. SceneDemo.cpp">
+      <Filter>Game\04. Instancing</Filter>
+    </ClCompile>
+    <ClCompile Include="25. RawBufferDemo.cpp">
+      <Filter>Game\05. Extra</Filter>
+    </ClCompile>
+    <ClCompile Include="26. GroupDemo.cpp">
+      <Filter>Game\05. Extra</Filter>
+    </ClCompile>
+    <ClCompile Include="27. TextureBufferDemo.cpp">
+      <Filter>Game\05. Extra</Filter>
+    </ClCompile>
+    <ClCompile Include="28. StructuredBufferDemo.cpp">
+      <Filter>Game\05. Extra</Filter>
+    </ClCompile>
+    <ClCompile Include="29. ViewportDemo.cpp">
+      <Filter>Game\05. Extra</Filter>
+    </ClCompile>
+    <ClCompile Include="30. CollisionDemo.cpp">
+      <Filter>Game\06. Collision</Filter>
+    </ClCompile>
+    <ClCompile Include="Portfolio1.cpp">
+      <Filter>Game</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -172,6 +223,48 @@
     <ClInclude Include="LightingMaterial.h">
       <Filter>Game\02. Lighting, Material</Filter>
     </ClInclude>
+    <ClInclude Include="19. InstancingDemo.h">
+      <Filter>Game\04. Instancing</Filter>
+    </ClInclude>
+    <ClInclude Include="20. MeshInstancingDemo.h">
+      <Filter>Game\04. Instancing</Filter>
+    </ClInclude>
+    <ClInclude Include="21. ModelInstancingDemo.h">
+      <Filter>Game\04. Instancing</Filter>
+    </ClInclude>
+    <ClInclude Include="22. AnimInstancingDemo.h">
+      <Filter>Game\04. Instancing</Filter>
+    </ClInclude>
+    <ClInclude Include="23. RenderDemo.h">
+      <Filter>Game\04. Instancing</Filter>
+    </ClInclude>
+    <ClInclude Include="24. SceneDemo.h">
+      <Filter>Game\04. Instancing</Filter>
+    </ClInclude>
+    <ClInclude Include="25. RawBufferDemo.h">
+      <Filter>Game\05. Extra</Filter>
+    </ClInclude>
+    <ClInclude Include="Instancing.h">
+      <Filter>Game\04. Instancing</Filter>
+    </ClInclude>
+    <ClInclude Include="26. GroupDemo.h">
+      <Filter>Game\05. Extra</Filter>
+    </ClInclude>
+    <ClInclude Include="27. TextureBufferDemo.h">
+      <Filter>Game\05. Extra</Filter>
+    </ClInclude>
+    <ClInclude Include="28. StructuredBufferDemo.h">
+      <Filter>Game\05. Extra</Filter>
+    </ClInclude>
+    <ClInclude Include="29. ViewportDemo.h">
+      <Filter>Game\05. Extra</Filter>
+    </ClInclude>
+    <ClInclude Include="30. CollisionDemo.h">
+      <Filter>Game\06. Collision</Filter>
+    </ClInclude>
+    <ClInclude Include="Portfolio1.h">
+      <Filter>Game</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <FxCompile Include="..\Shaders\01. Triangle.fx">
@@ -199,31 +292,70 @@
       <Filter>Shaders\Common</Filter>
     </FxCompile>
     <FxCompile Include="..\Shaders\08. GlobalTest.fx">
-      <Filter>Shaders\02.Lighting, Material</Filter>
+      <Filter>Shaders\02. Lighting, Material</Filter>
     </FxCompile>
     <FxCompile Include="..\Shaders\09. Lighting_Ambient.fx">
-      <Filter>Shaders\02.Lighting, Material</Filter>
+      <Filter>Shaders\02. Lighting, Material</Filter>
     </FxCompile>
     <FxCompile Include="..\Shaders\10. Lighting_Diffuse.fx">
-      <Filter>Shaders\02.Lighting, Material</Filter>
+      <Filter>Shaders\02. Lighting, Material</Filter>
     </FxCompile>
     <FxCompile Include="..\Shaders\11. Lighting_Specular.fx">
-      <Filter>Shaders\02.Lighting, Material</Filter>
+      <Filter>Shaders\02. Lighting, Material</Filter>
     </FxCompile>
     <FxCompile Include="..\Shaders\12. Lighting_Emissive.fx">
-      <Filter>Shaders\02.Lighting, Material</Filter>
+      <Filter>Shaders\02. Lighting, Material</Filter>
     </FxCompile>
     <FxCompile Include="..\Shaders\00. Light.fx">
       <Filter>Shaders\Common</Filter>
     </FxCompile>
     <FxCompile Include="..\Shaders\13. Lighting.fx">
-      <Filter>Shaders\02.Lighting, Material</Filter>
+      <Filter>Shaders\02. Lighting, Material</Filter>
     </FxCompile>
     <FxCompile Include="..\Shaders\14. NormalMapping.fx">
-      <Filter>Shaders\02.Lighting, Material</Filter>
+      <Filter>Shaders\02. Lighting, Material</Filter>
     </FxCompile>
     <FxCompile Include="..\Shaders\15. StaticModel.fx">
       <Filter>Shaders\03. Model</Filter>
+    </FxCompile>
+    <FxCompile Include="..\Shaders\16. Animation.fx">
+      <Filter>Shaders\03. Model</Filter>
+    </FxCompile>
+    <FxCompile Include="..\Shaders\17. Tween.fx">
+      <Filter>Shaders\03. Model</Filter>
+    </FxCompile>
+    <FxCompile Include="..\Shaders\18. Sky.fx">
+      <Filter>Shaders\03. Model</Filter>
+    </FxCompile>
+    <FxCompile Include="..\Shaders\19. Instancing.fx">
+      <Filter>Shaders\04. Instancing</Filter>
+    </FxCompile>
+    <FxCompile Include="..\Shaders\20. MeshInstancing.fx">
+      <Filter>Shaders\04. Instancing</Filter>
+    </FxCompile>
+    <FxCompile Include="..\Shaders\21. ModelInstancing.fx">
+      <Filter>Shaders\04. Instancing</Filter>
+    </FxCompile>
+    <FxCompile Include="..\Shaders\22. AnimInstancing.fx">
+      <Filter>Shaders\04. Instancing</Filter>
+    </FxCompile>
+    <FxCompile Include="..\Shaders\23. Render.fx">
+      <Filter>Shaders\04. Instancing</Filter>
+    </FxCompile>
+    <FxCompile Include="..\Shaders\00. Render.fx">
+      <Filter>Shaders\Common</Filter>
+    </FxCompile>
+    <FxCompile Include="..\Shaders\24. RawBuffer.fx">
+      <Filter>Shaders\05. Extra</Filter>
+    </FxCompile>
+    <FxCompile Include="..\Shaders\25. Group.fx">
+      <Filter>Shaders\05. Extra</Filter>
+    </FxCompile>
+    <FxCompile Include="..\Shaders\26. TextureBuffer.fx">
+      <Filter>Shaders\05. Extra</Filter>
+    </FxCompile>
+    <FxCompile Include="..\Shaders\27. StructuredBuffer.fx">
+      <Filter>Shaders\05. Extra</Filter>
     </FxCompile>
   </ItemGroup>
 </Project>

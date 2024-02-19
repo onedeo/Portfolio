@@ -147,6 +147,9 @@
   <ItemGroup>
     <ClInclude Include="01. StaticMeshDemo.h" />
     <ClInclude Include="02. ImGUIDemo.h" />
+    <ClInclude Include="03. AnimationDemo.h" />
+    <ClInclude Include="04. TweenDemo.h" />
+    <ClInclude Include="05. SkyDemo.h" />
     <ClInclude Include="AssimpTool.h" />
     <ClInclude Include="AsTypes.h" />
     <ClInclude Include="CameraScript.h" />
@@ -157,6 +160,9 @@
   <ItemGroup>
     <ClCompile Include="01. StaticMeshDemo.cpp" />
     <ClCompile Include="02. ImGUIDemo.cpp" />
+    <ClCompile Include="03. AnimationDemo.cpp" />
+    <ClCompile Include="04. TweenDemo.cpp" />
+    <ClCompile Include="05. SkyDemo.cpp" />
     <ClCompile Include="AssimpTool.cpp" />
     <ClCompile Include="AsTypes.cpp" />
     <ClCompile Include="CameraScript.cpp" />

@@ -53,13 +53,13 @@ void DiffuseDemo::Init()
 		auto texture = RESOURCES->Load<Texture>(L"echo", L"..\\Resources\\Textures\\echo.jpg");
 		_obj2->GetMeshRenderer()->SetTexture(texture);
 	}
-	RENDER->Init(_shader);
+	////
 }
 
 void DiffuseDemo::Update()
 {
 	_camera->Update();
-	RENDER->Update();
+	////
 	
 	Vec4 lightDiffuse{ 0.5f };
 	_shader->GetVector("LightDiffuse")->SetFloatVector((float*)&lightDiffuse);

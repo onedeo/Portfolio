@@ -53,13 +53,13 @@ void SpecularDemo::Init()
 		auto texture = RESOURCES->Load<Texture>(L"echo", L"..\\Resources\\Textures\\echo.jpg");
 		_obj2->GetMeshRenderer()->SetTexture(texture);
 	}
-	RENDER->Init(_shader);
+	////
 }
 
 void SpecularDemo::Update()
 {
 	_camera->Update();
-	RENDER->Update();
+	////
 	
 	Vec4 light{ 1.f, 1.f, 1.f, 1.f };
 	_shader->GetVector("LightSpecular")->SetFloatVector((float*)&light);

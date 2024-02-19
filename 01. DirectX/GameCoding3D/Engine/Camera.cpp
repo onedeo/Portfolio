@@ -17,6 +17,8 @@ Camera::~Camera()
 void Camera::Update()
 {
 	UpdateMatrix();
+
+	//RENDER->PushGlobalData(Camera::S_MatView, Camera::S_MatProjection);
 }
 
 void Camera::UpdateMatrix()
@@ -30,13 +32,16 @@ void Camera::UpdateMatrix()
 	Vec3 eyePosition = GetTransform()->GetPosition();
 	Vec3 focusPosition = eyePosition + GetTransform()->GetLook();
 	Vec3 upDirection = GetTransform()->GetUp();
-	S_MatView = ::XMMatrixLookAtLH(eyePosition, focusPosition, upDirection);
+	_matView = S_MatView = ::XMMatrixLookAtLH(eyePosition, focusPosition, upDirection);
 
 	//S_MatView = GetTransform()->GetWorldMatrix().Invert(); //d카메라를 기준으로 객체를 본다 -> 객체 * 카메라역행렬
 	// << : 
 
+
+
+
 	if (_type == ProjectionType::Perspective)
-		S_MatProjection = ::XMMatrixPerspectiveFovLH(XM_PI / 4.f, 800.f / 600.f, 1.f, 100.f);
+		_matProjection = S_MatProjection = ::XMMatrixPerspectiveFovLH(XM_PI / 4.f, 800.f / 600.f, 1.f, 100.f);
 	else
-		S_MatProjection = XMMatrixOrthographicLH(_fov, _width / _height, _near, _far);
+		_matProjection = S_MatProjection = XMMatrixOrthographicLH(_fov, _width / _height, _near, _far);
 }

@@ -37,7 +37,7 @@ public:
 	Matrix GetWorldMatrix() { return _matWorld; }
 
 	//°èÃş°ü°è
-	bool HasParent() { return false; }
+	bool HasParent() { return _parent!=nullptr; }
 	shared_ptr<Transform> GetParent() { return _parent; }
 	void SetParent(shared_ptr<Transform> parent) { _parent = parent; }
 

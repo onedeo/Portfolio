@@ -6,7 +6,10 @@ class Transform;
 class Camera;
 class MeshRenderer;
 class ModelRenderer;
-//class Animator;
+class ModelAnimator;
+class Light;
+class BaseCollider;
+class Terrain;
 
 class GameObject : public enable_shared_from_this<GameObject>
 {
@@ -25,15 +28,21 @@ public:
 	shared_ptr<Camera> GetCamera();
 	shared_ptr<MeshRenderer> GetMeshRenderer();
 	shared_ptr<ModelRenderer> GetModelRenderer();
-	//shared_ptr<Animator> GetAnimator();
+	shared_ptr<ModelAnimator> GetModelAnimator();
+	shared_ptr<Light> GetLight();
+	shared_ptr<BaseCollider> GetCollider();
+	shared_ptr<Terrain> GetTerrain();
 
 	shared_ptr<Transform> GetOrAddTransform();
+
+	string GetName() { return _name; }
+	void SetName(string name) { _name = name; }
 
 	void AddComponent(shared_ptr<Component> component);
 
 protected:
 	std::array<shared_ptr<Component>, FIXED_COMPONENT_COUNT> _components; //1개만 들어가는 것이기에 array로 크기를 지정
 	vector<shared_ptr<MonoBehaviour>> _scripts;
-
+	string _name;
 };
 

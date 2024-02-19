@@ -53,20 +53,20 @@ void LightingDemo::Init()
 		auto texture = RESOURCES->Load<Texture>(L"echo", L"..\\Resources\\Textures\\echo.jpg");
 		_obj2->GetMeshRenderer()->SetTexture(texture);
 	}
-	RENDER->Init(_shader);
+	//
 }
 
 void LightingDemo::Update()
 {
 	_camera->Update();
-	RENDER->Update();
+	//
 	{
 		LightDesc lightDesc;
 		lightDesc.ambient = Vec4(0.5f);
 		lightDesc.diffuse = Vec4(1.f);
 		lightDesc.specular = Vec4(1.f, 1.f, 1.f, 1.f);
 		lightDesc.direction = Vec3(0.f, -1.f, 0.f);
-		RENDER->PushLightData(lightDesc);
+		//
 	}
 
 	{
@@ -76,7 +76,7 @@ void LightingDemo::Update()
 		desc.specular = Vec4(1.f);
 		//desc.emissive = Color(0.3f, 0.f, 0.f, 0.5f);
 
-		RENDER->PushMaterialData(desc);
+//
 		_obj->Update();
 	}
 
@@ -87,7 +87,7 @@ void LightingDemo::Update()
 		//desc.specular = Color(0.5f, 0.5f, 0.5f, 1.f);
 		//desc.emissive = Color(1.f, 0.f, 0.f, 1.f);
 
-		RENDER->PushMaterialData(desc);
+//
 		_obj2->Update();
 	}
 }

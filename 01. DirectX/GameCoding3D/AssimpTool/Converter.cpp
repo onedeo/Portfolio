@@ -36,7 +36,7 @@ void Converter::ExportModelData(wstring savePath)
 	ReadSkinData();
 
 	//Write CSV File
-	/*{
+	{
 		FILE* file;
 		::fopen_s(&file, "../Vertices.csv", "w");
 
@@ -69,7 +69,7 @@ void Converter::ExportModelData(wstring savePath)
 	}
 
 
-	WriteModelFile(finalPath);*/
+	WriteModelFile(finalPath);
 }
 
 void Converter::ExportMaterialData(wstring savePath)
@@ -81,7 +81,7 @@ void Converter::ExportMaterialData(wstring savePath)
 
 void Converter::ExportAnimationData(wstring savePath, uint32 index)
 {
-	wstring finalPath = _modelPath + _texturePath + savePath + L".clip";
+	wstring finalPath = _modelPath + savePath + L".clip";
 	assert(index < _scene->mNumAnimations);
 
 	shared_ptr<asAnimation> animation = ReadAnimationData(_scene->mAnimations[index]);
@@ -179,7 +179,7 @@ void Converter::ReadSkinData()
 		vector<asBoneWeight> tempVertexBoneWeights;
 		tempVertexBoneWeights.resize(mesh->vertices.size());
 
-		// Bone을 순회하면서 연관된 vertexID, weight를 구해석 ㅣ록
+		// Bone을 순회하면서 연관된 vertexID, weight를 구해석 기록
 		for (uint32 b = 0; b < srcMesh->mNumBones; b++)
 		{
 			aiBone* srcMeshBone = srcMesh->mBones[b];
@@ -559,11 +559,9 @@ void Converter::WriteAnimationData(shared_ptr<asAnimation> animation, wstring fi
 	file->Write<uint32>(animation->frameCount);
 
 	file->Write<uint32>(animation->keyframes.size());
-
 	for (shared_ptr<asKeyframe> keyframe : animation->keyframes)
 	{
 		file->Write<string>(keyframe->boneName);
-
 		file->Write<uint32>(keyframe->transforms.size());
 		file->Write(&keyframe->transforms[0], sizeof(asKeyframeData) * keyframe->transforms.size());
 	}

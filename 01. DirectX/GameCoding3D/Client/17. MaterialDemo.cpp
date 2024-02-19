@@ -74,20 +74,20 @@ void MaterialDemo::Init()
 
 		_obj2->GetMeshRenderer()->SetMaterial(material);
 	}
-	RENDER->Init(_shader);
+	//
 }
 
 void MaterialDemo::Update()
 {
 	_camera->Update();
-	RENDER->Update();
+	//
 	{
 		LightDesc lightDesc;
 		lightDesc.ambient = Vec4(0.5f);
 		lightDesc.diffuse = Vec4(1.f);
 		lightDesc.specular = Vec4(1.f, 1.f, 1.f, 1.f);
 		lightDesc.direction = Vec3(0.f, -1.f, 0.f);
-		RENDER->PushLightData(lightDesc);
+		//
 	}
 
 	{
@@ -97,7 +97,7 @@ void MaterialDemo::Update()
 		desc.specular = Vec4(1.f);
 		//desc.emissive = Color(0.3f, 0.f, 0.f, 0.5f);
 
-		RENDER->PushMaterialData(desc);
+//
 		_obj->Update();
 	}
 
@@ -108,7 +108,7 @@ void MaterialDemo::Update()
 		//desc.specular = Color(0.5f, 0.5f, 0.5f, 1.f);
 		//desc.emissive = Color(1.f, 0.f, 0.f, 1.f);
 
-		RENDER->PushMaterialData(desc);
+//
 		_obj2->Update();
 	}
 }
