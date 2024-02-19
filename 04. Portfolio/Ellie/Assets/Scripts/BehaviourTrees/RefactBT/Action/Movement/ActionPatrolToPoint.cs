@@ -6,20 +6,17 @@ namespace Scripts.BehaviourTrees.RefactBT
 {
     public class ActionPatrolToPoint : MonsterNode
     {
-        public ActionPatrolToPoint(Transform transform)
+        private int patrolNum;
+        public ActionPatrolToPoint()
         {
-            if (monster == null)
-                monster = transform.GetComponent<Monster>();
+            patrolNum = 0;
+
         }
 
         public override NodeState Evaluate()
         {
-            if(monster ==null)
-            {
-                Debug.Log(transform.name + "Has No Monster Component");
-                return NodeState.FAILURE;
-            }
-            
+
+            return NodeState.SUCCESS;
         }
     }
 }

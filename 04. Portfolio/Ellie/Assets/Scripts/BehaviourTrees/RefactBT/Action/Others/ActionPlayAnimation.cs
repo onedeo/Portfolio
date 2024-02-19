@@ -11,10 +11,17 @@ namespace Scripts.BehaviourTrees.RefactBT
         private float animationLength;
         private float accumTime;        
 
-        public ActionPlayAnimation(Transform transform, AnimationType animation, bool waitToEnd=false)
+        public ActionPlayAnimation(AnimationType animation, bool waitToEnd=false)
         {
-            if(animator==null)
-                animator = transform.GetComponent<Animator>();
+            if (animator == null)
+                animator = tree.GetData<Animator>(MonsterData.ANIMATOR);
+            if (animator == null)
+            {
+                string name = tree.GetData<Transform>(MonsterData.TRANSFORM).name;
+                Debug.Log("Try To Access Animator That Does Not Have : " + name);
+
+                return;
+            }
             this.animation = animation;
             this.waitToEnd = waitToEnd;
         }
@@ -32,13 +39,7 @@ namespace Scripts.BehaviourTrees.RefactBT
         }
 
         public override NodeState Evaluate()
-        {
-            if (animator == null)
-            {
-                Debug.Log(transform.name + "Try Play Animation But No Animator");
-                return NodeState.FAILURE;
-            }
-            
+        {            
             if(waitToEnd)
             {
                 if (accumTime <= animationLength)

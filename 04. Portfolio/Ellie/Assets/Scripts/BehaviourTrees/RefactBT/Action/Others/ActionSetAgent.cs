@@ -7,24 +7,29 @@ namespace Scripts.BehaviourTrees.RefactBT
     {
         private MonsterAgent destination;
 
-        public ActionSetAgent(Transform transform, MonsterAgent destination)
+        public ActionSetAgent(MonsterAgent destination)
         {
             if (agent == null)
                 agent = transform.GetComponent<NavMeshAgent>();
+            if (agent == null)
+            {
+                string name = tree.GetData<Transform>(MonsterData.TRANSFORM).name;
+                Debug.Log("Try To Access NavMeshAgent That Does Not Have : " + name);
+            }
+
             if (monster == null)
                 monster = transform.GetComponent<Monster>();
+            if (monster == null)
+            {
+                string name = tree.GetData<Transform>(MonsterData.TRANSFORM).name;
+                Debug.Log("Try To Access Monster That Does Not Have : " + name);
+            }
 
             this.destination = destination;
         }
 
         public override NodeState Evaluate()
         {
-            if (agent == null)
-            {
-                Debug.Log(transform.name + "Has No NavMeshAgent");
-                return NodeState.FAILURE;
-            }
-
             switch (destination)
             {
                 case MonsterAgent.PLAYER:

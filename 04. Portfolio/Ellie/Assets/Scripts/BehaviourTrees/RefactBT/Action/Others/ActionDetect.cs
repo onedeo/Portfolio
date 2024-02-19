@@ -7,10 +7,10 @@ namespace Scripts.BehaviourTrees.RefactBT
     public class ActionDetect : MonsterNode
     {
         public DetectType type;
-        public ActionDetect(Transform transform, DetectType type)
+        public ActionDetect(DetectType type)
         {
             if (monster == null)
-                monster = transform.GetComponent<Monster>();
+                monster = tree.GetData<Monster>(MonsterData.MONSTER);
         }
 
         public override NodeState Evaluate()

@@ -11,8 +11,10 @@ namespace Scripts.BehaviourTrees.RefactBT
             List<Node> children = new()
             {
                 new Hold(),
-                new ActionDetect(transform, DetectType.PLAYER),
-                new ActionPlayAnimation(transform, AnimationType.STANDUP, true),
+                new ActionDetect(DetectType.PLAYER),
+                new ActionPlayAnimation(AnimationType.STANDUP, true),
+                new ActionPlayAudio(MonsterAudioType.Move1),
+                new ActionPatrolToPoint(),
             };
 
             SetChildren(children);

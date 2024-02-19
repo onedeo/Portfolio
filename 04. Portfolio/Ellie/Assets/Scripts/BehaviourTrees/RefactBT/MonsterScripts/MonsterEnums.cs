@@ -12,7 +12,9 @@ namespace Scripts.BehaviourTrees.RefactBT
         AUDIO_CON,
         TRANSFORM,
         ANIMATOR,
-        
+        PATROL_POINTS,
+        PlayerDetectAI,
+        ChaseDetectAI,
     }
 
     public enum DetectType

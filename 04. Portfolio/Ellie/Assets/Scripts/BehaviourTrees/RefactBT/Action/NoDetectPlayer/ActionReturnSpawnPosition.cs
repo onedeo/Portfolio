@@ -13,28 +13,26 @@ namespace Scripts.BehaviourTrees.RefactBT
         {
             if (agent == null)
                 agent = transform.GetComponent<NavMeshAgent>();
+            if (agent == null)
+            {
+                string name = tree.GetData<Transform>(MonsterData.TRANSFORM).name;
+                Debug.Log("Try To Access NavMeshAgent That Does Not Have : " + name);
+            }
+
             if (monster == null)
                 monster = transform.GetComponent<Monster>();
+            if(monster==null)
+            {
+                string name = tree.GetData<Transform>(MonsterData.TRANSFORM).name;
+                Debug.Log("Try To Access Monster That Does Not Have : " + name);
+            }
         }
         public override NodeState Evaluate()
         {
-            if (agent == null)
-            {
-                Debug.Log(transform.name + "Has No NavMeshAgent");
-                return NodeState.FAILURE;
-            }
-            if (monster == null)
-            {
-                Debug.Log(transform.name + "Has No Monster Component");
-                return NodeState.FAILURE;
-            }
-
             float distance = Vector3.SqrMagnitude(transform.position - monster.SpawnPosition);
             if (distance > 0.5f)
-            {
-                tree.IsOnSpawnPosition = true;
                 return NodeState.SUCCESS;
-            }
+
             else return NodeState.RUNNING;
         }
     }

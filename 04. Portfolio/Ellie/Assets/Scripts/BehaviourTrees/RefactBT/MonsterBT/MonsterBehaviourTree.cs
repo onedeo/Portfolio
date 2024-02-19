@@ -29,22 +29,41 @@ namespace Scripts.BehaviourTrees.RefactBT
             Animator animator = GetComponent<Animator>();
             monsterData.Add(MonsterData.ANIMATOR, animator);
 
+            Transform patrolPoints = transform.Find("PatrolPoints");
+            monsterData.Add(MonsterData.PATROL_POINTS, patrolPoints);
 
+            DetectAI detectPlayer = transform.Find("DetectPlayerAI").GetComponent<DetectAI>();
+            monsterData.Add(MonsterData.PlayerDetectAI, detectPlayer);
+
+            DetectAI detectChase = transform.Find("DetectChaseAI").GetComponent<DetectAI>();
+            monsterData.Add(MonsterData.ChaseDetectAI, detectChase);
         }
 
-        public object GetData(MonsterData data)
+        public T GetData<T>(MonsterData data)
         {
-            object obj;
+            object obj=null;
             if (monsterData.TryGetValue(data, out obj))
-                return obj;
+            {
+                if (obj is T) return (T)obj;
+            }
+            else
+            {
+                Debug.Log("Trying To Get Type Does Not Match : "+data.ToString());
+                return default(T);
+            }
 
             Debug.Log(gameObject.name + "Has No Object Try to Get : " + data.ToString());
-            return null;
+            return default(T);
         }
 
         protected override Node SetupTree()
         {
-            return null;
+            Node root = new Select(new List<Node>
+            {
+                // TO DO : add composite nodes execute first
+            });
+
+            return root;
         }
     }
 

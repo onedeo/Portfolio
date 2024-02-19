@@ -12,7 +12,7 @@ namespace Scripts.BehaviourTrees.RefactBT
             new ActionDetect(transform, DetectType.PLAYER);
             new ActionPlayAnimation(transform, AnimationType.WALK);
             new ActionPlayAudio(transform, MonsterAudioType.Move1);
-            new 
+            
         }
 
     }
