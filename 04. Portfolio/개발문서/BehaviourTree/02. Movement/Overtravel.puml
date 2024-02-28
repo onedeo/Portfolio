@@ -1,0 +1,19 @@
+@startuml
+
+[*]-->Overtravel
+Overtravel : Sequencer
+Overtravel--->AssertBoolean
+AssertBoolean   : bOvertraveld
+Overtravel--->PlayAudio
+PlayAudio      : Move1
+Overtravel--->PlayAnimation
+PlayAnimation  : Walk
+Overtravel---> Sequencer_ReturnSpawnPosition
+Sequencer_ReturnSpawnPosition : Returning to spawn position sequencer
+Overtravel--->PlayAnimation_
+PlayAnimation_ : Sit
+Overtravel--->SetBoolean
+SetBoolean : bOnSpawnPosition_true
+Overtravel--->SetBoolean_
+SetBoolean_ : bOvertraveld_false
+@enduml

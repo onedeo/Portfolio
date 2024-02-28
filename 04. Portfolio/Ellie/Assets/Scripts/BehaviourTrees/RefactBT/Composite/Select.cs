@@ -1,20 +1,28 @@
-using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 
-namespace Scripts.BehaviourTrees.RefactBT
+namespace Scripts.BehaviourTrees.Monster
 {
     public class Select : Node
     {
+        private int current;
         public Select() : base() { }
         public Select(List<Node> childrens) : base(childrens) { }
+
+        protected override void OnStart()
+        {
+            current = 0;
+            isStarted = true;
+        }
         public override NodeState Evaluate()
         {
-            bool anyChildIsRunning = false;
-
-            foreach(Node node in children)
+            if (!isStarted)
+                OnStart();
+            for(int i=current;i<children.Count;i++)
             {
-                switch (node.Evaluate())
+                current = i;
+                var child = children[current];
+
+                switch (child.Evaluate())
                 {
                     case NodeState.FAILURE:
                         continue;
@@ -26,8 +34,8 @@ namespace Scripts.BehaviourTrees.RefactBT
                         continue;
                 }
             }
+
             return NodeState.FAILURE;
         }
-
     }
 }

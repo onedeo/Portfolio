@@ -145,7 +145,7 @@ namespace Assets.Scripts.Monsters.AbstractClass
         public void Attack(IBaseEventPayload payload)
         {
             CombatPayload a = payload as CombatPayload;
-            ticketMachine.SendMessage(ChannelType.Combat, payload);
+            ticketMachine.SendMessage(ChannelType.Combat, a);
         }
 
         public void ReceiveDamage(IBaseEventPayload payload)

@@ -1,40 +1,30 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-namespace Scripts.BehaviourTrees.RefactBT
+namespace Scripts.BehaviourTrees.Monster
 {
     public class ActionPlayAudio : MonsterNode
     {
+        private AudioSource audioSource;
+        private MonsterAudioController audioController;
         private MonsterAudioType audioType;
         private bool isLoop;
         private bool isInteruptable;
+
         public ActionPlayAudio(MonsterAudioType audioType, bool isInteruptable = true, bool isLoop = true) : base()
         {
             if (audioSource == null)
-                audioSource = transform.GetComponent<AudioSource>();
-            if(audioSource==null)
-            {
-                string name = tree.GetData<Transform>(MonsterData.TRANSFORM).name;
-                Debug.Log("Try To Access AudioSource That Does Not Have : " + name);
-            }
+                audioSource = tree.GetComponentData<AudioSource>(MonsterComponentData.AUDIO);
+            if (audioSource == null)
+                DebugNull(transform, MonsterComponentData.AUDIO);
 
             if (audioController == null)
-                audioController = transform.GetComponent<MonsterAudioController>();
-            if(audioController==null)
-            {
-                string name = tree.GetData<Transform>(MonsterData.TRANSFORM).name;
-                Debug.Log("Try To Access AudioController That Does Not Have : " + name);
-            }
+                audioController = tree.GetComponentData<MonsterAudioController>(MonsterComponentData.AUDIO_CON);
+            if (audioController == null)
+                DebugNull(transform, MonsterComponentData.AUDIO_CON);
 
             this.audioType = audioType;
             this.isLoop = isLoop;
             this.isInteruptable = isInteruptable;
-        }
-
-        protected override void OnStart()
-        {
-            
         }
 
         public override NodeState Evaluate()
@@ -60,6 +50,5 @@ namespace Scripts.BehaviourTrees.RefactBT
 
             return NodeState.SUCCESS;
         }
-
     }
 }

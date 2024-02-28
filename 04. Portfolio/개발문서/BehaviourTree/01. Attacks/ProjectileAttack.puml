@@ -1,0 +1,22 @@
+@startuml
+
+[*]-->ProjectileAttack
+ProjectileAttack : Sequencer
+ProjectileAttack--->SkillUseable
+SkillUseable   : interval, distance
+ProjectileAttack--->Stop
+ProjectileAttack--->PlayAudio
+PlayAudio      : Projectile Cast
+ProjectileAttack--->PlayAnimation
+PlayAnimation  : ProjectileCast
+ProjectileAttack--->PlayAnimation_
+PlayAnimation_  : ProjectileFire
+ProjectileAttack--->Hold
+Hold           : AnimationHold
+ProjectileAttack--->PlayAudio_
+PlayAudio_      : ProjectileFire
+ProjectileAttack--->ExecuteAttack
+ExecuteAttack  : FireProjectile
+ProjectileAttack--->SetAgent
+SetAgent       : V3 Player
+@enduml

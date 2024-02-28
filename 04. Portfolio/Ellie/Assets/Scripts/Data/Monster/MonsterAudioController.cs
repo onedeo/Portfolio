@@ -13,7 +13,7 @@ public enum MonsterAudioType
     MoveSkill,
     MeleeAttack,
     MeleeAttackHit,
-    WeaponAttack,
+    WeaponAttackCast,
     WeaponAttackPerform,
     WeaponAttackHit,
     ProjectileAttack,
@@ -59,6 +59,14 @@ public class MonsterAudioController : MonoBehaviour
     {
         AudioClip clip = GetAudio(type);
         audioSource.clip = clip;
+        audioSource.Play();
+    }
+
+    public void PlayAudio(MonsterAudioType type, Transform transform)
+    {
+        AudioClip clip = GetAudio(type);
+        audioSource.clip = clip;
+        audioSource.transform.position = transform.position;
         audioSource.Play();
     }
 

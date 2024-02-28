@@ -1,0 +1,11 @@
+@startuml
+
+abstract Tree
+{
+#Node root
+
+- void Update()
+# abstract void SetupTree(Node root);
+}
+
+@enduml

@@ -1,0 +1,18 @@
+@startuml
+
+class MonsterMeleeAttack
+{
+- MeleeAttackData data
+- BoxCollider collider
+- ParticleSystem particle
+
+# override void Awake()
++ void SetInitialData(MeleeAttackData meleeData)
++ override void ExecuteAttack()
+- IEnumerator DisableCollider()
+- void SetAndAttack(Transform otherTransform)
+- void OnTriggerEnter(Collider other)
+
+}
+
+@enduml

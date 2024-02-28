@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Scripts.BehaviourTrees.RefactBT
+namespace Scripts.BehaviourTrees.Monster
 {
     public class DetectAI : MonoBehaviour
     {
@@ -36,6 +36,11 @@ namespace Scripts.BehaviourTrees.RefactBT
             {
                 IsDetected = false;
             }
+        }
+
+        public void SetDetectDistance(float detectDistance)
+        {
+            PlayerDetectDistance = detectDistance;
         }
     }
 

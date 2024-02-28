@@ -1,20 +1,23 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Scripts.BehaviourTrees.RefactBT
+namespace Scripts.BehaviourTrees.Monster
 {
     public class SeqReturnSpawnPosition : Sequence
     {
-        public SeqReturnSpawnPosition(Transform transform)
-        {
-            List<Node> children = new();
-            Inverter invertBool = new Inverter(new ActionAssertBoolean(transform, tree));
-            children.Add(invertBool);
-            children.Add(new ActionPlayAnimation(AnimationType.WALK));
-            children.Add(new ActionPlayAudio(MonsterAudioType.Move1, true, true));
-            children.Add(new ActionSetAgent(MonsterAgent.SPAWNPOSITION));
-            children.Add(new ActionReturnSpawnPosition(transform));
+        public SeqReturnSpawnPosition()
+        {     
+            List<Node> children = new()
+            {
+               new Inverter(new ActionAssertBoolean(tree.GetBTData<bool>(BTData.bOnSpawnPosition))),
+               new ActionPlayAudio(MonsterAudioType.Move1, true, true),
+               new ActionPlayAnimation(AnimationType.WALK),
+               new ActionSetAgent(tree.GetMonsterData<Vector3>(MonsterData.v3SpawnPosition)),
+               new ActionReturnSpawnPosition(),
+               new ActionSetBoolean(BTData.bOnSpawnPosition, true),
+            };
+
+            SetChildren(children);
         }
     }
 }

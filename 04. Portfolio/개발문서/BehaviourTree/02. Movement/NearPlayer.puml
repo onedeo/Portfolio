@@ -1,0 +1,16 @@
+@startuml
+
+[*]-->NearPlayer
+NearPlayer : Sequencer
+NearPlayer--->CheckPlayerIsNear
+CheckPlayerIsNear   : agent.stopdistance
+NearPlayer--->PlayAudio
+PlayAudio      : IdleAttack1
+NearPlayer--->PlayAnimation
+PlayAnimation  : Walk
+NearPlayer--->LookPlayer
+LookPlayer : Monster Facing Player
+NearPlayer--->PlayAnimation_
+PlayAnimation_ : IdleAttack
+
+@enduml

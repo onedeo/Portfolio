@@ -1,0 +1,23 @@
+@startuml
+
+class MonsterFleeSkill
+{
+        - const int constMaxAttempts
+        - FleeSkillData fleeData
+        - MonsterStatData statData
+        - NavMeshAgent agent
+        - Vector3 directionVector
+        - Vector3 runAwayVector
+        - Vector3 fleeVector
+        - int attemptFlee
+        - GameObject player
+
+        # override void Awake()
++ void SetInitialData(MonsterStatData statData, FleeSkillData fleeData)
+ + override void ExecuteAttack()
+- IEnumerator FinishUsingFlee()
+
+
+}
+
+@enduml

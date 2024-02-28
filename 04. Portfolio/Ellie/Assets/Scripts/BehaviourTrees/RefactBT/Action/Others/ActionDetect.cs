@@ -1,39 +1,28 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-namespace Scripts.BehaviourTrees.RefactBT
+namespace Scripts.BehaviourTrees.Monster
 {
     public class ActionDetect : MonsterNode
     {
-        public DetectType type;
+        private DetectType type;
+
         public ActionDetect(DetectType type)
         {
-            if (monster == null)
-                monster = tree.GetData<Monster>(MonsterData.MONSTER);
+            this.type = type;
         }
-
         public override NodeState Evaluate()
         {
-            if (monster == null)
-            {
-                Debug.Log(transform.name + "Has No Monster Component");
-                return NodeState.FAILURE;
-            }
-
             switch (type)
             {
                 case DetectType.PLAYER:
-                    if (monster.DetectedPlayer())
+                    if (tree.GetComponentData<DetectAI>(MonsterComponentData.PlayerDetectAI).IsDetected)
                         return NodeState.SUCCESS;
                     break;
                 case DetectType.CHASE:
-                    if (monster.DetectedChasePlayer())
+                    if (tree.GetComponentData<DetectAI>(MonsterComponentData.ChaseDetectAI).IsDetected)
                         return NodeState.SUCCESS;
                     break;
             }
+
             return NodeState.FAILURE;
         }
-
     }
 }

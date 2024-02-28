@@ -1,0 +1,16 @@
+@startuml
+
+class MonsterWeaponAttack
+{
+- WeaponAttackData data
+- GameObject target
+
+# override void Awake()
++ void void SetInitialData(ProjectileAttackData projectileData)
++ override void ExecuteAttack()
++ IEnumerator AttackFanshape()
+- bool CaculateDotProduct()
+- void SetAndAttack(Transform otherTransform)
+}
+
+@enduml

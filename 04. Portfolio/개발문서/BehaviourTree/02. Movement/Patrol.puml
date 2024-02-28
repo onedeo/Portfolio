@@ -1,0 +1,17 @@
+@startuml
+
+[*]-->Patrol
+Patrol : Sequencer
+Patrol--->Detect
+Detect   : Player
+Patrol--->PlayAudio
+PlayAudio      : Move1
+Patrol--->PlayAnimation
+PlayAnimation  : Walk
+Patrol---> PatrolToPoint
+PatrolToPoint : Patrol To One Point
+Patrol--->PlayAnimation_
+PlayAnimation_ : Idle
+Patrol--->Hold
+Hold : Wait and Patrol To Other Point
+@enduml

@@ -1,0 +1,18 @@
+@startuml
+
+[*]-->ReturnSpawnPosition
+ReturnSpawnPosition : Sequencer
+ReturnSpawnPosition--->Inverter
+Inverter-->AssertBoolean
+AssertBoolean   : bOnSpawnPosition
+ReturnSpawnPosition--->PlayAudio
+PlayAudio      : Move1
+ReturnSpawnPosition--->PlayAnimation
+PlayAnimation  : Walk
+ReturnSpawnPosition--->SetAgent
+SetAgent : SpawnPosition
+ReturnSpawnPosition--->Action_ReturnSpawnPosition
+ReturnSpawnPosition--->SetBoolean
+SetBoolean : bOnSpawnPosition_true
+
+@enduml

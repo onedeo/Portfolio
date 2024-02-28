@@ -1,0 +1,17 @@
+@startuml
+
+[*]-->FleeSkill
+FleeSkill : Sequencer
+FleeSkill--->SkillUseable
+SkillUseable   : interval, distance
+FleeSkill--->PlayAudio
+PlayAudio      : Move2
+FleeSkill--->PlayAnimation
+PlayAnimation  : Flee
+FleeSkill--->Hold
+Hold           : AnimationHold
+FleeSkill--->ExecuteAttack
+ExecuteAttack  : Flee
+FleeSkill--->Hold_
+Hold_           : duration-animationHold
+@enduml

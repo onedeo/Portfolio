@@ -1,0 +1,22 @@
+@startuml
+
+[*]-->MeleeAttack
+MeleeAttack : Sequencer
+MeleeAttack--->SkillUseable
+SkillUseable   : interval, distance
+MeleeAttack--->Stop
+MeleeAttack--->PlayAudio
+PlayAudio      : MeleeAttack
+MeleeAttack--->PlayAnimation
+PlayAnimation  : MeleeAttack
+MeleeAttack--->Hold 
+Hold           : AnimationHold
+MeleeAttack--->PlayParticle
+PlayParticle   : MeleeSwing
+MeleeAttack--->ExecuteAttack
+ExecuteAttack  : MeleeAttack
+MeleeAttack--->Hold_
+Hold_           : duration-animationHold
+MeleeAttack--->SetAgent
+SetAgent       : V3 Player
+@enduml

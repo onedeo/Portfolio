@@ -1,0 +1,13 @@
+@startuml
+
+class AdventureSkeleton
+{
+  - MeleeAttackData meleeAttackData
+  - RunToPlayerData runData
+  - WeaponAttackData weaponAttackData
+  # void Start()
+  - IEnumerator InitParsingData()
+  - void SetSkills()
+}
+
+@enduml

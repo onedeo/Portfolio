@@ -1,31 +1,25 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-namespace Scripts.BehaviourTrees.RefactBT
+namespace Scripts.BehaviourTrees.Monster
 {
     public class ActionPlayAnimation : MonsterNode
     {
+        Animator animator;
         private AnimationType animation;
         private bool waitToEnd;
         private float animationLength;
-        private float accumTime;        
+        private float accumTime;
 
-        public ActionPlayAnimation(AnimationType animation, bool waitToEnd=false)
+        public ActionPlayAnimation(AnimationType animation, bool waitToEnd = false)
         {
+            if(animator==null)
+                animator = tree.GetComponentData<Animator>(MonsterComponentData.ANIMATOR);
             if (animator == null)
-                animator = tree.GetData<Animator>(MonsterData.ANIMATOR);
-            if (animator == null)
-            {
-                string name = tree.GetData<Transform>(MonsterData.TRANSFORM).name;
-                Debug.Log("Try To Access Animator That Does Not Have : " + name);
+                DebugNull(transform, MonsterComponentData.ANIMATOR);
 
-                return;
-            }
             this.animation = animation;
             this.waitToEnd = waitToEnd;
         }
-
         protected override void OnStart()
         {
             animator.SetTrigger(animation.ToString());
@@ -37,7 +31,6 @@ namespace Scripts.BehaviourTrees.RefactBT
                 animationLength = clipInfo[0].clip.length;
             }
         }
-
         public override NodeState Evaluate()
         {            
             if(waitToEnd)
@@ -51,7 +44,6 @@ namespace Scripts.BehaviourTrees.RefactBT
             }
 
             return NodeState.SUCCESS;
-            
         }
     }
 }

@@ -1,0 +1,28 @@
+@startuml
+
+class MonsterBase
+{
+  - Dictionary<MonsterSkill, MonsterAttackBase> attacks
+  # MonsterBehaviourTree tree
+  + MonsterStatData monsterStat
+  # DetectAI detectPlayer
+  # DetectAI detectChase
+  + MonsterCenter MonsterCenter
+  + List<Transform> patrolPoints
+
+  - void Awake()
+  # virtual void Start()
+  - void Update()
+  # void SetMonsterData(MonsterStatData data)
+  - void SetDetectAI()
+  # void AddAttack(MOnsterSkill skill, MonsterAttackBase attack)
+  + bool ExecuteAttack(MonsterSkill skill)
+  + void Attack(IBaseEventPayload payload)
+  + void ReceiveDamage(IBaseEventPayload payload)
+  - void SetMonsterDead()
+  - void UpdateHP(float damage)
+  - IEnumerator EndBattleState()
+  - void MonsterOnPlayerForward()
+}
+
+@enduml

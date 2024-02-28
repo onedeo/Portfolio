@@ -1,0 +1,13 @@
+@startuml
+
+class MonsterAttackBase
+{
+  - MonsterBase monster
+         # MonsterAudioController audioController
+        # MonsterParticleController particleController
+        # virtual void Awake()
+        + virtual void ExecuteAttack()
++ void Attack(IBaseEventPayload payload)
+}
+
+@enduml
