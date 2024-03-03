@@ -76,7 +76,7 @@ void Portfolio1::SetSceneBasic()
 		auto obj = make_shared<GameObject>();
 		obj->GetOrAddTransform()->SetPosition(Vec3(0.f,0.5f, 0.f));
 		obj->AddComponent(make_shared<MeshRenderer>());
-		obj->GetMeshRenderer()->SetMaterial(RESOURCES->Get<Material>(L"Circles"));
+		obj->GetMeshRenderer()->SetMaterial(RESOURCES->Get<Material>(L"Veigar"));
 		auto mesh = RESOURCES->Get<Mesh>(L"Sphere");
 		obj->GetMeshRenderer()->SetMesh(mesh);
 		obj->SetName("Sphere");
@@ -99,7 +99,7 @@ void Portfolio1::SetSceneBasic()
 		_scenes[BASIC]->Add(obj);
 	}
 
-	// Normal
+	// Normal Leather
 	{
 		auto obj = make_shared<GameObject>();
 		obj->GetOrAddTransform()->SetPosition(Vec3(4.0f, 0.f, 0.f));
@@ -108,6 +108,19 @@ void Portfolio1::SetSceneBasic()
 		obj->GetMeshRenderer()->SetMesh(mesh);
 		auto material = RESOURCES->Get<Material>(L"Leather");
 		obj->GetMeshRenderer()->SetMaterial(material);
+		obj->AddComponent(make_shared<Turning>());
+
+		_scenes[BASIC]->Add(obj);
+	}
+
+	// Normal Circle
+	{
+		auto obj = make_shared<GameObject>();
+		obj->GetOrAddTransform()->SetPosition(Vec3(6.f, 0.5f, 0.f));
+		obj->AddComponent(make_shared<MeshRenderer>());
+		obj->GetMeshRenderer()->SetMaterial(RESOURCES->Get<Material>(L"Circles"));
+		auto mesh = RESOURCES->Get<Mesh>(L"Cube");
+		obj->GetMeshRenderer()->SetMesh(mesh);
 		obj->AddComponent(make_shared<Turning>());
 
 		_scenes[BASIC]->Add(obj);
@@ -329,7 +342,7 @@ void Portfolio1::LoadTextures()
 				material->SetDiffuseMap(diffuseTexture);
 			}
 			{
-				auto normalTexture = RESOURCES->Load<Texture>(L"LeatherNormal", L"..\\Resources\\Textures\\Circles_Normal.png");
+				auto normalTexture = RESOURCES->Load<Texture>(L"Circles_Normal", L"..\\Resources\\Textures\\Circles_Normal.png");
 				material->SetNormalMap(normalTexture);
 			}
 			MaterialDesc& desc = material->GetMaterialDesc();
