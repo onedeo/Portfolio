@@ -1,0 +1,12 @@
+@startuml
+
+class WizardSkeleton
+{
+  - FleeSkillData fleeData
+  - ProjectileAttackData projectileData
+  # void Start()
+  - IEnumerator InitParsingData()
+  - void SetSkills()
+}
+
+@enduml

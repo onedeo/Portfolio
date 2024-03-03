@@ -1,0 +1,19 @@
+@startuml
+
+[*]-->NoDetection
+NoDetection : Sequencer
+NoDetection--->Inverter
+Inverter-->Detect
+Detect   : Player
+NoDetection--->PlayAudio
+PlayAudio      : Idle
+NoDetection--->PlayAnimation
+PlayAnimation  : Sit
+NoDetection--->Detect_
+Detect_ : Player
+NoDetection--->SetBoolean
+SetBoolean : bOnSpawnPosition_false
+NoDetection--->PlayAnimation_
+PlayAnimation_ : StandUp
+
+@enduml

@@ -1,0 +1,26 @@
+@startuml
+
+class MonsterBase
+{
+    # Dictionary<MonsterSkill, MonsterAttackBase> attacks
+    # MonsterStatData monsterStat
+    - MonsterBehaviourTree tree
+    # void AddAttack(MonsterSkill skill, MonsterAttackBase attack)
+    + bool ExecuteAttack(MonsterSkill skill)
+}
+
+class NormalSkeleton extends MonsterBase
+{
+    - MeleeAttackData meleeAttackData
+    - IEnumerator InitParsingData()
+    - void SetSkills()
+}
+
+class WizardSkeleton extends MonsterBase
+{
+    
+}
+class AdventureSkeleton extends MonsterBase {
+}
+
+@enduml

@@ -1,22 +1,15 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-namespace Scripts.BehaviourTrees.RefactBT
+namespace Scripts.BehaviourTrees.Monster
 {
     public abstract class Tree : MonoBehaviour
     {
-        private Node root = null;
+        protected Node root = null;
 
-        protected void Start()
-        {
-            root = SetupTree();
-        }
         private void Update()
         {
             if (root != null) root.Evaluate();
         }
-        protected abstract Node SetupTree();
+        protected abstract void SetupTree(Node root);
     }
-
 }

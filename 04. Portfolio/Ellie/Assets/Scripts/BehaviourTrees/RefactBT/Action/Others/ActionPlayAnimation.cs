@@ -1,24 +1,25 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-namespace Scripts.BehaviourTrees.RefactBT
+namespace Scripts.BehaviourTrees.Monster
 {
     public class ActionPlayAnimation : MonsterNode
     {
+        Animator animator;
         private AnimationType animation;
         private bool waitToEnd;
         private float animationLength;
-        private float accumTime;        
+        private float accumTime;
 
-        public ActionPlayAnimation(Transform transform, AnimationType animation, bool waitToEnd=false)
+        public ActionPlayAnimation(AnimationType animation, bool waitToEnd = false)
         {
             if(animator==null)
-                animator = transform.GetComponent<Animator>();
+                animator = tree.GetComponentData<Animator>(MonsterComponentData.ANIMATOR);
+            if (animator == null)
+                DebugNull(transform, MonsterComponentData.ANIMATOR);
+
             this.animation = animation;
             this.waitToEnd = waitToEnd;
         }
-
         protected override void OnStart()
         {
             animator.SetTrigger(animation.ToString());
@@ -30,15 +31,8 @@ namespace Scripts.BehaviourTrees.RefactBT
                 animationLength = clipInfo[0].clip.length;
             }
         }
-
         public override NodeState Evaluate()
-        {
-            if (animator == null)
-            {
-                Debug.Log(transform.name + "Try Play Animation But No Animator");
-                return NodeState.FAILURE;
-            }
-            
+        {            
             if(waitToEnd)
             {
                 if (accumTime <= animationLength)
@@ -50,7 +44,6 @@ namespace Scripts.BehaviourTrees.RefactBT
             }
 
             return NodeState.SUCCESS;
-            
         }
     }
 }

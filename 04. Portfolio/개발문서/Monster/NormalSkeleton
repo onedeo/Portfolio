@@ -1,0 +1,12 @@
+@startuml
+
+class NormalSkeleton
+{
+  - MeleeAttackData meleeAttackData
+  - RunToPlayerData runData
+  # void Start()
+  - IEnumerator InitParsingData()
+  - void SetSkills()
+}
+
+@enduml

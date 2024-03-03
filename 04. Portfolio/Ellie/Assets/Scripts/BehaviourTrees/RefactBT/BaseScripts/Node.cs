@@ -1,8 +1,7 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Scripts.BehaviourTrees.RefactBT
+namespace Scripts.BehaviourTrees.Monster
 {
     public enum NodeState
     {
@@ -14,9 +13,12 @@ namespace Scripts.BehaviourTrees.RefactBT
     public class Node
     {
         protected NodeState state;
-
+        protected Transform transform;
         public Node parent;
         protected List<Node> children;
+        protected Tree baseTree;
+        protected bool isStarted;
+        protected bool isExited;
 
         public Node()
         {
@@ -31,6 +33,7 @@ namespace Scripts.BehaviourTrees.RefactBT
         {
             Attach(child);
         }
+
         protected virtual void OnStart() { }
         protected virtual void OnExit() { }
         public virtual NodeState Evaluate() => NodeState.FAILURE;
@@ -46,6 +49,5 @@ namespace Scripts.BehaviourTrees.RefactBT
             node.parent = this;
             children.Add(node);
         }
-
     }
 }

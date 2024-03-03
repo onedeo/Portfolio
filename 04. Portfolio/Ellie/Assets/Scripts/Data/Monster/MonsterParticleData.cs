@@ -31,7 +31,7 @@ public class MonsterParticleData : ScriptableObject
                 return meleeAttack;
             case MonsterParticleType.MeleeHit:
                 return meleeHit;
-            case MonsterParticleType.WeaponAttack:
+            case MonsterParticleType.WeaponSwing:
                 return weaponAttack;
             case MonsterParticleType.WeaponHit:
                 return weaponHit;
@@ -56,7 +56,7 @@ public class MonsterParticleData : ScriptableObject
                 return meleeAttackOffset;
             case MonsterParticleType.MeleeHit:
                 return meleeHitOffset;
-            case MonsterParticleType.WeaponAttack:
+            case MonsterParticleType.WeaponSwing:
                 return weaponAttackOffset;
             case MonsterParticleType.WeaponHit:
                 return weaponHitOffset;

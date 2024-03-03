@@ -1,18 +1,21 @@
-using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 
-namespace Scripts.BehaviourTrees.RefactBT
+namespace Scripts.BehaviourTrees.Monster
 {
     public class SeqNoDetection : Sequence
     {
-        public SeqNoDetection(Transform transform)
+        public SeqNoDetection()
         {
             List<Node> children = new()
             {
-                new Hold(),
-                new ActionDetect(transform, DetectType.PLAYER),
-                new ActionPlayAnimation(transform, AnimationType.STANDUP, true),
+                // undetected player
+                new Inverter(new ActionDetect(DetectType.PLAYER)),
+                new ActionPlayAudio(MonsterAudioType.Idle,false, true),
+                new ActionPlayAnimation(AnimationType.SIT, true),
+                new ActionDetect(DetectType.PLAYER),
+                // if detected player
+                new ActionSetBoolean(BTData.bOnSpawnPosition, false),
+                new ActionPlayAnimation(AnimationType.STANDUP, true),
             };
 
             SetChildren(children);

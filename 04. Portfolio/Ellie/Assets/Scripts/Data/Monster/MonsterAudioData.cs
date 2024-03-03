@@ -50,7 +50,7 @@ public class MonsterAudioData : ScriptableObject
                 return meleeAttack;
             case MonsterAudioType.MeleeAttackHit:
                 return meleeAttackHit;
-            case MonsterAudioType.WeaponAttack:
+            case MonsterAudioType.WeaponAttackCast:
                 return weaponAttack;
             case MonsterAudioType.WeaponAttackPerform:
                 return weaponAttackPerform;

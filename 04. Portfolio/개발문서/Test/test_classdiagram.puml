@@ -1,44 +1,27 @@
 @startuml
 
-interface Item
+[*] --> WIZARD_SKELETON
 
-Item<|-- Toy
-Item<|-- Tool
-Item<|-- Bread
+state WIZARD_SKELETON {
+  [*] --> ATTACK_SELECT
+  ATTACK_SELECT --> SEQ_FLEE_SKILL : "Flee Skill"
+  ATTACK_SELECT --> SEQ_PROJECTILE_ATTACK : "Projectile Attack"
+  ATTACK_SELECT --> [*] : "No Attack"
 
-class ShoppingCart
-{
-    -List<Item> Item
-    +void AddItem(Item item)
-    +void removeItem(Item item)
-    +Item GetItem(int index)
-    #int Size()
-    /'- : private, + : public, # : protected'/
-}
+  [*] --> MOVEMENT_SELECT
+  MOVEMENT_SELECT --> SEQ_OVERTRAVEL : "Overtravel"
+  MOVEMENT_SELECT --> SEQ_CHASE_PLAYER : "Chase Player"
+  MOVEMENT_SELECT --> SEQ_PATROL : "Patrol"
+  MOVEMENT_SELECT --> [*] : "No Movement"
 
-ShoppingCart o-- Item
+  [*] --> NO_DETECT_SELECT
+  NO_DETECT_SELECT --> SEQ_RETURN_SPAWN_POSITION : "Return Spawn Position"
+  NO_DETECT_SELECT --> SEQ_NO_DETECTION : "No Detection"
+  NO_DETECT_SELECT --> [*] : "No Detection Actions"
 
-class Client
-{
-    void OnAddItem(Item item)
-    void OnRemoveItem(Item item)
-}
-
-class Server
-{
-    ShoppingCart cart
-    int AddItem(Item item)
-    int RemoveItem(Item item)
-}
-
-Server-->ShoppingCart
-Client-->Server
-Client*- ShopView
-
-class ShopView
-{
-    void LoadView()
-    void Update(ShoppingCart cart)
+  ATTACK_SELECT --> WIZARD_SKELETON : "Return to Wizard Skeleton"
+  MOVEMENT_SELECT --> WIZARD_SKELETON : "Return to Wizard Skeleton"
+  NO_DETECT_SELECT --> WIZARD_SKELETON : "Return to Wizard Skeleton"
 }
 
 @enduml

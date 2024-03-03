@@ -1,0 +1,23 @@
+@startuml
+
+class Node
+{
+# NodeState state
+        # Transform transform
+        + Node parent
+        # List<Node> children
+        # Tree baseTree
+        # bool isStarted
+        # bool isExited
+
+        + Node()
+        + Node(List<Node> children)
+        + Node(Node child)
+         # virtual void OnStart()
+        # virtual void OnExit()
+        + virtual NodeState Evaluate()
+        # void SetChildren(List<Node> children)
+        - void Attach(Node node)
+}
+
+@enduml

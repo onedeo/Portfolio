@@ -1,8 +1,6 @@
-using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 
-namespace Scripts.BehaviourTrees.RefactBT
+namespace Scripts.BehaviourTrees.Monster
 {
     public class Sequence : MonsterNode
     {
@@ -27,8 +25,8 @@ namespace Scripts.BehaviourTrees.RefactBT
                         return NodeState.SUCCESS;
                 }
             }
+
             return anyChildIsRunning ? NodeState.RUNNING : NodeState.SUCCESS;
         }
-
     }
 }

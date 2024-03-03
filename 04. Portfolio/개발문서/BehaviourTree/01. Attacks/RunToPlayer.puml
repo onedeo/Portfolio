@@ -1,0 +1,13 @@
+@startuml
+
+[*]-->FleeSkill
+FleeSkill : Sequencer
+FleeSkill--->SkillUseable
+SkillUseable   : interval, distance
+FleeSkill--->PlayAudio
+PlayAudio      : Move2
+FleeSkill--->PlayAnimation
+PlayAnimation  : RUN
+FleeSkill--->RunToPlayer
+RunToPlayer : change speed
+@enduml

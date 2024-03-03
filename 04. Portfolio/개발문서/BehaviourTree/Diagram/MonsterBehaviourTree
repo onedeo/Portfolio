@@ -1,0 +1,20 @@
+@startuml
+
+class MonsterBehaviourTree
+{
+# Dictionary<MonsterComponentData, object> monsterComponentData
+# Dictionary<BTData, object> BtData
+# Dictionary<MonsterData, object> monsterData
+
+# MonsterBehaviourTree()
+# override void SetupTree(Node root)
+- void InitialComponentData()
++ T GetComponentData<T>(MonsterComponentData data)
+- void InitialBTData()
++ T GetBTData<T>(BTData data)
++ void SetBTData<T>(BTData data, T value)
++ T GetMonsterData<T>(MonsterData data)
++ void AddMonsterData<T>(MonsterData key, T value)
+}
+
+@enduml

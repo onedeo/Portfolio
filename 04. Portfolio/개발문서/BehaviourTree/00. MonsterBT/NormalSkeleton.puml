@@ -1,0 +1,41 @@
+@startuml
+
+[*]-->Repeat
+Repeat-->Sequencer
+Repeat : Decorator
+Sequencer-->UpdateData
+Sequencer-->MonsterAction
+'selector attack'
+MonsterAction : Selector
+MonsterAction-->MonsterAttack
+MonsterAttack : Selector
+MonsterAttack-->RunToPlayer
+RunToPlayer : Sequencer
+MonsterAttack-->MeleeAttack
+MeleeAttack : Sequencer
+'selector movement'
+MonsterAction-->MonsterMovement
+MonsterMovement : Selector
+MonsterMovement-->Overtravel
+Overtravel : Sequencer
+MonsterMovement-->NearPlayer
+NearPlayer : Sequencer
+MonsterMovement-->ChasePlayer
+ChasePlayer : Sequencer
+MonsterMovement-->Patrol
+Patrol : Sequencer
+'selector no detection'
+MonsterAction-->NoPlayerDetection
+NoPlayerDetection : Selector
+NoPlayerDetection-->ReturnSpawnPosition
+ReturnSpawnPosition : Sequencer
+NoPlayerDetection-->NoDetection
+NoDetection : Sequencer
+
+
+
+
+
+
+
+@enduml

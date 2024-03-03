@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Scripts.BehaviourTrees.RefactBT
+namespace Scripts.BehaviourTrees.Monster
 {
-    public enum MonsterData
+    public enum MonsterComponentData
     {
         MONSTER,
         AGENT,
@@ -12,8 +12,51 @@ namespace Scripts.BehaviourTrees.RefactBT
         AUDIO_CON,
         TRANSFORM,
         ANIMATOR,
-        
+        PATROL_POINTS,
+        PARTICLE,
+        MONSTER_CENTER,
+
+        PlayerDetectAI,
+        ChaseDetectAI,
     }
+
+    public enum BTData
+    {
+        bOnSpawnPosition,
+        bOvertraveld,
+        bReturning,
+
+        fPlayerDistanceSqr,
+        fSpawnDistanceSqr,
+
+        v3PlayerPosition,
+
+        iCurrentHP,
+    }
+
+
+    public enum MonsterData
+    {
+        v3SpawnPosition,
+
+        // Datas
+        MonsterStat,
+        RunToPlayer,
+        Melee,
+        Weapon,
+        Flee,
+        Projectile,
+    }
+
+    public enum MonsterSkill
+    {
+        RunToPlayer,
+        Melee,
+        Projectile,
+        Weapon,
+        Flee,
+    }
+  
 
     public enum DetectType
     {
@@ -22,19 +65,28 @@ namespace Scripts.BehaviourTrees.RefactBT
     }
     public enum AnimationType
     {
+        IDLE,
         STANDUP,
         WALK,
-
+        SIT,
+        IDLE_ATTACK,
+        RUN,
+        MELEE,
+        WEAPON,
+        FLEE,
+        PROJECTILE_CAST,
+        PROJECTILE_FIRE,
     }
     public enum MonAudioType
     {
         WALK,
     }
 
-    public enum MonsterAgent
+    public enum MonsterType
     {
-        PLAYER,
-        SPAWNPOSITION,
-        PATROL,
+        NormalSkeleton,
+        AdventureSekeleton,
+        WizardSkeleton,
+        GuildguardSkeleton
     }
 }

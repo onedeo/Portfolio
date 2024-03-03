@@ -133,4 +133,4 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f7a80ba725771d447bb83db7145dd5d2, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Scripts.BehaviourTrees.RefactBT.DetectAI, Assembly.Ellie
+  m_EditorClassIdentifier: Scripts.BehaviourTrees.Monster.DetectAI, Assembly.Ellie

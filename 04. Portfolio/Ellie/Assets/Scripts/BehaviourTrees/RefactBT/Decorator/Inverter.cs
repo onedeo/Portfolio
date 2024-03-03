@@ -2,13 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Scripts.BehaviourTrees.RefactBT
+namespace Scripts.BehaviourTrees.Monster
 {
     public class Inverter : Node
     {
-        public Inverter(Node node) : base(node)
-        {
-        }
+        public Inverter(Node node) : base(node){}
         public override NodeState Evaluate()
         {
             switch (children[0].Evaluate())
@@ -20,6 +18,7 @@ namespace Scripts.BehaviourTrees.RefactBT
                 case NodeState.FAILURE:
                     return NodeState.SUCCESS;
             }
+
             return NodeState.FAILURE;
         }
 

@@ -1,18 +1,22 @@
-using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 
-namespace Scripts.BehaviourTrees.RefactBT
+namespace Scripts.BehaviourTrees.Monster
 {
     public class SeqPatrol : Sequence
     {
-        public SeqPatrol(Transform transform)
+        public SeqPatrol()
         {
-            List<Node> children = new();
-            new ActionDetect(transform, DetectType.PLAYER);
-            new ActionPlayAnimation(transform, AnimationType.WALK);
-            new ActionPlayAudio(transform, MonsterAudioType.Move1);
-            new 
+            List<Node> children = new()
+            {
+                new ActionDetect(DetectType.PLAYER),
+                new ActionPlayAudio(MonsterAudioType.Move1),
+                new ActionPlayAnimation(AnimationType.WALK),
+                new ActionPatrolToPoint(),
+                new ActionPlayAnimation(AnimationType.IDLE),
+                new ActionHold(1.0f),
+            };
+
+            SetChildren(children);
         }
 
     }

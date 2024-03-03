@@ -1,0 +1,13 @@
+@startuml
+
+[*]-->ChasePlayer
+ChasePlayer : Sequencer
+ChasePlayer--->Detect
+Detect   : Detect Chase
+ChasePlayer--->PlayAudio
+PlayAudio      : Move1
+ChasePlayer--->PlayAnimation
+PlayAnimation  : Walk
+ChasePlayer--->SetAgent
+SetAgent : Destination To Player
+@enduml

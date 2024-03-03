@@ -1,14 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-namespace Scripts.BehaviourTrees.RefactBT
+namespace Scripts.BehaviourTrees.Monster
 {
-    public class Hold : Node
+    public class ActionHold : MonsterNode
     {
         private float holdTime;
         private float accumTime=0;
-        public Hold(float holdTime= 1.0f) : base()
+        public ActionHold(float holdTime= 1.0f) : base()
         {
             this.holdTime = holdTime;
         }
@@ -22,6 +20,5 @@ namespace Scripts.BehaviourTrees.RefactBT
             accumTime += Time.deltaTime;
             return NodeState.RUNNING;
         }
-
     }
 }

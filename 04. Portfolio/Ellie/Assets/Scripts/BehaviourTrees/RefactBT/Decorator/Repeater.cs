@@ -2,20 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Scripts.BehaviourTrees.RefactBT
+namespace Scripts.BehaviourTrees.Monster
 {
     public class Repeater : Node
     {
-        Transform transform;
         bool repeatOnSuccess;
         bool repeatOnFailure;
-        Repeater(Transform transform, List<Node> childrens, bool repeatOnSuccess = true, bool repeatOnFailure = true) : base(childrens)
+        public Repeater(Node child, bool repeatOnSuccess = true, bool repeatOnFailure = true) : base(child)
         {
-            this.transform = transform;
             this.repeatOnFailure = repeatOnFailure;
             this.repeatOnSuccess = repeatOnSuccess;
         }
-
+        public Repeater(List<Node> childrens, bool repeatOnSuccess = true, bool repeatOnFailure = true) : base(childrens)
+        {
+            this.repeatOnFailure = repeatOnFailure;
+            this.repeatOnSuccess = repeatOnSuccess;
+        }
         public override NodeState Evaluate()
         {
             if (children.Count != 1)

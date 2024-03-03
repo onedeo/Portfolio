@@ -1,0 +1,24 @@
+@startuml
+
+[*]-->WeaponAttack
+WeaponAttack : Sequencer
+WeaponAttack--->SkillUseable
+SkillUseable   : interval, distance
+WeaponAttack--->Stop
+WeaponAttack--->PlayAudio
+PlayAudio      : WeaponAttackCast
+WeaponAttack--->PlayAnimation
+PlayAnimation  : WeaponAttack
+WeaponAttack--->Hold 
+Hold           : AnimationHold
+WeaponAttack--->PlayParticle
+PlayParticle   : WeaponSwing
+WeaponAttack--->PlayAudio_
+PlayAudio_      : WeaponAttackPerform
+WeaponAttack--->ExecuteAttack
+ExecuteAttack  : WeaponAttack
+WeaponAttack--->Hold_
+Hold_           : duration-animationHold
+WeaponAttack--->SetAgent
+SetAgent       : V3 Player
+@enduml

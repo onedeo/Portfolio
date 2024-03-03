@@ -1,0 +1,18 @@
+@startuml
+
+class MonsterProjectileAttack
+{
+private const string path
+private ProjectileAttackData projectileData;
+private GameObject projectileObj;
+private ProjectileBase projectile;
+
+# override void Awake()
++ void void SetInitialData(ProjectileAttackData projectileData)
++ override void ExecuteAttack()
++ void Explode(Transform transform)
+- IEnumerator DisableCollider()
+- void SetAndAttack(Transform otherTransform)
+}
+
+@enduml

@@ -1,0 +1,10 @@
+@startuml
+
+class MonsterNode
+{
+# MonsterBehaviourTree tree;
++ MonsterNode() : base()
++ MonsterNode(List<Node> children) : base(children)
+# void DebugNull(Transform trns, MonsterComponentData component)
+}
+@enduml

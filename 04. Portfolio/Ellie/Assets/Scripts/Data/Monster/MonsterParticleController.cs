@@ -6,7 +6,7 @@ public enum MonsterParticleType
 {
     MeleeAttack,
     MeleeHit,
-    WeaponAttack,
+    WeaponSwing,
     WeaponHit,
     ProjectileCast,
     ProjectileHit,
@@ -45,10 +45,19 @@ public class MonsterParticleController : MonoBehaviour
         return null;
     }
 
+    public bool PlayParticle(MonsterParticleType type, Transform transform)
+    {
+        particle = GetParticle(type);
+        if (particle == null) return false;
+        particle.transform.position = transform.position;
+        particle.Play();
+        return true;
+    }
     public bool PlayParticle(MonsterParticleType type)
     {
         particle = GetParticle(type);
         if (particle == null) return false;
+        particle.transform.position = transform.position;
         particle.Play();
         return true;
     }
