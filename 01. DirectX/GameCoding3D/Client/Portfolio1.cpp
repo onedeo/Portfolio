@@ -80,7 +80,7 @@ void Portfolio1::SetSceneBasic()
 		auto mesh = RESOURCES->Get<Mesh>(L"Sphere");
 		obj->GetMeshRenderer()->SetMesh(mesh);
 		obj->SetName("Sphere");
-		obj->AddComponent(make_shared<Turning>());
+		//obj->AddComponent(make_shared<Turning>());
 
 		_scenes[BASIC]->Add(obj);
 	}
@@ -94,129 +94,129 @@ void Portfolio1::SetSceneBasic()
 		auto mesh = RESOURCES->Get<Mesh>(L"Cube");
 		obj->GetMeshRenderer()->SetMesh(mesh);
 		obj->SetName("Cube");
-		obj->AddComponent(make_shared<Turning>());
+		//obj->AddComponent(make_shared<Turning>());
 
 		_scenes[BASIC]->Add(obj);
 	}
 
-	// Normal Leather
-	{
-		auto obj = make_shared<GameObject>();
-		obj->GetOrAddTransform()->SetPosition(Vec3(4.0f, 0.f, 0.f));
-		obj->AddComponent(make_shared<MeshRenderer>());
-		auto mesh = RESOURCES->Get<Mesh>(L"Cube");
-		obj->GetMeshRenderer()->SetMesh(mesh);
-		auto material = RESOURCES->Get<Material>(L"Leather");
-		obj->GetMeshRenderer()->SetMaterial(material);
-		obj->AddComponent(make_shared<Turning>());
+	//// Normal Leather
+	//{
+	//	auto obj = make_shared<GameObject>();
+	//	obj->GetOrAddTransform()->SetPosition(Vec3(4.0f, 0.f, 0.f));
+	//	obj->AddComponent(make_shared<MeshRenderer>());
+	//	auto mesh = RESOURCES->Get<Mesh>(L"Cube");
+	//	obj->GetMeshRenderer()->SetMesh(mesh);
+	//	auto material = RESOURCES->Get<Material>(L"Leather");
+	//	obj->GetMeshRenderer()->SetMaterial(material);
+	//	//obj->AddComponent(make_shared<Turning>());
 
-		_scenes[BASIC]->Add(obj);
-	}
+	//	_scenes[BASIC]->Add(obj);
+	//}
 
-	// Normal Circle
-	{
-		auto obj = make_shared<GameObject>();
-		obj->GetOrAddTransform()->SetPosition(Vec3(6.f, 0.5f, 0.f));
-		obj->AddComponent(make_shared<MeshRenderer>());
-		obj->GetMeshRenderer()->SetMaterial(RESOURCES->Get<Material>(L"Circles"));
-		auto mesh = RESOURCES->Get<Mesh>(L"Cube");
-		obj->GetMeshRenderer()->SetMesh(mesh);
-		obj->AddComponent(make_shared<Turning>());
+	//// Normal Circle
+	//{
+	//	auto obj = make_shared<GameObject>();
+	//	obj->GetOrAddTransform()->SetPosition(Vec3(6.f, 0.5f, 0.f));
+	//	obj->AddComponent(make_shared<MeshRenderer>());
+	//	obj->GetMeshRenderer()->SetMaterial(RESOURCES->Get<Material>(L"Circles"));
+	//	auto mesh = RESOURCES->Get<Mesh>(L"Cube");
+	//	obj->GetMeshRenderer()->SetMesh(mesh);
+	//	//obj->AddComponent(make_shared<Turning>());
 
-		_scenes[BASIC]->Add(obj);
-	}
+	//	_scenes[BASIC]->Add(obj);
+	//}
 
-	// Minecraft
-	{	
-		shared_ptr<GameObject> obj[6];
-		for (int i = 0; i < 6; i++)
-		{
-			obj[i] = make_shared<GameObject>();
-			obj[i]->AddComponent(make_shared<MeshRenderer>());
-			obj[i]->GetMeshRenderer()->SetMaterial(RESOURCES->Get<Material>(L"Batman"));
-		}
-		for (int i = 1; i < 6; i++)
-		{
-			obj[0]->GetOrAddTransform()->AddChildren(obj[i]->GetOrAddTransform());
-			obj[i]->GetOrAddTransform()->SetParent(obj[0]->GetOrAddTransform());
-		}
+	//// Minecraft
+	//{	
+	//	shared_ptr<GameObject> obj[6];
+	//	for (int i = 0; i < 6; i++)
+	//	{
+	//		obj[i] = make_shared<GameObject>();
+	//		obj[i]->AddComponent(make_shared<MeshRenderer>());
+	//		obj[i]->GetMeshRenderer()->SetMaterial(RESOURCES->Get<Material>(L"Batman"));
+	//	}
+	//	for (int i = 1; i < 6; i++)
+	//	{
+	//		obj[0]->GetOrAddTransform()->AddChildren(obj[i]->GetOrAddTransform());
+	//		obj[i]->GetOrAddTransform()->SetParent(obj[0]->GetOrAddTransform());
+	//	}
 
-		// Body
-		obj[0]->GetOrAddTransform()->SetPosition(Vec3(-2.f, 1.f, 0.f));
-		obj[0]->GetOrAddTransform()->SetScale(Vec3(0.4f, 0.6f, 0.2f));
-		obj[0]->GetOrAddTransform()->SetLocalRotation(Vec3(0.f, XM_PI, 0.f));
-		auto mesh = make_shared<Mesh>();
-		obj[0]->GetMeshRenderer()->SetMesh(mesh);
-		mesh->CreateBody();
-		RESOURCES->Add(L"MCBody", mesh);
-		obj[0]->SetName("MCBody");
-		obj[0]->AddComponent(make_shared<Turning>());
+	//	// Body
+	//	obj[0]->GetOrAddTransform()->SetPosition(Vec3(-2.f, 1.f, 0.f));
+	//	obj[0]->GetOrAddTransform()->SetScale(Vec3(0.4f, 0.6f, 0.2f));
+	//	obj[0]->GetOrAddTransform()->SetLocalRotation(Vec3(0.f, XM_PI, 0.f));
+	//	auto mesh = make_shared<Mesh>();
+	//	obj[0]->GetMeshRenderer()->SetMesh(mesh);
+	//	mesh->CreateBody();
+	//	RESOURCES->Add(L"MCBody", mesh);
+	//	obj[0]->SetName("MCBody");
+	//	//obj[0]->AddComponent(make_shared<Turning>());
 
-		// Head
-		obj[1]->GetOrAddTransform()->SetLocalPosition(Vec3(0.f, 0.85f, 0.f));
-		obj[1]->GetOrAddTransform()->SetScale(Vec3(0.4f, 0.4f, 0.4f));
-		auto mesh1 = make_shared<Mesh>();
-		obj[1]->GetMeshRenderer()->SetMesh(mesh1);
-		mesh1->CreateHead();
-		RESOURCES->Add(L"MCHead", mesh1);
-		obj[1]->SetName("MCHead");
-				
-		// LeftArm
-		obj[2]->GetOrAddTransform()->SetLocalPosition(Vec3(-0.75f, 0.f, 0.f));
-		obj[2]->GetOrAddTransform()->SetScale(Vec3(0.2f, 0.6f, 0.2f));
-		auto mesh2 = make_shared<Mesh>();
-		obj[2]->GetMeshRenderer()->SetMesh(mesh2);
-		mesh2->CreateLArm();
-		RESOURCES->Add(L"MCLArm", mesh2);
-		obj[2]->SetName("MCLArm");
+	//	// Head
+	//	obj[1]->GetOrAddTransform()->SetLocalPosition(Vec3(0.f, 0.85f, 0.f));
+	//	obj[1]->GetOrAddTransform()->SetScale(Vec3(0.4f, 0.4f, 0.4f));
+	//	auto mesh1 = make_shared<Mesh>();
+	//	obj[1]->GetMeshRenderer()->SetMesh(mesh1);
+	//	mesh1->CreateHead();
+	//	RESOURCES->Add(L"MCHead", mesh1);
+	//	obj[1]->SetName("MCHead");
+	//			
+	//	// LeftArm
+	//	obj[2]->GetOrAddTransform()->SetLocalPosition(Vec3(-0.75f, 0.f, 0.f));
+	//	obj[2]->GetOrAddTransform()->SetScale(Vec3(0.2f, 0.6f, 0.2f));
+	//	auto mesh2 = make_shared<Mesh>();
+	//	obj[2]->GetMeshRenderer()->SetMesh(mesh2);
+	//	mesh2->CreateLArm();
+	//	RESOURCES->Add(L"MCLArm", mesh2);
+	//	obj[2]->SetName("MCLArm");
 
-		// RightArm
-		obj[3]->GetOrAddTransform()->SetLocalPosition(Vec3(0.75f, 0.f, 0.f));
-		obj[3]->GetOrAddTransform()->SetScale(Vec3(0.2f, 0.6f, 0.2f));
-		auto mesh3 = make_shared<Mesh>();
-		obj[3]->GetMeshRenderer()->SetMesh(mesh3);
-		mesh3->CreateRArm();
-		RESOURCES->Add(L"MCRArm", mesh3);
-		obj[3]->SetName("MCRArm");
+	//	// RightArm
+	//	obj[3]->GetOrAddTransform()->SetLocalPosition(Vec3(0.75f, 0.f, 0.f));
+	//	obj[3]->GetOrAddTransform()->SetScale(Vec3(0.2f, 0.6f, 0.2f));
+	//	auto mesh3 = make_shared<Mesh>();
+	//	obj[3]->GetMeshRenderer()->SetMesh(mesh3);
+	//	mesh3->CreateRArm();
+	//	RESOURCES->Add(L"MCRArm", mesh3);
+	//	obj[3]->SetName("MCRArm");
 
-		// LeftLeg
-		obj[4]->GetOrAddTransform()->SetLocalPosition(Vec3(-0.25f, -1.f, 0.f));
-		obj[4]->GetOrAddTransform()->SetScale(Vec3(0.2f, 0.6f, 0.2f));
-		auto mesh4 = make_shared<Mesh>();
-		obj[4]->GetMeshRenderer()->SetMesh(mesh4);
-		mesh4->CreateRArm();
-		RESOURCES->Add(L"MCRArm", mesh4);
-		obj[4]->SetName("MCRArm");
+	//	// LeftLeg
+	//	obj[4]->GetOrAddTransform()->SetLocalPosition(Vec3(-0.25f, -1.f, 0.f));
+	//	obj[4]->GetOrAddTransform()->SetScale(Vec3(0.2f, 0.6f, 0.2f));
+	//	auto mesh4 = make_shared<Mesh>();
+	//	obj[4]->GetMeshRenderer()->SetMesh(mesh4);
+	//	mesh4->CreateRArm();
+	//	RESOURCES->Add(L"MCRArm", mesh4);
+	//	obj[4]->SetName("MCRArm");
 
 
-		// RightLeg
-		obj[5]->GetOrAddTransform()->SetLocalPosition(Vec3(0.25f, -1.f, 0.f));
-		obj[5]->GetOrAddTransform()->SetScale(Vec3(0.2f, 0.6f, 0.2f));
-		auto mesh5 = make_shared<Mesh>();
-		obj[5]->GetMeshRenderer()->SetMesh(mesh5);
-		mesh5->CreateRArm();
-		RESOURCES->Add(L"MCRArm", mesh5);
-		obj[5]->SetName("MCRArm");
+	//	// RightLeg
+	//	obj[5]->GetOrAddTransform()->SetLocalPosition(Vec3(0.25f, -1.f, 0.f));
+	//	obj[5]->GetOrAddTransform()->SetScale(Vec3(0.2f, 0.6f, 0.2f));
+	//	auto mesh5 = make_shared<Mesh>();
+	//	obj[5]->GetMeshRenderer()->SetMesh(mesh5);
+	//	mesh5->CreateRArm();
+	//	RESOURCES->Add(L"MCRArm", mesh5);
+	//	obj[5]->SetName("MCRArm");
 
-		for (int i = 0; i < 6; i++)
-			_scenes[BASIC]->Add(obj[i]);
-	}
+	//	for (int i = 0; i < 6; i++)
+	//		_scenes[BASIC]->Add(obj[i]);
+	//}
 
-	// Ellie
-	{
-		auto m1 = make_shared<Model>();
-		m1->ReadModel(L"Ellie/Ellie");
-		m1->ReadMaterial(L"Ellie/Ellie");
+	//// Ellie
+	//{
+	//	auto m1 = make_shared<Model>();
+	//	m1->ReadModel(L"Ellie/Ellie");
+	//	m1->ReadMaterial(L"Ellie/Ellie");
 
-		auto obj = make_shared<GameObject>();
-		obj->GetOrAddTransform()->SetPosition(Vec3(-4.0f, 0.f, 0.f));
-		obj->GetOrAddTransform()->SetScale(Vec3(0.01f));
-		obj->AddComponent(make_shared<ModelRenderer>(_shader));
-		obj->GetModelRenderer()->SetModel(m1);
-		obj->AddComponent(make_shared<Turning>());
+	//	auto obj = make_shared<GameObject>();
+	//	obj->GetOrAddTransform()->SetPosition(Vec3(-4.0f, 0.f, 0.f));
+	//	obj->GetOrAddTransform()->SetScale(Vec3(0.01f));
+	//	obj->AddComponent(make_shared<ModelRenderer>(_shader));
+	//	obj->GetModelRenderer()->SetModel(m1);
+	//	//obj->AddComponent(make_shared<Turning>());
 
-		_scenes[BASIC]->Add(obj);
-	}
+	//	_scenes[BASIC]->Add(obj);
+	//}
 
 	// GRID
 	{

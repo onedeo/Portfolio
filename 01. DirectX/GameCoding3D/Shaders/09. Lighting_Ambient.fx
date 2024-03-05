@@ -27,7 +27,6 @@ float4 PS(VertexOutput input) : SV_TARGET
 	return Texture0.Sample(LinearSampler, input.uv) * color;
 }
 
-//계층 구조 : 셰이더 ->테크닉 -> 패스
 technique11 T0
 {
 	PASS_VP(p0, VS, PS)
